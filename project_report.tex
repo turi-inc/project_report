@@ -5,10 +5,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{tipa}
-%\renewcommand*{\familydefault}{\sfdefault}
 
-% Set margins 
-%\usepackage[margin=2.5cm]{geometry}
 \usepackage{setspace} 
 \DeclareUnicodeCharacter{00A0}{ }
 
@@ -64,13 +61,8 @@
 \end{titlepage}
 % END TITLE PAGE %
 
-% Change the tableofcontent title %
-\renewcommand{\contentsname}{Innholdfortegnelse}
 \tableofcontents
 \pagebreak
-
-% 1.5 linje %
-%\onehalfspacing
 
 
 \section{Introduction}
@@ -103,6 +95,7 @@ The following functionalities should be supported (bold means that we they were 
 Finally we were not able to implement all of our goals and we had tons of more ideas. But for the first release of turi (1.0.0) we decided to require all these features above.
 
 
+\section{The development process}
 \subsection{Git}
 We use github.com instead of the git repository supplied to us from the school, this gave us the opportunity to work outside the school network. In addition it gave us the ability to use 3rd party applications, this is explained the following subsections. The githib repository address is: https://github.com/turi-inc/turi.
 
@@ -136,6 +129,44 @@ CodeClimate also have some cool features like Trends over the "health" of our co
 \subsubsection{Hakiri}
 This 3rd party application is used to show if there is any gem which is not up to date, and if there is any known security claws in any of the gems we use in our project.
 
+\section{Design of the site}
+
+\section{Gems}
+We use several gems in our project, this means that we not need find up the wheel for already created features, and we can focus on our own feature. All the gems used can be found in the gemfile in the project source, but the most important ones are:
+\subsection{Devise}
+In the first iterations we created our own authentication system, but we found fast out that we could use \textit{Devise}. This made it possible to focus on other tasks and let \textit{Devise} handle the authentication. 
+
+\subsection{Pundit}
+
+\subsection{Leaflet}
+
+\subsection{rails-asserts}
+
+\subsection{Geocoder}
+Geocoder is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location. 
+
+\subsection{Puma}
+Puma is a "simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications."\cite{puma}. Heroku recommend Puma over the stock rails server (WEBrick) by saying that: "While WEBrick should be fine for development, it was not designed to handle a high concurrent workload that a Ruby app must serve in production. A production web server should be used instead."\cite{heroku_webserver}. Even tho Heroku only uses one core (for the free program), this secures that the project is ready for a deployment onto a multi-core server in the future.  
+
+
+\section{Trip Features}
+The trip and it's features are the main focus of our project. 
+\subsection{Discuss}
+\subsection{Event management}
+\subsection{Equipment planning}
+\subsection{Gallery}
+\subsection{Blog}
+\subsection{Share your trip (public setting)}
+\subsection{Explore trips}
+\subsection{Search}
+
+\section{Other features}
+\subsection{Friend requests}
+
+\section{Tests}
+
+\section{Group collaboration}
+
 
 \section{The development process}
 
@@ -164,3 +195,9 @@ After a push to the master Travis will push the code to Heroku and run the datab
 
 
 \end{document}
+
+%puma
+https://github.com/puma/puma
+
+% heroku_webserver
+https://devcenter.heroku.com/articles/ruby-default-web-server
