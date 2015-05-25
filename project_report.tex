@@ -11,9 +11,6 @@
 %\usepackage[margin=2.5cm]{geometry}
 \usepackage{setspace} 
 \DeclareUnicodeCharacter{00A0}{ }
-   
-
-
 
 \begin{document}
 \begin{titlepage}
@@ -79,7 +76,7 @@
 \section{Introduction}
 Imagine you want to go on a trip - to Norway for example. You ask you friends to join you but they reject because they can not afford the money or they have no spare time. What now? You can either go alone or try to find some people who can join you. The first place we look today is on the world wide web. We already can find some portals where you can find partners for your trip. But what about planning your actually trip? We couldn’t find a tool which allows you to plan your trip in detail. Planning your trip gets especially difficult if you find your trip mates online and you can not meet because you live too far away from each other. You can now either use the phone or create e.g. some Facebook group. Still those ways lack of several features we want to implement in our trip planner which makes it unique. In fact we came up with the idea to create a a trip planner which offers a combination between socialising and planning for your trips.
 
-\subsection{The product name: turi } %(tʉːɾi) %
+\subsection{The product name: turi}
 The name derived from the Norwegian word “tur” (a trip/a walk). turi was short and pregnant enough and sounds best to the ear. It is also a Norwegian name, but this will be no problem when we think about topics like a trademark etc.
 
 \subsection{Summary of goals (planned functionalities)}
@@ -138,6 +135,32 @@ CodeClimate also have some cool features like Trends over the "health" of our co
 
 \subsubsection{Hakiri}
 This 3rd party application is used to show if there is any gem which is not up to date, and if there is any known security claws in any of the gems we use in our project.
+
+
+\section{The development process}
+
+Using tools like GitHub and Travis CI we came up with the following workflow:
+
+\subsection{Git Workflow}
+Since we use Git together with GitHub, we are able to make use of the continuous integration tool Travis CI. Therefore we decided to go with the following development workflow. Please note that the term "origin" represents for the main turi repository on GitHub.
+
+
+\subsubsection{Developing of a new feature}
+The developer creates a local feature branch with a telling name. A feature always relates to a user story in Agilefant.
+
+
+\subsubsection{Starting a merge request}
+If the developer finished with the development of his local feature, he pushes the feature branch to his own remote repository (which is a fork of the origin repository). Before he pushes his changes, he has to do a rebase on the current develop branch of the origin to make sure all sources are up to date and we don't mess up the git history we thousand of branches. After making sure that everything is up to date, he can create a merge request on GitHub from his feature branch to the origin develop branch.
+
+\subsubsection{Validating the merge request}
+After the merge request is submitted, it's open for discussion. For additional validation, Travis builds every merge request to ensure that all tests are running. If the Travis CI build is passing and the merge request can be fast forwarded (so the request was rebased) another developer can accept the merge. The person who accepts the merge should be never be the owner of the merge request.
+
+\subsubsection{Deploying to production}
+A soon as a merge request is accepted, Travis CI will run again against the latest sources of the origin develop branch. If the build is successfull Travis will push the develop branch to the master branch. Therefore we will always have a stable version of turi on the master branch. A developer should never push changes directly to the master branch.
+
+After a push to the master Travis will push the code to Heroku and run the database migrations. Therefore we always have a stable snapshot version on heroku.
+
+\subsection{Conclusion of the workflow}
 
 
 \end{document}
