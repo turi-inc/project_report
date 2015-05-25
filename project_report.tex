@@ -1,0 +1,143 @@
+\documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tipa}
+%\renewcommand*{\familydefault}{\sfdefault}
+
+% Set margins 
+%\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace} 
+\DeclareUnicodeCharacter{00A0}{ }
+   
+
+
+
+\begin{document}
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.7mm}} % Defines a new command for the horizontal lines, change thickness here
+
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Universitetet i Tromsø}\\[1.5cm] % Name of your university/college
+\textsc{\Large INF-2900}\\[0.5cm] % Major heading such as course name
+\textsc{\large Software Engineering}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.5cm]
+{ \huge \bfseries Turi}\\[0.5cm] % Title of your document
+\HRule \\[3cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+\Large \emph{Gruppe:}\\
+1\\[2cm] % Your name
+% title
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+\textsc{\large Våren 2015}\\[4cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics{pictures/UiT_samarbeidslogo_bokmal_300ppi.png}\\[1cm] 
+% Include a department/university logo - this will require the graphicx package
+ 
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+% END TITLE PAGE %
+
+% Change the tableofcontent title %
+\renewcommand{\contentsname}{Innholdfortegnelse}
+\tableofcontents
+\pagebreak
+
+% 1.5 linje %
+%\onehalfspacing
+
+
+\section{Introduction}
+Imagine you want to go on a trip - to Norway for example. You ask you friends to join you but they reject because they can not afford the money or they have no spare time. What now? You can either go alone or try to find some people who can join you. The first place we look today is on the world wide web. We already can find some portals where you can find partners for your trip. But what about planning your actually trip? We couldn’t find a tool which allows you to plan your trip in detail. Planning your trip gets especially difficult if you find your trip mates online and you can not meet because you live too far away from each other. You can now either use the phone or create e.g. some Facebook group. Still those ways lack of several features we want to implement in our trip planner which makes it unique. In fact we came up with the idea to create a a trip planner which offers a combination between socialising and planning for your trips.
+
+\subsection{The product name: turi } %(tʉːɾi) %
+The name derived from the Norwegian word “tur” (a trip/a walk). turi was short and pregnant enough and sounds best to the ear. It is also a Norwegian name, but this will be no problem when we think about topics like a trademark etc.
+
+\subsection{Summary of goals (planned functionalities)}
+The following functionalities should be supported (bold means that we they were implemented during the course sprints):
+\begin{itemize}
+  \item {\textbf{Discuss with participants}}
+  \item {\textbf{Event management (for appointments top plan)}}
+  \item {\textbf{Route planning}}
+  \item {\textbf{Equipment planning}}
+  \item {\textbf{Gallery to visualize your trip experiences}}
+  \item {\textbf{Blog about your experience}}
+  \item {\textbf{Share your trip (public/private)}}
+  \item {Copy a previous trip from others (e.g. routes)}
+  \item {Rating functionality and other common social functions (commenting, likes..)
+  \begin{itemize}
+    \item {Friend requests}
+  \end{itemize}}
+  \item {\textbf{Explore trips based on their location}}
+  \item {Badges and rewards for participating and using Turi}
+  \item {Search and find trips according your interests}
+\end{itemize}
+
+\noindent
+Finally we were not able to implement all of our goals and we had tons of more ideas. But for the first release of turi (1.0.0) we decided to require all these features above.
+
+
+\subsection{Git}
+We use github.com instead of the git repository supplied to us from the school, this gave us the opportunity to work outside the school network. In addition it gave us the ability to use 3rd party applications, this is explained the following subsections. The githib repository address is: https://github.com/turi-inc/turi.
+
+\subsubsection{Travis CI}
+Travis CI is a hosted continuous integration service. It is integrated with GitHub and provides testing for our project. So when we created a pull request on the development branch of the Github repository, Travis would test our new code automatically and give us a clear indication if the test was passing or not. When the pull request is merged with the development branch it would be tested once again by Travis to be sure that everything was working correctly before the pull request is automatically merged with the master branch of the repository. The log from Travis is public and can be seen here: https://travis-ci.org/turi-inc/turi/builds.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.45]{pictures/Travis_buildlog.png}
+    \caption{A sample of the build logs from Travis CI}
+    \label{fig:}
+  \end{center}
+\end{figure}
+
+
+\subsubsection{Heroku}
+Heroku is a cloud platform which host our project for free. When a pull request is merged with the master branch it's automatically pushed to Heroku. This gives us and other people to see a preview of the project. We had some minor problem getting this to work properly since we use Sqlite3 when we develop, but Heroku does not support this and so we had to switch over to postgres in the production environment.
+
+\subsubsection{CodeClimate}
+Is also a 3rd party application which checks our code for test coverage, complexity and duplications. The check is done on the master branch of the repository, every time a new pull request is merged with the branch. It gives us an indication about the code health and grades our code, on the basis of test coverage, complexity and duplications. The summary of the code climate of out project can be found here: https://codeclimate.com/github/turi-inc/turi. \\
+CodeClimate also have some cool features like Trends over the "health" of our code over time, and the location "hotspots" in the code.  
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.45]{pictures/trends_code.png}
+    \caption{CodeClimate trends}
+    \label{fig:}
+  \end{center}
+\end{figure}
+
+\subsubsection{Hakiri}
+This 3rd party application is used to show if there is any gem which is not up to date, and if there is any known security claws in any of the gems we use in our project.
+
+
+\end{document}
