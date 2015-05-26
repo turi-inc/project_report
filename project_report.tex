@@ -160,9 +160,21 @@ The trip and it's features are the main focus of our project.
 \subsection{Equipment planning}
 \subsection{Gallery}
 \subsection{Blog}
+The blog platform allows a trip editor to create a blog associated with the trip. The user can edit the blog through a simple editor interface which also allows for urls and images. A blog can be marked as public, which means that non-participants can read it. The platform has a blog index list which lists the blogs in order of creation and shows an excerpt from each entry.
+
+The text input is handled through a plugin named CKEditor. This plugin integrates with a text area and allows the user to work with text in a similar fashion as a regular text editor The plugin automatically adds the appropriate html tags necessary to render the text properly in a browser. As default the editor has an overwhelming amount of tools available, but for this implementation the number of tools has been greatly reduced to remove unneeded functions and improve ease-of-use.
+
+Generally implementing the blog was straight-forward to implement and the only issues that presented themselves were designing the tests and getting the interface to look presentable. The blog was assigned a single user story estimated at 5 points, which in retrospect seems fairly appropriate.
 \subsection{Share your trip (public setting)}
 \subsection{Explore trips}
 \subsection{Search}
+The search system is implemented through address tags which are read out of a form and appended on the address bar. These tags are read as arguments by the controller methods running search and used to do search on the database. The search allows the user to do a search on title, start and end location and date, and tags. The same engine is also used to search for other users.
+
+Making a search engine for trips made it necessary to consider what the user would want to search for. A trip has several data fields but not every field makes for a useful search option. A search on location is useful in that it find trips related to a certain location, while a search on description leaves few guarantees for what the result will be. The final implementation allows for search on title, start and end locations and dates, and tags. A possible missing option is the option to search for trips created by a specific user, although this is not necessarily needed since the engine also allows for searching for specific users.
+
+The solution used here is not the only possible solution. A second option would be to use a separate model and controller for search. This allows for storing searches and makes the logic behind the implementation cleaner, depending on the number of fields used as search terms. The downside is extra logic is needed to clean the database of old searches regularly. Since each search is its own entry, it could end up growing much faster than any of the other databases. The solution used is simpler, but faster to implement and the difference in user experience is minimal.
+
+The search system was assigned a single user story estimated at 8 points. The scoring of the story seemed appropriate as implementing search required some time to study the different options available and implement it. Not every field could be read through the same query which meant extra work for comparison and merging of search results before getting the final result. This led to some trial and error to get the query results correct. Unfortunately the user story in question only refers to searching for trips and not users and no additional user story were made for the user search. This means that there is no tracking available for the work done on the user search and no estimation for work load.
 \subsection{Route Planner}
 
 When planning a trip, it could be very useful to illustrate the route, and points of interests on a map. This map should be visible to all the participants, so that the route, or proposed route could be discussed.
