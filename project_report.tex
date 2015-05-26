@@ -138,9 +138,11 @@ Devise is a popular authentication solution for Rails based on Warden \cite{devi
 In the first iterations we created our own authentication system, but we found out that we could use \textit{Devise}, after the lecture about authentication. This made it possible to focus on other task in the project, and not focus on making a secure and safe authentication system. 
 
 \subsection{Pundit}
-\textit{Pundit} is a authorization system, which we use in almost all features in projects, 
+\textit{Pundit} is an authorization system, which we use in almost all features in projects, 
 
 \subsection{Leaflet}
+\textit{Leaflet}\cite{leaflet} is a JavaScript library that let us implement the interactive map for the routes. Before discovering \textit{Leaflet}, we looked at a similar gem from Google, but it was too heavy for our requirements. As an example, Google Maps seemed to snap waypoints to the nearest road, which is counter-productive for us since we want the users to be able to plan any kind of trip, including hikes.
+
 
 \subsection{rails-asserts}
 
@@ -161,6 +163,8 @@ The trip and it's features are the main focus of our project.
 \subsection{Share your trip (public setting)}
 \subsection{Explore trips}
 \subsection{Search}
+\subsection{Route Planner}
+
 
 \section{Other features}
 \subsection{Friend requests}
@@ -168,13 +172,22 @@ The trip and it's features are the main focus of our project.
 \section{Tests}
 
 \section{Group collaboration}
-\begin{itemize}
-  \item {we sit together in the lab, and most participants in the group meet on a daily basis}
-  \item {A 2 hours meeting every week}
-  \item {Many of the features are developed as via par-programming}
-  \item {In the last iteration we mostly worked separate, since most of us had exams in other subjects. But we still had communication between the members. }
-  \item {Our own Google group, for discussion. }
-\end{itemize}
+
+
+%\begin{itemize}
+%  \item {we sit together in the lab, and most participants in the group meet on a daily basis} *
+%  \item {A 2 hours meeting every week} *
+%  \item {Many of the features are developed as via par-programming} *
+%  \item {In the last iteration we mostly worked separate, since most of us had exams in other subjects. But we still had communication between the members. } *
+%  \item {Our own Google group, for discussion. } *
+%\end{itemize}
+When we got this assignment, we formed a Google Group to share our ideas and organize ourselves. It was also used to schedule weekly two-hour scrum meetings. During these meetings everyone had the opportunity to talk about what they were working on, any issues they had, and what they planned to work on that week.
+
+In the sprint planning meetings, we consistently used scrum poker after we had made sure all the user stories were clear to everyone. We did not do any retrospectives apart from the ones planned in the course, with Weihai Yu.
+
+Day to day we sat together in the lab, what ever each of us were working on. This meant that if one of us had an issue, they always had someone they could ask for help without too much effort. Everyone in the group was very helpful, so this arrangement worked out perfectly. Many of the programming sessions were done in pairs, which is a great way to avoid getting stuck for too long. During the last iteration, the weekly meetings were getting shorter and more informal because we prioritized programming, and we communicated naturally with an on-demand basis.
+
+
 
 
 \section{The development process}
@@ -203,7 +216,12 @@ After a push to the master Travis will push the code to Heroku and run the datab
 \subsection{Conclusion of the workflow}
 
 
+
+
 \end{document}
+
+%leaflet
+http://leafletjs.com/
 
 %puma
 https://github.com/puma/puma
