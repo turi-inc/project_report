@@ -134,19 +134,21 @@ This 3rd party application is used to show if there is any gem which is not up t
 \section{Gems}
 We use several gems in our project, this means that we not need find up the wheel for already created features, and we can focus on our own feature. All the gems used can be found in the gemfile in the project source, but the most important ones are:
 \subsection{Devise}
-In the first iterations we created our own authentication system, but we found fast out that we could use \textit{Devise}. This made it possible to focus on other tasks and let \textit{Devise} handle the authentication. 
+Devise is a popular authentication solution for Rails based on Warden \cite{devise}. \\
+In the first iterations we created our own authentication system, but we found out that we could use \textit{Devise}, after the lecture about authentication. This made it possible to focus on other task in the project, and not focus on making a secure and safe authentication system. 
 
 \subsection{Pundit}
+\textit{Pundit} is a authorization system, which we use in almost all features in projects, 
 
 \subsection{Leaflet}
 
 \subsection{rails-asserts}
 
 \subsection{Geocoder}
-Geocoder is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location. 
+\textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location. 
 
 \subsection{Puma}
-Puma is a "simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications."\cite{puma}. Heroku recommend Puma over the stock rails server (WEBrick) by saying that: "While WEBrick should be fine for development, it was not designed to handle a high concurrent workload that a Ruby app must serve in production. A production web server should be used instead."\cite{heroku_webserver}. Even tho Heroku only uses one core (for the free program), this secures that the project is ready for a deployment onto a multi-core server in the future.  
+\textit{Puma} is a "simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications."\cite{puma}. Heroku recommend \textit{Puma} over the stock rails server (WEBrick) by saying that: "While WEBrick should be fine for development, it was not designed to handle a high concurrent workload that a Ruby app must serve in production. A production web server should be used instead."\cite{heroku_webserver}. Even tho Heroku only uses one core (for the free program), this secures that the project is ready for a deployment onto a multi-core server in the future.  
 
 
 \section{Trip Features}
@@ -166,6 +168,13 @@ The trip and it's features are the main focus of our project.
 \section{Tests}
 
 \section{Group collaboration}
+\begin{itemize}
+  \item {we sit together in the lab, and most participants in the group meet on a daily basis}
+  \item {A 2 hours meeting every week}
+  \item {Many of the features are developed as via par-programming}
+  \item {In the last iteration we mostly worked separate, since most of us had exams in other subjects. But we still had communication between the members. }
+  \item {Our own Google group, for discussion. }
+\end{itemize}
 
 
 \section{The development process}
