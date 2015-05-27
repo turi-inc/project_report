@@ -161,11 +161,17 @@ Bjørnar and Kristoffer was given the responsibility of implementing the feature
 \noindent
 In retrospect, the user story could have been classified as an “epic”, with multiple fine-grained user stories. The implementation could have been divided into three main parts; the map control and GUI, the back-end model and controller, and the view. And given how the workload have been on this feature, we would have given the map control 13 points, the back-end, including tests would get 8 points, and the view would get about 3 points.\\
 
+<<<<<<< HEAD
 \noindent
 Implementing the feature was mainly done by peer-programming. This worked really well for the map, which was implemented in JavaScript, using the Leaflet API, where one was writing code, and the other was helping, and could very quickly look up manuals and documentation on the fly.\\
 
 \noindent
 The model and controller was a bit more complicated for this feature, than for the other features. A route is a collection of waypoints, and at first, we thought about having these as two separate models,  but after some help from Runar, we decided on a structure where the route model uses nested-attributes of the waypoint model. This way a route is created all at once, and not by appending waypoints to a route. \\
+=======
+\paragraph{}Implementing the feature was mainly done by pair-programming. This worked really well for the map, which was implemented in JavaScript, using the Leaflet API, where one was writing code, and the other was helping, and could very quickly look up manuals and documentation on the fly.
+
+The model and controller was a bit more complicated for this feature, than for the other features. A route is a collection of waypoints, and at first, we thought about having these as two separate models,  but after some help from Runar, we decided on a structure where the route model uses nested-attributes of the waypoint model. This means that waypoints are passed as parameters of a route upon its creation instead of being appended after the fact.
+>>>>>>> bbff142ec42f14aad2422ddca5e5e919ae07786c
 
 \noindent
 We did not put much effort into the view during the implementation of the feature, and at the end, we did not feel this was a bad choice, since the group did not decide on a uniform design until at the end of the third sprint. And since Florian had put a lot of work into the layouts, applying a design to the views was trivial.\\
@@ -177,10 +183,13 @@ We did not put much effort into the view during the implementation of the featur
 \subsection{Friend requests}
 
 \section{Tests}
+\subsection{Routes and Waypoints}
+
 
 \section{Git}
 We use github.com instead of the git repository supplied to us from the school, this gave us the opportunity to work outside the school network. In addition it gave us the ability to use 3rd party applications, this is explained the following subsections. The githib repository address is: \url{https://github.com/turi-inc/turi}.
 
+<<<<<<< HEAD
 \subsubsection{Travis CI}
 Travis CI is a hosted continuous integration service. It is integrated with GitHub and provides testing for our project. So when we created a pull request on the development branch of the Github repository, Travis would test our new code automatically and give us a clear indication if the test was passing or not. When the pull request is merged with the development branch it would be tested once again by Travis to be sure that everything was working correctly before the pull request is automatically merged with the master branch of the repository. The log from Travis is public and can be seen here: \url{https://travis-ci.org/turi-inc/turi/builds}.
 
@@ -210,6 +219,9 @@ CodeClimate also have some cool features like Trends over the "health" of our co
 
 \subsubsection{Hakiri}
 This 3rd party application is used to show if there is any gem which is not up to date, and if there is any known security claws in any of the gems we use in our project.
+=======
+% Please feel free to edit this, everyone!
+>>>>>>> bbff142ec42f14aad2422ddca5e5e919ae07786c
 
 %\begin{itemize}
 %  \item {we sit together in the lab, and most participants in the group meet on a daily basis} *
@@ -218,10 +230,15 @@ This 3rd party application is used to show if there is any gem which is not up t
 %  \item {In the last iteration we mostly worked separate, since most of us had exams in other subjects. But we still had communication between the members. } *
 %  \item {Our own Google group, for discussion. } *
 %\end{itemize}
+<<<<<<< HEAD
 
 \section{Group collaboration}
 When we got this assignment, we formed a Google Group to share our ideas and organize ourselves. It was also used to schedule weekly two-hour scrum meetings. These meetings started with a stand-up session, where everyone talked about what they were working on, any issues they had, and what they planned to work on that week.\\
 
+=======
+When we got this assignment, we formed a Google Group to share our ideas and organize ourselves. It was also used to schedule weekly two-hour scrum meetings. These meetings started with a stand-up session, where everyone talked about what they were working on, any issues they had, and what they planned to work on that week.\\
+
+>>>>>>> bbff142ec42f14aad2422ddca5e5e919ae07786c
 \noindent
 In the sprint planning meetings, we consistently used scrum poker after we had made sure all the user stories were clear to everyone. We did not do any retrospectives apart from the ones planned in the course, with Weihai Yu.\\
 
@@ -257,6 +274,7 @@ After a push to the master Travis will push the code to Heroku and run the datab
 
 \subsection{Conclusion of the workflow}
 
+<<<<<<< HEAD
 \section{Something about the different sprints?}
 \begin{itemize}
   \item {What were our plans for the first iteration?
@@ -302,6 +320,15 @@ After a push to the master Travis will push the code to Heroku and run the datab
 \bibitem{puma}
 \emph{Puma webserver - GitHub}\\
 \url{https://github.com/puma/puma}
+=======
+\section{Final Thoughts}
+
+\subsection{Bjørnar}
+I think the group communicated really well, and we've worked steadily, more or less from start to finish. This continuous forward momentum was really important for my motivation, as the complexity of the project increased rapidly from the get-go. Learning Ruby on Rails and JavaScript on top of HTML and Git was challenging to say the least. I'm still not sure that I really got the hang of it. I updated Agilefant somewhat diligently during the first sprint, but it quickly took the back seat as the learning curve of the other elements grew steeper. In the end I used a rough estimate to update the last two sprints. It's certainly a useful tool, but it feels a little bit clunky to interact with. Because I worked on a single user story for the entirety of the second and third sprints, I didn't need it to find out what to work on next.\\
+
+\noindent
+All that said, I appreciated the benefits of agile development, and the scrum meetings were very useful and concise. Everyone got to have their say, and the group was excellent in the sense that we didn't try to overpower each other. The user stories were well defined with acceptance criteria, so knowing \textit{what} to do was never a problem. The course as a whole has given me useful insight into the perils of software engineering and working in groups, but also into the benefits. It can be a challenge to understand other people's code, or to satisfy everyone when a decision has to be made, but the group can also be a great resource when you're stuck with a seemingly insurmountable problem.
+>>>>>>> bbff142ec42f14aad2422ddca5e5e919ae07786c
 
 \bibitem{heroku_webserver}
 \emph{Heroku Ruby webserver advise}\\
