@@ -30,22 +30,24 @@
 %----------------------------------------------------------------------------------------
 
 \HRule \\[0.5cm]
+\includegraphics[scale=0.25]{pictures/turi_logo.png}\\[0.5cm]
 { \huge \bfseries Turi}\\[0.5cm] % Title of your document
-\HRule \\[3cm]
+\HRule \\[1cm]
  
 %----------------------------------------------------------------------------------------
 %	AUTHOR SECTION
 %----------------------------------------------------------------------------------------
 
+
 % If you don't want a supervisor, uncomment the two lines below and remove the section above
 \Large \emph{Group:}\\
-1\\[2cm] % Your name
+1\\[1.5cm] % Your name
 % title
 %----------------------------------------------------------------------------------------
 %	DATE SECTION
 %----------------------------------------------------------------------------------------
 
-\textsc{\large Spring 2015}\\[4cm] % Date, change the \today to a set date if you want to be precise
+\textsc{\large Spring 2015}\\[3cm] % Date, change the \today to a set date if you want to be precise
 
 %----------------------------------------------------------------------------------------
 %	LOGO SECTION
@@ -112,7 +114,7 @@ In the first iterations we created our own authentication system, but we found o
 \subsection{rails-asserts}
 
 \subsection{Geocoder}
-\textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location. 
+\textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location to show the location in the explore map. 
 
 \subsection{Puma}
 \textit{Puma} is a "simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications."\cite{puma}. Heroku recommend \textit{Puma} over the stock rails server (WEBrick) by saying that: "While WEBrick should be fine for development, it was not designed to handle a high concurrent workload that a Ruby app must serve in production. A production web server should be used instead."\cite{heroku_webserver}. Even tho Heroku only uses one core (for the free program), this secures that the project is ready for a deployment onto a multi-core server in the future.  
@@ -136,7 +138,10 @@ The text input is handled through a plugin named CKEditor\cite{CKEditor}. This p
 Generally implementing the blog was straight-forward to implement and the only issues that presented themselves were designing the tests and getting the interface to look presentable. The blog was assigned a single user story estimated at 5 points, which in retrospect seems fairly appropriate.
 
 \subsection{Share your trip (public setting)}
-A trip should we private to the participants of the trip, unless they decide it should be shared with the public. The public should only be able to view a small subset of the information about the trip, which the participant agrees to share.  Therefor each trip needs a private setting and it's own public view, this was the one of the main things we wanted to implement in the 3rd sprint for the project. 
+A trip should we private to the participants of the trip, unless they decide it should be shared with the public. The public should only be able to view a small subset of the information about the trip, which the participant agrees to share.  Therefor each trip needs a private setting and it's own public view, this was the one of the main things we wanted to implement in the 3rd sprint for the project. \\
+
+\noindent
+The implementation of the feature was quite straightforward, the thing that took the most time was the design of the public trip view, and finding out what and how we were going to show the different elements on a single page. We ended up using \emph{Kaminari}\cite{kaminari}, to "paginate" the different elements. For example if a trip has many public blog entries, only one of them are displayed on the page at the same time. 
 
 \subsection{Explore trips}
 
@@ -329,6 +334,17 @@ I think the group communicated really well, and we've worked steadily, more or l
 \noindent
 All that said, I appreciated the benefits of agile development, and the scrum meetings were very useful and concise. Everyone got to have their say, and the group was excellent in the sense that we didn't try to overpower each other. The user stories were well defined with acceptance criteria, so knowing \textit{what} to do was never a problem. The course as a whole has given me useful insight into the perils of software engineering and working in groups, but also into the benefits. It can be a challenge to understand other people's code, or to satisfy everyone when a decision has to be made, but the group can also be a great resource when you're stuck with a seemingly insurmountable problem.
 
+
+\subsection{Martin}
+I think the group communication was good, the meeting each week gave us a opportunity to talk about our work and get feedback on the user stories we were working on and ask for help if we were stuck on something. By having a place to meet in the lab, gave us also the ability to ask each other questions about our code and the problem we faced underway in the development. \\ 
+The complexity did quickly increase in the second iteration of the project, it was hard to keep up all the changes. But we all worked on our own features so we didn't have to keep up with all the changes, so I think it worked out fine. \\
+As for Agilefant I think it's a useful tool, but it was really easy to forget to update. Therefor some of the user stories have a estimates time used. \\
+
+\noindent
+As for the course itself, it was quite interesting to learn web development, Ruby-on-Rails, Git and agile development. It's something completely different from the things we're done in the past. In addition to the the language and the version-control we also had to learn bootstrap, how to use the AppUI elements, how to design a HTML view and some basic JavaScript. 
+
+
+
 \subsection{Kristoffer}
 \noindent
 For the first few weeks of this assignment the workload felt quite overwhelming since we had to learn so many new things before we could start the project. There was a new language, Ruby, and the web-framework, Rails. Then there was the tests, and the API for creating tests, FactoryGirl. And by our own choice, we went ahead with the map feature, and needed to learn JavaScript, and the leaflet API as well.  
@@ -372,6 +388,10 @@ Working in groups could be very tiresome, when there are issues in the group, or
 \bibitem{CKEditor}
 \emph{CKEditor}\\
 \url{https://en.wikipedia.org/wiki/CKEditor}
+
+\bibitem{kaminari}
+\emph{Kaminari - GitHub}\\
+\url{https://github.com/amatsuda/kaminari}
 
 \end{thebibliography}
 
