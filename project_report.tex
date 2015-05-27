@@ -156,16 +156,18 @@ The search system was assigned a single user story estimated at 8 points. The sc
 \subsection{Route Planner}
 
 \noindent
-When planning a trip, it could be very useful to illustrate the route, and points of interests on a map. This map should be visible to all the participants, so that the route, or proposed route could be discussed.
+When planning a trip, it could be very useful to illustrate the route, and points of interests on a map. This map should be visible to all the participants, so that the route, or proposed route could be discussed.\\
 
+\noindent
 Bjørnar and Kristoffer was given the responsibility of implementing the feature, and when planning the second sprint a single user story (CITE) was created for the entire feature. The user story was given the maximum points for complexity by the scum poker session, thus it was expected that the entire feature was to be implemented during the second sprint. \\
 
 \noindent
 In retrospect, the user story could have been classified as an “epic”, with multiple fine-grained user stories. The implementation could have been divided into three main parts; the map control and GUI, the back-end model and controller, and the view. And given how the workload have been on this feature, we would have given the map control 13 points, the back-end, including tests would get 8 points, and the view would get about 3 points. \\
 
 \noindent
-Implementing the feature was mainly done by pair-programming. This worked really well for the map, which was implemented in JavaScript, using the Leaflet API, where one was writing code, and the other was helping, and could very quickly look up manuals and documentation on the fly.
+Implementing the feature was mainly done by pair-programming. This worked really well for the map, which was implemented in JavaScript, using the Leaflet API, where one was writing code, and the other was helping, and could very quickly look up manuals and documentation on the fly. \\
 
+\noindent
 The model and controller was a bit more complicated for this feature, than for the other features. A route is a collection of waypoints, and at first, we thought about having these as two separate models,  but after some help from Runar, we decided on a structure where the route model uses nested-attributes of the waypoint model. This means that waypoints are passed as parameters of a route upon its creation instead of being appended after the fact. \\
 
 \noindent
