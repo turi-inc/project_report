@@ -95,39 +95,8 @@ The following functionalities should be supported (bold means that we they were 
 Finally we were not able to implement all of our goals and we had tons of more ideas. But for the first release of turi (1.0.0) we decided to require all these features above.
 
 
-\section{The development process}
-\subsection{Git}
-We use github.com instead of the git repository supplied to us from the school, this gave us the opportunity to work outside the school network. In addition it gave us the ability to use 3rd party applications, this is explained the following subsections. The githib repository address is: https://github.com/turi-inc/turi.
-
-\subsubsection{Travis CI}
-Travis CI is a hosted continuous integration service. It is integrated with GitHub and provides testing for our project. So when we created a pull request on the development branch of the Github repository, Travis would test our new code automatically and give us a clear indication if the test was passing or not. When the pull request is merged with the development branch it would be tested once again by Travis to be sure that everything was working correctly before the pull request is automatically merged with the master branch of the repository. The log from Travis is public and can be seen here: https://travis-ci.org/turi-inc/turi/builds.
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[scale=0.45]{pictures/Travis_buildlog.png}
-    \caption{A sample of the build logs from Travis CI}
-    \label{fig:}
-  \end{center}
-\end{figure}
 
 
-\subsubsection{Heroku}
-Heroku is a cloud platform which host our project for free. When a pull request is merged with the master branch it's automatically pushed to Heroku. This gives us and other people to see a preview of the project. We had some minor problem getting this to work properly since we use Sqlite3 when we develop, but Heroku does not support this and so we had to switch over to postgres in the production environment.
-
-\subsubsection{CodeClimate}
-Is also a 3rd party application which checks our code for test coverage, complexity and duplications. The check is done on the master branch of the repository, every time a new pull request is merged with the branch. It gives us an indication about the code health and grades our code, on the basis of test coverage, complexity and duplications. The summary of the code climate of out project can be found here: https://codeclimate.com/github/turi-inc/turi. \\
-CodeClimate also have some cool features like Trends over the "health" of our code over time, and the location "hotspots" in the code.  
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[scale=0.45]{pictures/trends_code.png}
-    \caption{CodeClimate trends}
-    \label{fig:}
-  \end{center}
-\end{figure}
-
-\subsubsection{Hakiri}
-This 3rd party application is used to show if there is any gem which is not up to date, and if there is any known security claws in any of the gems we use in our project.
 
 \section{Design of the site}
 
@@ -138,11 +107,9 @@ Devise is a popular authentication solution for Rails based on Warden \cite{devi
 In the first iterations we created our own authentication system, but we found out that we could use \textit{Devise}, after the lecture about authentication. This made it possible to focus on other task in the project, and not focus on making a secure and safe authentication system. 
 
 \subsection{Pundit}
-\textit{Pundit} is an authorization system, which we use in almost all features in projects, 
+\textit{Pundit} is a authorization system\cite{pundit}, which we use in almost all features in projects, our main usage of the gem is used for who can and can't do things to the trip or the trip features. For example a editor and the owner of a trip is able to edit the trip title, description and so on, but a viewer is not able to do this. 
 
 \subsection{Leaflet}
-\textit{Leaflet}\cite{leaflet} is a JavaScript library that let us implement the interactive map for the routes. Before discovering \textit{Leaflet}, we looked at a similar gem from Google, but it was too heavy for our requirements. As an example, Google Maps seemed to snap waypoints to the nearest road, which is counter-productive for us since we want the users to be able to plan any kind of trip, including hikes.
-
 
 \subsection{rails-asserts}
 
@@ -158,6 +125,8 @@ The trip and it's features are the main focus of our project.
 \subsection{Discuss}
 \subsection{Event management}
 \subsection{Equipment planning}
+A Equipment planning is essential for a trip, knowing what you need to bring and the ability to delegate things to other participants in the trip. In our implementation of each trip can have multiply list, which can contain multiply items. Each item in return contain a a number (number of items) and a price, these items can be assigned to other participants. Charts provides a overview of all lists and for each individual list, these charts provides a summary of the assignments (items and price) for each participant in a pie chart. \\ This feature had two different user stories attaches to it (\emph{\#154 and \#155}), and combined they had a point value of 13. This estimation was reasonable, and the implementation of the features spanned the whole sprint 2. We changed the look and feel of the features multiply time in the sprint, before ending up at the current implementation, which we felt was the most intuitive. There wasn't any participial problem we faced when implementation this feature. 
+
 \subsection{Gallery}
 \subsection{Blog}
 The blog platform allows a trip editor to create a blog associated with the trip. The user can edit the blog through a simple editor interface which also allows for urls and images. A blog can be marked as public, which means that non-participants can read it. The platform has a blog index list which lists the blogs in order of creation and shows an excerpt from each entry.
@@ -166,6 +135,7 @@ The text input is handled through a plugin named CKEditor. This plugin integrate
 
 Generally implementing the blog was straight-forward to implement and the only issues that presented themselves were designing the tests and getting the interface to look presentable. The blog was assigned a single user story estimated at 5 points, which in retrospect seems fairly appropriate.
 \subsection{Share your trip (public setting)}
+A trip should we private to the participants of the trip, unless they decide it should be shared with the public. The public should only be able to view a small subset of the information about the trip, which the participant agrees to share.  Therefor each trip needs a private setting and it's own public view, this was the one of the main things we wanted to implement in the 3rd sprint for the project. 
 \subsection{Explore trips}
 \subsection{Search}
 The search system is implemented through address tags which are read out of a form and appended on the address bar. These tags are read as arguments by the controller methods running search and used to do search on the database. The search allows the user to do a search on title, start and end location and date, and tags. The same engine is also used to search for other users.
@@ -198,6 +168,38 @@ We did not put much effort into the view during the implementation of the featur
 
 \section{Group collaboration}
 
+\section{Git}
+We use github.com instead of the git repository supplied to us from the school, this gave us the opportunity to work outside the school network. In addition it gave us the ability to use 3rd party applications, this is explained the following subsections. The githib repository address is: https://github.com/turi-inc/turi.
+
+\subsubsection{Travis CI}
+Travis CI is a hosted continuous integration service. It is integrated with GitHub and provides testing for our project. So when we created a pull request on the development branch of the Github repository, Travis would test our new code automatically and give us a clear indication if the test was passing or not. When the pull request is merged with the development branch it would be tested once again by Travis to be sure that everything was working correctly before the pull request is automatically merged with the master branch of the repository. The log from Travis is public and can be seen here: https://travis-ci.org/turi-inc/turi/builds.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.45]{pictures/Travis_buildlog.png}
+    \caption{A sample of the build logs from Travis CI}
+    \label{fig:}
+  \end{center}
+\end{figure}
+
+
+\subsubsection{Heroku}
+Heroku is a cloud platform which host our project for free. When a pull request is merged with the master branch it's automatically pushed to Heroku. This gives us and other people to see a preview of the project. We had some minor problem getting this to work properly since we use Sqlite3 when we develop, but Heroku does not support this and so we had to switch over to postgres in the production environment.
+
+\subsubsection{CodeClimate}
+Is also a 3rd party application which checks our code for test coverage, complexity and duplications. The check is done on the master branch of the repository, every time a new pull request is merged with the branch. It gives us an indication about the code health and grades our code, on the basis of test coverage, complexity and duplications. The summary of the code climate of out project can be found here: https://codeclimate.com/github/turi-inc/turi. \\
+CodeClimate also have some cool features like Trends over the "health" of our code over time, and the location "hotspots" in the code.  
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.45]{pictures/trends_code.png}
+    \caption{CodeClimate trends}
+    \label{fig:}
+  \end{center}
+\end{figure}
+
+\subsubsection{Hakiri}
+This 3rd party application is used to show if there is any gem which is not up to date, and if there is any known security claws in any of the gems we use in our project.
 
 %\begin{itemize}
 %  \item {we sit together in the lab, and most participants in the group meet on a daily basis} *
@@ -240,16 +242,26 @@ After a push to the master Travis will push the code to Heroku and run the datab
 
 \subsection{Conclusion of the workflow}
 
+\begin{thebibliography}{9}
+\bibitem{puma}
+\emph{Puma webserver - GitHub}\\
+\url{https://github.com/puma/puma}
+
+\bibitem{heroku_webserver}
+\emph{Heroku Ruby webserver advise}\\
+\url {https://devcenter.heroku.com/articles/ruby-default-web-server}
+
+\bibitem{devise}
+\emph{Devise - GitHub}\\
+\url{https://github.com/plataformatec/devise}
 
 
+\bibitem{pundit}
+\emph{Pundit - GitHub}\\
+\url{https://github.com/elabs/pundit}
+
+
+\end{thebibliography}
 
 \end{document}
 
-%leaflet
-http://leafletjs.com/
-
-%puma
-https://github.com/puma/puma
-
-% heroku_webserver
-https://devcenter.heroku.com/articles/ruby-default-web-server
