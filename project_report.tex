@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{tabulary}
+\usepackage{wrapfig}
 \usepackage[
 backend=biber,
 style=numeric,
@@ -13,6 +14,8 @@ sorting=ynt
 \addbibresource{references.bib}
 \usepackage{setspace} 
 \DeclareUnicodeCharacter{00A0}{ }
+
+\urldef{\AJAX}\url{https://en.wikipedia.org/wiki/Ajax_(programming)}
 
 \begin{document}
 \begin{titlepage}
@@ -104,8 +107,22 @@ Finally we were not able to implement all of our goals (the goals which are not 
 
 \section{The development process}
 
+\subsection{Software development}
+The field of software development started in the 1950s with operating systems. The type of software development process used at this time, and still used today, is called the waterfall model. This model focus on having sequential phases of development, see figure \ref{fig:waterfall}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{pictures/waterfall}
+  \caption{The waterfall model \cite{waterfall_image}}
+  \label{fig:waterfall}
+\end{figure}
+
+After the millenia the request for fea 
+
 \subsection{User stories}
 \label{sec:user-stories}
+
+
 
 \begin{table}
   \begin{tabulary}{1.0\textwidth}{|L|L|L|}
@@ -232,7 +249,19 @@ In the first iterations we created our own authentication system, but we found o
 
 \section{Trip Features}
 The trip and it's features are the main focus of our project. 
-\subsection{Discuss}
+\subsection{Discussion}
+
+\begin{wrapfigure}[16]{r}{0.5\textwidth}
+  \begin{center}
+    \vspace{-40pt}
+    \includegraphics[width=0.5\textwidth]{pictures/discussion}
+    \caption{Turi discussion}
+  \label{fig:discussion}
+  \end{center}
+\end{wrapfigure}
+
+This feature is for discussion among the trip participants. If something needs discussion considering the trip, this is a place where the participants can come to an agreement. All participants can create a new discussion and comment on others and their own discussions. In figure \ref{fig:discussion} is an example of the discussion feature. At the top of the figure is the title of discussion. Next to it is the name of the discussion creator and how long since it was created. Below the title are the comments to the discussion. Each comment has information of who created it, how long since it was created and an image of the creator if available. Adding new comments to the discussion is done by exchanging data to the server using AJAX \footnote{\AJAX}. This gives a smoother experience for the commentator. 
+
 \subsection{Event management}
 \subsection{Equipment planning}
 A Equipment planning is essential for a trip, knowing what you need to bring and the ability to delegate things to other participants in the trip. In our implementation of each trip can have multiply list, which can contain multiply items. Each item in return contain a a number (number of items) and a price, these items can be assigned to other participants. Charts provides a overview of all lists and for each individual list, these charts provides a summary of the assignments (items and price) for each participant in a pie chart. \\ This feature had two different user stories attaches to it (\emph{\#154 and \#155}), and combined they had a point value of 13. This estimation was reasonable, and the implementation of the features spanned the whole sprint 2. We changed the look and feel of the features multiply time in the sprint, before ending up at the current implementation, which we felt was the most intuitive. There wasn't any participial problem we faced when implementation this feature, but there was a lot of work to get everything working on a single view page, instead of having views for each of the controllers. A particulate tricky part of the feature was the form for the item assignment, since we used the same form for creating, editing and deleting, this caused the create method of the equipment-assignment controller to become quite large and complex. 
