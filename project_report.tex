@@ -76,10 +76,10 @@
 
 
 \section{Introduction}
-Imagine you want to go on a trip - to Norway for example. You ask you friends to join you but they reject because they can not afford the money or they have no spare time. What now? You can either go alone or try to find some people who can join you. The first place we look today is on the world wide web. We already can find some portals where you can find partners for your trip. But what about planning your actually trip? We couldn’t find a tool which allows you to plan your trip in detail. Planning your trip gets especially difficult if you find your trip mates online and you can not meet because you live too far away from each other. You can now either use the phone or create e.g. some Facebook group. Still those ways lack of several features we want to implement in our trip planner which makes it unique. In fact we came up with the idea to create a a trip planner which offers a combination between socialising and planning for your trips.
+Imagine you want to go on a trip - to Norway for example. You ask you friends to join you but they reject because they cannot afford the money or they have no spare time. What now? You can either go alone or try to find some people who can join you. The first place we look today is on the world wide web. There are already some portals where you can find partners for your trip. But what about planning your actual trip? We couldn't find a tool which allows you to plan a trip in detail. Planning your trip gets particularly difficult if you find your trip mates online and you cannot meet because you live too far away from each other. You can now either use the phone or create e.g. some Facebook group. Still, those ways lack several of the features we want to implement in our trip planner which makes it unique. In fact we came up with the idea to create a trip planner that offers a combination between socializing and planning for your trips.
 
 \subsection{The product name: turi}
-The name derived from the Norwegian word “tur” (a trip/a walk). turi was short and pregnant enough and sounds best to the ear. It is also a Norwegian name, but this will be no problem when we think about topics like a trademark etc.
+The name derived from the Norwegian word “tur” (a trip/a walk). turi was short and concise enough and sounds good to the ear. It is also a Norwegian name, but this will be no problem when we think about topics like a trademark etc.
 
 \subsection{Summary of goals (planned functionalities)}
 The following functionalities should be supported (bold means that we they were implemented during the course sprints):
@@ -102,7 +102,7 @@ The following functionalities should be supported (bold means that we they were 
 \end{itemize}
 
 \noindent
-Finally we were not able to implement all of our goals (the goals which are not in bold) and we had tons of more ideas. But for the first release of turi (1.0.0) we decided to require all these features above.\\
+In the end we weren't able to implement all of our goals (the goals which are not in bold) and we had tons of more ideas. But for the first release of turi (1.0.0) we decided to require all these features above.\\
 
 
 \section{The development process}
@@ -133,7 +133,7 @@ Finally we were not able to implement all of our goals (the goals which are not 
 
     6&As an owner of a trip, I want to be able to edit the details, so that I can redo or add information. & 5 \\ \hline
 
-    7&As a logged in user, I want to be able to see a detail page of my trip, so that I can display the details of my trip. & 3 \\ \hline
+    7&As a logged in user, I want to be able to see a details page of my trip, so that I can display the details of my trip. & 3 \\ \hline
 
     8&As an owner of a trip, I want to be able to delete the trip, so that I can delete my data because I am not planning on going anyway. & 3 \\ \hline
 
@@ -151,19 +151,19 @@ Finally we were not able to implement all of our goals (the goals which are not 
     \hline
     N. & User story & Pts \\ \hline
 
-    1&As an trip user I want to be able to create events for my trip so that I can organize my trip with the other participant.
+    1&As a trip user I want to be able to create events for my trip so that I can organize my trip with the other participant.
     & 5 \\ \hline
 
-    2&As an trip user I want to be able to connect my trip with a dropbox folder to show the other participants the pictures on it
+    2&As a trip user I want to be able to connect my trip with a dropbox folder to show the other participants the pictures on it
     & 8 \\ \hline
 
-    3 &As an User I want to be able to create and manage an equipment list for my trip. 
+    3 &As a User I want to be able to create and manage an equipment list for my trip. 
     & 8 \\ \hline
 
-    4 & As an User I want to be able to assign equipment Items to a user (to mark that he has bought it e.g.).
+    4 & As a User I want to be able to assign equipment Items to a user (to mark that he has bought it e.g.).
     & 5 \\ \hline
 
-    5& As an trip owner or editor I want to be able to create blog articles so that I can share my trip experience or planning results
+    5& As a trip owner or editor I want to be able to create blog articles so that I can share my trip experience or planning results
     & 5 \\ \hline
 
     6& As a person I want to share turi on social networks so that my friends or other people get to know the site.
@@ -194,10 +194,10 @@ Finally we were not able to implement all of our goals (the goals which are not 
     1& As a developer I want to have a clean code structure.
     & ? \\ \hline
 
-    2& As an user I want to have a uniform user interface.
+    2& As a user I want to have a uniform user interface.
     & ? \\ \hline
 
-    3& As an user I want to be able to set the privacy of my trip to public or private.
+    3& As a user I want to be able to set the privacy of my trip to public or private.
     & ? \\ \hline
 
     4&As a user I want to manage my friends so I can stay in touch with my friends on the site.
@@ -215,13 +215,13 @@ Finally we were not able to implement all of our goals (the goals which are not 
 \section{Design of the site}
 
 \section{Gems}
-We use several gems in our project, this means that we not need find up the wheel for already created features, and we can focus on our own feature. All the gems used can be found in the gemfile in the project source, but the most important ones are:
+We use several gems in our project, this means that we didn't need to reinvent the wheel for features that already exist, and we could focus on our own features. All the gems used can be found in the gemfile in the project source, but the most important ones are the following.
 \subsection{Devise}
 Devise is a popular authentication solution for Rails based on Warden \cite{devise}. \\
-In the first iterations we created our own authentication system, but we found out that we could use \textit{Devise}, after the lecture about authentication. This made it possible to focus on other task in the project, and not focus on making a secure and safe authentication system. 
+In the first iterations we created our own authentication system, but we found out that we could use \textit{Devise}, after the lecture about authentication. This made it possible to focus more on other task in the project, and less on the details of making a secure and safe authentication system. 
 
 \subsection{Pundit}
-\textit{Pundit} is a authorization system\cite{pundit}, which we use in almost all features in projects, our main usage of the gem is used for who can and can't do things to the trip or the trip features. For example a editor and the owner of a trip is able to edit the trip title, description and so on, but a viewer is not able to do this. 
+\textit{Pundit} is an authorization system\cite{pundit}, which we use in almost all of the features in the project. Our main usage of the gem is to check privileges when a user interacts with the trip or the trip features. For example an editor and the owner of a trip are able to edit the trip title, description and so on, but a viewer is not able to do this. 
 
 \subsection{Leaflet}
 \textit{Leaflet}\cite{leaflet} is a JavaScript library that let us implement the interactive map for the routes. Before discovering \textit{Leaflet}, we looked at a similar gem from Google, but it was too heavy for our requirements. As an example, Google Maps seemed to snap waypoints to the nearest road, which is counter-productive for us since we want the users to be able to plan any kind of trip, including hikes.
@@ -232,7 +232,7 @@ In the first iterations we created our own authentication system, but we found o
 \textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location to show the location in the explore map. 
 
 \subsection{Puma}
-\textit{Puma} is a "simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications."\cite{puma}. Heroku recommend \textit{Puma} over the stock rails server (WEBrick) by saying that: "While WEBrick should be fine for development, it was not designed to handle a high concurrent workload that a Ruby app must serve in production. A production web server should be used instead."\cite{heroku_webserver}. Even tho Heroku only uses one core (for the free program), this secures that the project is ready for a deployment onto a multi-core server in the future.  
+\textit{Puma} is a "simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications."\cite{puma}. Heroku recommend \textit{Puma} over the stock rails server (WEBrick) by saying that: "While WEBrick should be fine for development, it was not designed to handle a high concurrent workload that a Ruby app must serve in production. A production web server should be used instead."\cite{heroku_webserver}. Even though Heroku only uses one core (for the free program), this ensures that the project is ready for deployment onto a multi-core server in the future.  
 
 
 \section{Trip Features}
@@ -248,41 +248,41 @@ The trip and it's features are the main focus of our project.
 \caption{Turi discussion}
 \end{figure}
 
-This feature is for discussion among the trip participants. If something needs discussion considering the trip, this is a place where the participants can come to an agreement. All participants can create a new discussion and comment on others and their own discussions. In figure \ref{fig:discussion} is an example of the discussion feature. At the top of the figure is the title of discussion. Next to it is the name of the discussion creator and how long since it was created. Below the title are the comments to the discussion. Each comment has information of who created it, how long since it was created and an image of the creator if available. Adding new comments to the discussion is done by exchanging data to the server using AJAX \footnote{\AJAX}. This gives a smoother experience for the commentator. 
+This feature is for discussion among the trip participants. If something needs discussion considering the trip, this is a place where the participants can come to an agreement. All participants can create a new discussion and comment on others and their own discussions. Figure \ref{fig:discussion} is an example of the discussion feature. At the top of the figure is the title of discussion. Next to it is the name of the discussion creator and how long since it was created. Below the title are the comments to the discussion. Each comment has information on who created it, how long since it was created and an image of the creator, if available. Adding new comments to the discussion is done by exchanging data to the server using AJAX \footnote{\AJAX}. This gives a smoother experience for the commentator. 
 
 \subsection{Event management}
 \subsection{Equipment planning}
-A Equipment planning is essential for a trip, knowing what you need to bring and the ability to delegate things to other participants in the trip. In our implementation of each trip can have multiply list, which can contain multiply items. Each item in return contain a a number (number of items) and a price, these items can be assigned to other participants. Charts provides a overview of all lists and for each individual list, these charts provides a summary of the assignments (items and price) for each participant in a pie chart. \\ This feature had two different user stories attaches to it (\emph{\#154 and \#155}), and combined they had a point value of 13. This estimation was reasonable, and the implementation of the features spanned the whole sprint 2. We changed the look and feel of the features multiply time in the sprint, before ending up at the current implementation, which we felt was the most intuitive. There wasn't any participial problem we faced when implementation this feature, but there was a lot of work to get everything working on a single view page, instead of having views for each of the controllers. A particulate tricky part of the feature was the form for the item assignment, since we used the same form for creating, editing and deleting, this caused the create method of the equipment-assignment controller to become quite large and complex. 
+Equipment planning is essential for a trip, knowing what you need to bring and the ability to distribute responsibilities between the participants of the trip. In our implementation each trip can have multiple list, which can contain multiple items. Each item in return contains a number (number of items) and a price, these items can be assigned to other participants. Charts provide an overview of all the lists and for each individual list, these charts provide a summary of the assignments (items and price) for each participant in a pie chart. \\ This feature had two different user stories attached to it (\emph{\#154 and \#155}), and they had a combined point value of 13. This estimation was reasonable, and the implementation of the features spanned the entire second sprint. We changed the look and feel of the features multiple during this sprint, before ending up at the current implementation, which we felt was the most intuitive. There weren't any particular problems we faced when implementing this feature. There was, however, a lot of work to get everything working on a single view page, instead of having views for each of the controllers. A particularly tricky part of the feature was the form for the item assignment, since we used the same form for creating, editing and deleting, this caused the create method of the equipment-assignment controller to become quite large and complex. 
 
 \subsection{Gallery}
 \subsection{Blog}
-The blog platform allows a trip editor to create a blog associated with the trip. The user can edit the blog through a simple editor interface which also allows for urls and images. A blog can be marked as public, which means that non-participants can read it. The platform has a blog index list which lists the blogs in order of creation and shows an excerpt from each entry.\\
+The blog platform allows a trip editor to create a blog associated with the trip. The user can edit the blog through a simple editor interface which also allows for URLs and images. A blog can be marked as public, which means that non-participants can read it. The platform has a blog index list which lists the blogs in order of creation and shows an excerpt from each entry.\\
 
 \noindent
-The text input is handled through a plugin named CKEditor\cite{CKEditor}. This plugin integrates with a text area and allows the user to work with text in a similar fashion as a regular text editor The plugin automatically adds the appropriate html tags necessary to render the text properly in a browser. As default the editor has an overwhelming amount of tools available, but for this implementation the number of tools has been greatly reduced to remove unneeded functions and improve ease-of-use.\\
+The text input is handled through a plug-in named CKEditor\cite{CKEditor}. This plug-in integrates with a text area and allows the user to work with text in a similar fashion as a regular text editor It automatically adds the appropriate HTML tags necessary to render the text properly in a browser. By default the editor has an overwhelming amount of tools available, but for this implementation the number of tools has been greatly reduced to remove unneeded functions and improve ease-of-use.\\
 
 \noindent
-Generally implementing the blog was straight-forward to implement and the only issues that presented themselves were designing the tests and getting the interface to look presentable. The blog was assigned a single user story estimated at 5 points, which in retrospect seems fairly appropriate.
+In general, implementing the blog was straight-forward to implement and the only issues that presented themselves were designing the tests and getting the interface to look presentable. The blog was assigned a single user story estimated at 5 points, which in retrospect seems fairly appropriate.
 
 \subsection{Share your trip (public setting)}
-A trip should we private to the participants of the trip, unless they decide it should be shared with the public. The public should only be able to view a small subset of the information about the trip, which the participant agrees to share.  Therefor each trip needs a private setting and it's own public view, this was the one of the main things we wanted to implement in the 3rd sprint for the project. \\
+A trip is private to the participants of the trip, unless they decide it should be shared with the public. The public should only be able to view a small subset of the information about the trip, which the participants agree to share. Therefore each trip needs a private setting and its own public view, this was the one of the main things we wanted to implement in the 3rd sprint for the project. \\
 
 \noindent
-The implementation of the feature was quite straightforward, the thing that took the most time was the design of the public trip view, and finding out what and how we were going to show the different elements on a single page. We ended up using \emph{Kaminari}\cite{kaminari}, to "paginate" the different elements. For example if a trip has many public blog entries, only one of them are displayed on the page at the same time. 
+The implementation of the feature was quite straightforward. The thing that took the most time was the design of the public trip view, and finding out what and how we were going to show the different elements on a single page. We ended up using \emph{Kaminari}\cite{kaminari}, to "paginate" the different elements. For example if a trip has many public blog entries, only one of them are displayed on the page at any given time. 
 
 \subsection{Explore trips}
 
 \subsection{Search}
-The search system is implemented through address tags which are read out of a form and appended on the address bar. These tags are read as arguments by the controller methods running search and used to do search on the database. The search allows the user to do a search on title, start and end location and date, and tags. The same engine is also used to search for other users.\\
+The search system is implemented through address tags which are read out of a form and appended on the address bar. These tags are read as arguments by the controller methods running search, and are used to do look-up in the database. The search allows the user to do a search on title, start and end location and date, and tags. The same engine is also used to search for other users.\\
 
 \noindent
-Making a search engine for trips made it necessary to consider what the user would want to search for. A trip has several data fields but not every field makes for a useful search option. A search on location is useful in that it find trips related to a certain location, while a search on description leaves few guarantees for what the result will be. The final implementation allows for search on title, start and end locations and dates, and tags. A possible missing option is the option to search for trips created by a specific user, although this is not necessarily needed since the engine also allows for searching for specific users.\\
+Making a search engine for trips made it necessary to consider what the user would want to search for. A trip has several data fields but not every field makes for a useful search option. A search on location is useful in that it find trips related to a certain location, while a search on description leaves few guarantees for what the result will be. The final implementation allows for search on title, start and end locations and dates, and tags. A possible missing option could be to search for trips created by a specific user, although this is not necessarily needed since the engine also allows for searching for specific users.\\
 
 \noindent
 The solution used here is not the only possible solution. A second option would be to use a separate model and controller for search. This allows for storing searches and makes the logic behind the implementation cleaner, depending on the number of fields used as search terms. The downside is extra logic is needed to clean the database of old searches regularly. Since each search is its own entry, it could end up growing much faster than any of the other databases. The solution used is simpler, but faster to implement and the difference in user experience is minimal.\\
 
 \noindent
-The search system was assigned a single user story estimated at 8 points. The scoring of the story seemed appropriate as implementing search required some time to study the different options available and implement it. Not every field could be read through the same query which meant extra work for comparison and merging of search results before getting the final result. This led to some trial and error to get the query results correct. Unfortunately the user story in question only refers to searching for trips and not users and no additional user story were made for the user search. This means that there is no tracking available for the work done on the user search and no estimation for work load.
+The search system was assigned a single user story estimated at 8 points. The scoring of the story seemed appropriate as implementing search required some time to study the different options available and implement it. Not every field could be read through the same query which meant extra work for comparison and merging of search results before getting the final result. This led to some trial and error to get the query results correct. Unfortunately the user story in question only refers to searching for trips and not users and no additional user stories were made for the user search. This means that there is no tracking available for the work done on the user search and no estimation for work load.
 
 
 \subsection{Route Planner}
@@ -296,10 +296,10 @@ The search system was assigned a single user story estimated at 8 points. The sc
 \end{figure}
 
 \noindent
-When planning a trip, it could be very useful to illustrate the route, and points of interests on a map. This map should be visible to all the participants, so that the route, or proposed route could be discussed.\\
+When planning a trip, it could be very useful to illustrate the route, and points of interests on a map. This map should be visible to all the participants so that the route, or proposed route, could be discussed.\\
 
 \noindent
-Bjørnar and Kristoffer was given the responsibility of implementing the feature, and when planning the second sprint a single user story (CITE) was created for the entire feature. The user story was given the maximum points for complexity by the scum poker session, thus it was expected that the entire feature was to be implemented during the second sprint. \\
+Bjørnar and Kristoffer was given the responsibility of implementing the feature, and when planning the second sprint a single user story (\emph{\#171}) was created for the entire feature. The user story was given the maximum points for complexity by the scum poker session, thus it was expected that the entire feature was to be implemented during the second sprint. \\
 
 \noindent
 In retrospect, the user story could have been classified as an “epic”, with multiple fine-grained user stories. The implementation could have been divided into three main parts; the map control and GUI, the back-end model and controller, and the view. And given how the workload have been on this feature, we would have given the map control 13 points, the back-end, including tests would get 8 points, and the view would get about 3 points. \\
@@ -308,27 +308,27 @@ In retrospect, the user story could have been classified as an “epic”, with 
 Implementing the feature was mainly done by pair-programming. This worked really well for the map, which was implemented in JavaScript, using the Leaflet API, where one was writing code, and the other was helping, and could very quickly look up manuals and documentation on the fly. \\
 
 \noindent
-The model and controller was a bit more complicated for this feature, than for the other features. A route is a collection of waypoints, and at first, we thought about having these as two separate models,  but after some help from Runar, we decided on a structure where the route model uses nested-attributes of the waypoint model. This means that waypoints are passed as parameters of a route upon its creation instead of being appended after the fact. \\
+The model and controller were a bit more complicated for this feature, than for the other features. A route is a collection of waypoints, and at first, we thought about having these as two separate models, but after some help from Runar, we decided on a structure where the route model uses nested-attributes of the waypoint model. This means that waypoints are passed as parameters of a route upon its creation instead of being appended after the fact. \\
 
 \noindent
-We did not put much effort into the view during the implementation of the feature, and at the end, we did not feel this was a bad choice, since the group did not decide on a uniform design until at the end of the third sprint. And since Florian had put a lot of work into the layouts, applying a design to the views was trivial. \\
+We did not put much effort into the view during the implementation of the feature, and at the end, we did not feel this was a bad choice, since the group did not decide on a uniform design before the end of the third sprint. And since Florian had put a lot of work into the layouts, applying a design to the views was trivial. \\
 
 \noindent
 The feature was implemented on a separate branch on Github, and was only merged into the development branch at the end of the third sprint, when the feature was done. This was not a deliberate choice, but the view was always a work in progress, and we did not feel the feature was polished enough to be introduced in the master branch. There was also the continuous development functionality, that required that all tests needed to pass before a pull request could be accepted, and we did not start writing tests until at the end of the third sprint. \\
 
 \section{Other features}
 \subsection{Friend requests}
-Now that you have register and login to the Turi site and been with a trip with some people and now you want to continue to stay in touch with them so that you can go with more trips with them. This is why the friendship feature was created, so that you as a user has the option to add other users as your friends. \\
+Now that you have registered and logged into the turi site and been on a trip with some people and now you want to continue to stay in touch with them so that you can go with more trips with them. This is why the friendship feature was created, so that you as a user have the option to add other users as your friends. \\
 
 \noindent
-User story for the friends feature where given in the second sprint and it was given 5 points during the scum poker session. Ingvild was given the responsibility for implementing the friends feature. In the start the friends feature where implemented without request. In the third sprint the request was stared on, this time both Runar and Ingvild as assign to work on the request. But it was not given aa an user story since it was a part of the friends user story. In retrospect the friends user story should have been given 8 points since there were some work with friends and request. \\
+The user story for the friends feature was made in the second sprint and it was given 5 points during the scum poker session. Ingvild was given the responsibility for implementing the friends feature. In the beginning this feature was implemented without friend requests. In the third sprint the ability to request friendship was added. This time both Runar and Ingvild was assigned to work on the request. But it was not given a an user story since it was a part of the friends user story. In retrospect this user story should have been given 8 points since there was some work with friends and request. \\
 
 \noindent
-When a user click add friend, rails will build an request for the user id and the receiver id. The pending request will come up under Request on the receivers user page. The user that sent the request can visit the user page to the receiver and remove the request, if the request was sent with a mistake, which will delete the request from the database. When the receiver see the pending request she/he will have the option to either accept (+) or not accept(-) the request, if he/she click accept on the pending request, then a friendship will be build between the receiver and the requester. Either if they click + or - to the request will be deleted from the database. When they go to their user page the friend name will be shown under Friends, there they can remove them as a friend or click on their name and visit their user page. When they remove them as a friend it will delete the friendship from the database. When implementing the friends feature one of the problem was that even tough both user was friends, the friendship will be only be shown on one of the user (this user would be the one that sent the request) user page. This is why inverse friendship had to be used when telling rails to show the friend on both users user page. \\
+When a user clicks "add friend", rails will build a request for the user id and the receiver id. The pending request will come up under "Request" on the receiver's user page. The user that sent the request can visit the user page of the receiver and remove the request if the it was sent by mistake, which will delete the request from the database. When the receiver sees the pending request she/he will have the option to either accept (+) or decline(-) the request, if he/she accepts, then a friendship will be built between the receiver and the requester. Either way, the request will be deleted from the database. When they go to their user page the friend name will be shown under Friends, there they can remove them as a friend or click on their name and visit their user page. When they remove them as a friend it will delete the friendship from the database. When implementing the friends feature one of the problems was that even tough both users were friends, the friendship would only be shown to one of the users' (the sender) user page. This is why inverse friendships had to be used when telling rails to show the friend on both users user page. \\
 
 \section{Tests}
 \noindent
-The model tests model are simple tests, that tests the lowest level of the site, the database layer. The tests checks if the database requires the required fields, before saving anything to the database. We have implemented model tests for all the features, to make sure the database is consistent.
+The model tests are relatively simple, and they deal with the lowest level of the site, the database layer. The tests check if the database requires the appropriate fields, before saving anything to the database. We have implemented model tests for all the features, to make sure the database is consistent.
 \\
 
 \noindent
@@ -336,15 +336,15 @@ The controller is responsible for handling the HTTP requests. Testing the contro
 \\
 
 \noindent
-The feature tests, are testing if the view is updated in the expected manor after a clicking a link, or doing some other action on the site it self. These test are not testing any of the underlying processes, and are not that important, though we have written feature tests for almost all of the features. 
+The feature tests, are testing if the view is updated in the expected manner after a clicking a link, or doing some other action on the site itself. They are not testing any of the underlying processes, and are not that important, though we have written feature tests for almost all of the features. 
 At total we have about 240 tests, and the test coverage according to CodeClimate is about 90 percent as seen in figure \ref{fig:codeclimate}.
 \\
 
 \section{Git}
-We use github.com instead of the git repository supplied to us from the school, this gave us the opportunity to work outside the school network. In addition it gave us the ability to use 3rd party applications, this is explained the following subsections. The githib repository address is: \url{https://github.com/turi-inc/turi}.
+We use github.com instead of the git repository supplied to us from the school, this gave us the opportunity to work outside the school network. In addition it gave us the ability to use 3rd party applications, this is explained the following subsections. The GitHub repository address is: \url{https://github.com/turi-inc/turi}.
 
 \subsubsection{Travis CI}
-Travis CI is a hosted continuous integration service. It is integrated with GitHub and provides testing for our project. So when we created a pull request on the development branch of the Github repository, Travis would test our new code automatically and give us a clear indication if the test was passing or not. When the pull request is merged with the development branch it would be tested once again by Travis to be sure that everything was working correctly before the pull request is automatically merged with the master branch of the repository. The log from Travis is public and can be seen here: \url{https://travis-ci.org/turi-inc/turi/builds}.
+Travis CI is a hosted continuous integration service. It is integrated with GitHub and provides testing for our project. So when we created a pull request on the development branch of the Github repository, Travis would test our new code automatically and give us a clear indication if the test was passing or not. When the pull request is merged with the development branch it would be tested once again by Travis to be sure that everything was working correctly before the pull request is automatically merged with the master branch of the repository. The log from Travis is public and can be viewed here: \url{https://travis-ci.org/turi-inc/turi/builds}.
 
 \begin{figure}
   \begin{center}
@@ -356,10 +356,10 @@ Travis CI is a hosted continuous integration service. It is integrated with GitH
 
 
 \subsubsection{Heroku}
-Heroku is a cloud platform which host our project for free. When a pull request is merged with the master branch it's automatically pushed to Heroku. This gives us and other people to see a preview of the project. We had some minor problem getting this to work properly since we use Sqlite3 when we develop, but Heroku does not support this and so we had to switch over to postgres in the production environment.
+Heroku is a cloud platform which hosts our project for free. When a pull request is merged with the master branch it's automatically pushed to Heroku. This lets us, and other people, see a preview of the project. We had some minor problem getting this to work properly because we use Sqlite3 when we develop, but Heroku does not support Sqlite3 so we set the production database to use postgres instead.
 
 \subsubsection{CodeClimate}
-Is also a 3rd party application which checks our code for test coverage, complexity and duplications. The check is done on the master branch of the repository, every time a new pull request is merged with the branch. It gives us an indication about the code health and grades our code, on the basis of test coverage, complexity and duplications. The summary of the code climate of out project can be found here: \url{https://codeclimate.com/github/turi-inc/turi}. \\
+Is also a 3rd party application which checks our code for test coverage, complexity and duplications. The check is done on the master branch of the repository every time a new pull request is merged with the branch. Then it gives us an indication about the code health and grades our code, on the basis of test coverage, complexity and duplications. The summary of the code climate of our project can be found here: \url{https://codeclimate.com/github/turi-inc/turi}. \\
 CodeClimate also have some cool features like Trends over the "health" of our code over time, and the location "hotspots" in the code.  
 
 \begin{figure}
@@ -371,28 +371,17 @@ CodeClimate also have some cool features like Trends over the "health" of our co
 \end{figure}
 
 \subsubsection{Hakiri}
-This 3rd party application is used to show if there is any gem which is not up to date, and if there is any known security claws in any of the gems we use in our project.
-
-
-%\begin{itemize}
-%  \item {we sit together in the lab, and most participants in the group meet on a daily basis} *
-%  \item {A 2 hours meeting every week} *
-%  \item {Many of the features are developed as via par-programming} *
-%  \item {In the last iteration we mostly worked separate, since most of us had exams in other subjects. But we still had communication between the members. } *
-%  \item {Our own Google group, for discussion. } *
-%\end{itemize}
+This 3rd party application is used to show if any of the gems are outdated, and if there are any known security claws in the gems we use in our project.
 
 
 \section{Group collaboration}
-When we got this assignment, we formed a Google Group to share our ideas and organize ourselves. It was also used to schedule weekly two-hour scrum meetings. These meetings started with a stand-up session, where everyone talked about what they were working on, any issues they had, and what they planned to work on that week.\\
-
 When we got this assignment, we formed a Google Group to share our ideas and organize ourselves. It was also used to schedule weekly two-hour scrum meetings. These meetings started with a stand-up session, where everyone talked about what they were working on, any issues they had, and what they planned to work on that week.\\
 
 \noindent
 In the sprint planning meetings, we consistently used scrum poker after we had made sure all the user stories were clear to everyone. We did not do any retrospectives apart from the ones planned in the course, with Weihai Yu.\\
 
 \noindent
-Day to day we sat together in the lab, what ever each of us were working on. This meant that if one of us had an issue, they always had someone they could ask for help without too much effort. Everyone in the group was very helpful, so this arrangement worked out perfectly. Many of the programming sessions were done in pairs, which is a great way to avoid getting stuck for too long. During the last iteration, the weekly meetings were getting shorter and more informal because we prioritized programming, and we communicated naturally with an on-demand basis.
+Day to day we sat together in the lab, what ever each of us were working on. This meant that if one of us had an issue, they always had someone they could ask for help without too much effort. Everyone in the group was very helpful, so this arrangement worked out perfectly. Many of the programming sessions were done in pairs, which is a great way to avoid getting stuck for too long. During the last iteration, the weekly meetings were getting shorter and more informal because we prioritized programming, and we communicated naturally on an on-demand basis.
 
 
 
@@ -402,7 +391,7 @@ Day to day we sat together in the lab, what ever each of us were working on. Thi
 Using tools like GitHub and Travis CI we came up with the following workflow:
 
 \subsection{Git Workflow}
-Since we use Git together with GitHub, we are able to make use of the continuous integration tool Travis CI. Therefore we decided to go with the following development workflow. Please note that the term "origin" represents for the main turi repository on GitHub.
+Since we use Git together with GitHub, we are able to make use of the continuous integration tool Travis CI. Therefore we decided to go with the following development workflow. Please note that the term "origin" represents the main turi repository on GitHub.
 
 
 \subsubsection{Developing of a new feature}
@@ -410,42 +399,37 @@ The developer creates a local feature branch with a telling name. A feature alwa
 
 
 \subsubsection{Starting a merge request}
-If the developer finished with the development of his local feature, he pushes the feature branch to his own remote repository (which is a fork of the origin repository). Before he pushes his changes, he has to do a rebase on the current develop branch of the origin to make sure all sources are up to date and we don't mess up the git history we thousand of branches. After making sure that everything is up to date, he can create a merge request on GitHub from his feature branch to the origin develop branch.
+If the developer finished with the development of his local feature, he pushes the feature branch to his own remote repository (which is a fork of the origin repository). Before he pushes his changes, he has to do a rebase on the current \textit{develop branch} of the origin to make sure all sources are up to date and we don't mess up the git history with thousands of branches. After making sure that everything is up to date, the developer can create a merge request on GitHub from his feature branch to the origin \textit{develop branch}.
 
 \subsubsection{Validating the merge request}
-After the merge request is submitted, it's open for discussion. For additional validation, Travis builds every merge request to ensure that all tests are running. If the Travis CI build is passing and the merge request can be fast forwarded (so the request was rebased) another developer can accept the merge. The person who accepts the merge should be never be the owner of the merge request.
+After the merge request is submitted, it's open for discussion. For additional validation, Travis builds every merge request to ensure that all tests are running. If the Travis CI build is passing and the merge request can be fast forwarded (so the request was rebased) another developer can accept the merge. The person who accepts the merge should never be the owner of the merge request.
 
 \subsubsection{Deploying to production}
-A soon as a merge request is accepted, Travis CI will run again against the latest sources of the origin develop branch. If the build is successfull Travis will push the develop branch to the master branch. Therefore we will always have a stable version of turi on the master branch. A developer should never push changes directly to the master branch.\\
+As soon as a merge request is accepted, Travis CI will run again against the latest sources of the origin \textit{develop branch}. If the build is successful Travis will push the \textit{develop branch} to the \textit{master branch}. Therefore we will always have a stable version of turi on the \textit{master branch}. A developer should never push changes directly to the \textit{master branch}.\\
 
 \noindent
 After a push to the master Travis will push the code to Heroku and run the database migrations. Therefore we always have a stable snapshot version on heroku.
 
 \subsection{Conclusion of the workflow}
-\subsubsection{1st Sprint}
-
-
-\subsubsection{2nd Sprint}
-\subsubsection{3rd Sprint}
 
 \section{Iterations}
 \subsection{Iteration 1}
 For the first iteration we focused on getting the basic features for the website working. This included authentication, participants and trip creation. We also decided on a graphical interface that would be applied to the product to make it easier to create a coherent and appealing look. Near the end of the iteration each group member went through an informal code review with an outside person. We were to explain what we had worked on, how it was done and how we tested the functionality.\\
 
 \noindent
-During development we learned that we could save time if we checked for existing gems before attempting to implement functionality from scratch. This showed up in the authentication part where we first attempted to code an authentication system. In addition, based on the feedback from the code reviews we learned that we had to use more controller and model tests and lower the focus on feature tests.
+During development we learned that we could save time if we checked for existing gems before attempting to implement functionality from scratch. This showed up in the authentication part where we first attempted to code our own authentication system. In addition, based on the feedback from the code reviews we learned that we had to use more controller and model tests and lower the focus on feature tests.
 
 \subsubsection{Retrospective}
-During this retrospective we wrote down our thoughts on the project, the group and anything relating to these. Each member wrote down their thoughts and passed the paper to their left. This continued until the papers returned at their original owners, with other members' thoughts added. The retrospect finished with every group member thanking another member for bringing something to the group.
+During this retrospective we wrote down our thoughts on the project, the group and anything relating to these. Each member wrote down their thoughts and passed the paper to their left. This continued until the papers returned at their original owners, with other members' thoughts added. The retrospect finished with the group members thanking each other for bringing something to the group.
 
 \subsection{Iteration 2}
-This iteration we decided to start implementing more and larger features. As the basic trip and authentication features were complete, the focus were on supporting features like blog and discussion platforms, maps, equipment lists, friends and event calendar.
+This iteration we decided to start implementing more and larger features. As the basic trip and authentication features were complete, the focus was on supporting features like blog and discussion platforms, maps, equipment lists, friends and an event calendar.
 
 \subsubsection{Retrospective}
-During the retrospective we talked about how we were doing with various parts of the project and each member had a graph with six categories they were supposed to rate. The results showed somewhat of a consensus for planning, development, user stories and coding. Almost everyone rated these highly, indicating these categories were handled well. Communication varied, with both high and low ratings. Some wanted more formal meetings while others thought the communication was goo enough already since we usually worked in close proximity to each other and talked together while working. Documentation were rated low because we had not been creating much documentation. What we learned was that the git commits and the data from Travis also counted as documentation, meaning that we were not as lacking in documentation as we first thought.
+During the retrospective we talked about how we were doing with various parts of the project and each member had a graph with six categories they were supposed to rate. The results showed something of a consensus for planning, development, user stories and coding. Almost everyone rated these highly, indicating these categories were handled well. Communication varied, with both high and low ratings. Some wanted more formal meetings while others thought the communication was good enough already since we usually worked in close proximity to each other and talked together while working. Documentation was rated low because we had not been creating much documentation. What we learned was that the git commits and the data from Travis also counted as documentation, meaning that we were not as lacking in this department as we first thought.
 
 \subsection{Iteration 3}
-This iteration saw very few new features. The only notable feature were an addition to the friendship system in the form of proper friend requests. We focused on finishing the features that were still unfinished at the end of iteration 2, namely the route planner and equipment lists. The main work went into making the interface design for our features coherent and into doing bug fixes.
+This iteration saw very few new features. The only notable feature was an addition to the friendship system in the form of proper friend requests. We focused on finishing the features that were still unfinished at the end of iteration 2, namely the route planner and equipment lists. The main work went into making the interface design for our features coherent and doing bug fixes.
 
 
 \section{Final Thoughts}
@@ -458,12 +442,12 @@ All that said, I appreciated the benefits of agile development, and the scrum me
 
 
 \subsection{Martin}
-I think the group communication was good, the meeting each week gave us a opportunity to talk about our work and get feedback on the user stories we were working on and ask for help if we were stuck on something. By having a place to meet in the lab, gave us also the ability to ask each other questions about our code and the problem we faced underway in the development. \\ 
-The complexity did quickly increase in the second iteration of the project, it was hard to keep up all the changes. But we all worked on our own features so we didn't have to keep up with all the changes, so I think it worked out fine. \\
-As for Agilefant I think it's a useful tool, but it was really easy to forget to update. Therefor some of the user stories have a estimates time used. \\
+I think the group communication was good, the meeting each week gave us a opportunity to talk about our work and get feedback on the user stories we were working on and ask for help if we were stuck on something. Having a place to meet in the lab, gave us the ability to ask each other questions about our code and the problem we faced underway in the development. \\ 
+The complexity did quickly increase in the second iteration of the project, it was hard to keep up with all the changes. But we all worked on our own features so we didn't have to keep up with all the changes, so I think it worked out fine. \\
+As for Agilefant I think it's a useful tool, but it was really easy to forget to update. Therefore some of the user stories have an estimated time used. \\
 
 \noindent
-As for the course itself, it was quite interesting to learn web development, Ruby-on-Rails, Git and agile development. It's something completely different from the things we're done in the past. In addition to the the language and the version-control we also had to learn bootstrap, how to use the AppUI elements, how to design a HTML view and some basic JavaScript. 
+As for the course itself, it was quite interesting to learn web development, Ruby-on-Rails, Git and agile development. It's something completely different from the things we're done in the past. In addition to the language and the version-control we also had to learn bootstrap, how to use the AppUI elements, how to design a HTML view and some basic JavaScript. 
 
 
 
@@ -474,15 +458,15 @@ The initial shock, I think could have been alleviated if we used the Django web-
 Our group was also very lucky to have the exchange student, Florian on the team, since he was very experienced with creating web-applications. This made the project progress very fast in the beginning, but it could be a bit hard to keep up at beginning. \\
 
 \noindent
-The communication in the group may have been better organized, since we only had one formal meeting each week. However, it felt like there has been good communication in the group. All the members of the group have been sitting at the same place in the lab for the whole semester, even when working with other courses, and many days the whole group was present. Thus, getting help with a problem was very easy.
-From previous experiences, working in groups could be very challenging, luckily this have not been the case for this assignment, and I felt that the group worked well together. Working in scum groups and using agile methods, have given valuable insight into software engineering.  \\
+The communication in the group may have been better organized, since we only had one formal meeting each week. However, it felt like there was good communication in the group. All the members of the group have been sitting at the same place in the lab for the whole semester, even when working with other courses, and many days the whole group was present. Thus, getting help with a problem was very easy.
+From previous experiences, working in groups could be very challenging, luckily this has not been the case for this assignment, and I felt that the group worked well together. Working in scrum groups and using agile methods, has given valuable insight into software engineering.  \\
 
 \subsection{Ole-Morten}
 \noindent
 During the first sprint, the complexity of the product seemed overwhelming. It was difficult to get a realistic grasp on how much work needed to be done, and it was hard to look past the feeling of having taken on a project too big to finish. The early implementation of the graphical interface also created some issues when coding as the html code for the interface represented another thing to learn on top of Ruby and Rails. As features were completed and I started getting an idea of how much time went into developing each feature the project, while still complex, seemed less insurmountable.\\
 
 \noindent
-How the various tasks were divided among the group members seemed to work out pretty well, although some may have required more effort than expected. I ended up with the smaller tasks, like search and blogs, which ended up as a good thing since I struggled with understanding Rails. Quite a bit of time was spent on reading and understanding how things were supposed to work. Getting comfortable with the tools also took some time. We used git for version control and while I had some experience with simple git usage, the way we worked with it was unfamiliar. It took some time getting comfortable working with the git setup without worrying about doing something wrong. Considering the Agilefant tool, it differed how extensively group members used it and personally I never got to the point where I properly understood how to use the tool outside of adding time spent on user stories. I never felt like I had to learn more about it either since other member usually added and updated the user stories.\\
+How the various tasks were divided among the group members seemed to work out pretty well, although some may have required more effort than expected. I ended up with the smaller tasks, like search and blogs, which ended up as a good thing since I struggled with understanding Rails. Quite a bit of time was spent on reading and understanding how things were supposed to work. Getting comfortable with the tools also took some time. We used git for version control and while I had some experience with simple git usage, the way we worked with it was unfamiliar. It took some time getting comfortable working with the git setup without worrying about doing something wrong. Considering the Agilefant tool, it differed how extensively group members used it and personally I never got to the point where I properly understood how to use the tool outside of adding time spent on user stories. I never felt like I had to learn more about it either since other members usually added and updated the user stories.\\
 
 \noindent
 Generally working in groups and collaborating is always a challenge, especially for someone timid, but in the end it worked out well.
