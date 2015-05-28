@@ -243,9 +243,10 @@ The trip and it's features are the main focus of our project.
   \begin{center}
     \vspace{-0pt}
     \includegraphics[width=0.5\textwidth]{pictures/discussion}
-  \label{fig:discussion}
+  
   \end{center}
 \caption{Turi discussion}
+\label{fig:discussion}
 \end{figure}
 
 This feature is for discussion among the trip participants. If something needs discussion considering the trip, this is a place where the participants can come to an agreement. All participants can create a new discussion and comment on others and their own discussions. In figure \ref{fig:discussion} is an example of the discussion feature. At the top of the figure is the title of discussion. Next to it is the name of the discussion creator and how long since it was created. Below the title are the comments to the discussion. Each comment has information of who created it, how long since it was created and an image of the creator if available. Adding new comments to the discussion is done by exchanging data to the server using AJAX \footnote{\AJAX}. This gives a smoother experience for the commentator. 
@@ -290,10 +291,10 @@ The search system was assigned a single user story estimated at 8 points. The sc
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{pictures/route_planning}
-  	\label{fig:route}
   \end{center}
 \caption{Turi Route Planner}
-\end{figure}
+\label{fig:route}
+\end{figure} 
 
 \noindent
 When planning a trip, it could be very useful to illustrate the route, and points of interests on a map. This map should be visible to all the participants, so that the route, or proposed route could be discussed.\\
@@ -305,16 +306,16 @@ Bjørnar and Kristoffer was given the responsibility of implementing the feature
 In retrospect, the user story could have been classified as an “epic”, with multiple fine-grained user stories. The implementation could have been divided into three main parts; the map control and GUI, the back-end model and controller, and the view. And given how the workload have been on this feature, we would have given the map control 13 points, the back-end, including tests would get 8 points, and the view would get about 3 points. \\
 
 \noindent
-Implementing the feature was mainly done by pair-programming. This worked really well for the map, which was implemented in JavaScript, using the Leaflet API, where one was writing code, and the other was helping, and could very quickly look up manuals and documentation on the fly. \\
+Implementing the feature was mainly done by pair-programming. This worked really well for the map, which was implemented in JavaScript, using the Leaflet API, where one was writing code, and the other was helping, and could very quickly look up manuals and documentation on the fly. We also ran into a problem how get the data from the map into the database. The solution we found was to use JQuery to add the data into a table in the view, and then submitting this table. When showing a route, we conversely uses JQuery to read coordinates from the table, and then draw the route.  \\
 
 \noindent
-The model and controller was a bit more complicated for this feature, than for the other features. A route is a collection of waypoints, and at first, we thought about having these as two separate models,  but after some help from Runar, we decided on a structure where the route model uses nested-attributes of the waypoint model. This means that waypoints are passed as parameters of a route upon its creation instead of being appended after the fact. \\
+The model and controller was a bit complicated for this feature. A route is a collection of waypoints, and at first, we thought about having these as two separate models, but after some help from Runar, we decided on a structure where the route model uses nested-attributes of the waypoint model. This means that waypoints are passed as parameters of a route upon its creation instead of being appended after the fact. \\
 
 \noindent
 We did not put much effort into the view during the implementation of the feature, and at the end, we did not feel this was a bad choice, since the group did not decide on a uniform design until at the end of the third sprint. And since Florian had put a lot of work into the layouts, applying a design to the views was trivial. \\
 
 \noindent
-The feature was implemented on a separate branch on Github, and was only merged into the development branch at the end of the third sprint, when the feature was done. This was not a deliberate choice, but the view was always a work in progress, and we did not feel the feature was polished enough to be introduced in the master branch. There was also the continuous development functionality, that required that all tests needed to pass before a pull request could be accepted, and we did not start writing tests until at the end of the third sprint. \\
+The feature was implemented on a separate branch on Github, and was only merged into the development branch at the end of the third sprint, when the feature was done. This was not a deliberate choice, but the view was always a work in progress, and we did not feel the feature was polished enough to be introduced in the master branch. There was also the continuous development functionality, that required that all tests needed to pass before a pull request could be accepted, and we did not start writing tests until at the end of the third sprint. Figure \ref{fig:route} shows an example of a saved route. \\
 
 \section{Other features}
 \subsection{Friend requests}
@@ -337,7 +338,7 @@ The controller is responsible for handling the HTTP requests. Testing the contro
 
 \noindent
 The feature tests, are testing if the view is updated in the expected manor after a clicking a link, or doing some other action on the site it self. These test are not testing any of the underlying processes, and are not that important, though we have written feature tests for almost all of the features. 
-At total we have about 240 tests, and the test coverage according to CodeClimate is about 90 percent as seen in figure \ref{fig:codeclimate}.
+At total we have about 240 tests, and the test coverage according to CodeClimate is about 90 percent.
 \\
 
 \section{Git}
