@@ -16,6 +16,7 @@
 \DeclareUnicodeCharacter{00A0}{ }
 
 \urldef{\AJAX}\url{https://en.wikipedia.org/wiki/Ajax_(programming)}
+\urldef{\DROPBOX}\url{https://www.dropbox.com/}
 
 \begin{document}
 \begin{titlepage}
@@ -31,16 +32,14 @@
 
 \textsc{\LARGE University of Tromsø}\\[1.5cm] % Name of your university/college
 \textsc{\Large INF-2900}\\[0.5cm] % Major heading such as course name
-\textsc{\large Software Engineering}\\[0.5cm] % Minor heading such as course title
+\textsc{\large Software Engineering}\\[3cm] % Minor heading such as course title
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\HRule \\[0.5cm]
 \includegraphics[scale=0.25]{pictures/turi_logo.png}\\[0.5cm]
-{ \huge \bfseries Turi}\\[0.5cm] % Title of your document
-\HRule \\[1cm]
+{ \huge \bfseries Turi}\\[2cm] % Title of your document
  
 %----------------------------------------------------------------------------------------
 %	AUTHOR SECTION
@@ -48,14 +47,13 @@
 
 
 % If you don't want a supervisor, uncomment the two lines below and remove the section above
-\Large \emph{Group:}\\
-1\\[1.5cm] % Your name
+\Large \emph{Group: 1}\\[1.5cm]
 % title
 %----------------------------------------------------------------------------------------
 %	DATE SECTION
 %----------------------------------------------------------------------------------------
 
-\textsc{\large Spring 2015}\\[3cm] % Date, change the \today to a set date if you want to be precise
+\textsc{\large Spring 2015}\\[2cm] % Date, change the \today to a set date if you want to be precise
 
 %----------------------------------------------------------------------------------------
 %	LOGO SECTION
@@ -76,7 +74,21 @@
 
 
 \section{Introduction}
-Imagine you want to go on a trip - to Norway for example. You ask you friends to join you but they reject because they cannot afford the money or they have no spare time. What now? You can either go alone or try to find some people who can join you. The first place we look today is on the world wide web. There are already some portals where you can find partners for your trip. But what about planning your actual trip? We couldn't find a tool which allows you to plan a trip in detail. Planning your trip gets particularly difficult if you find your trip mates online and you cannot meet because you live too far away from each other. You can now either use the phone or create e.g. some Facebook group. Still, those ways lack several of the features we want to implement in our trip planner which makes it unique. In fact we came up with the idea to create a trip planner that offers a combination between socializing and planning for your trips.
+Imagine you want to go on a trip - to Norway for example. You ask you friends to join you but they reject because they cannot afford the money or they have no spare time. What now?
+
+You can either go alone or try to find some people who can join you. The first place we look today is on the world wide web. There are already some portals where you can find partners for your trip. But what about planning your actual trip?
+
+We couldn't find a tool which allows you to plan your trip in detail. Planning your trip gets particularly difficult if you find your trip mates online and you can't meet because you live too far away from each other. 
+
+You can now either use the phone or create e.g. some Facebook group. Still those ways lack several of the features we want to implement in our trip planner which makes it unique. In fact we came up with the idea to create a trip planner which offers a combination between socializing and planning for your trips.\\
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=1\textwidth]{pictures/turi_landing_page.png}
+  \end{center}
+\caption{Turi Landing Page}
+\label{fig:turilandingpage}
+\end{figure}
 
 \subsection{The product name: turi}
 The name derived from the Norwegian word “tur” (a trip/a walk). turi was short and concise enough and sounds good to the ear. It is also a Norwegian name, but this will be no problem when we think about topics like a trademark etc.
@@ -104,7 +116,6 @@ The following functionalities should be supported (bold means that we they were 
 \noindent
 In the end we weren't able to implement all of our goals (the goals which are not in bold) and we had tons of more ideas. But for the first release of turi (1.0.0) we decided to require all these features above.\\
 
-
 \section{The development process}
 
 \subsection{User stories}
@@ -120,7 +131,7 @@ In the end we weren't able to implement all of our goals (the goals which are no
     1&As a user, I want to look at the website during the development, so that I can see the progress.
     & 5 \\ \hline
     
-    2&As an user, I want to be able to register on the web page, so that I can login into the planner.
+    2&As a user, I want to be able to register on the web page, so that I can login into the planner.
     & 5 \\ \hline
 
     3&As a logged in user, I want to be able to see my account page, so that I can get an overview of my activity and information.
@@ -172,7 +183,7 @@ In the end we weren't able to implement all of our goals (the goals which are no
     7& As a user I want to be able to reset my password so that I can login, because I forgot my password.
     &5 \\ \hline
 
-    8& As an Trip User I want to be able to have a discussion forum for my trip.
+    8& As a Trip User I want to be able to have a discussion forum for my trip.
     & 8 \\ \hline
 
     9& As a user I want to explore trips using a map.
@@ -213,6 +224,8 @@ In the end we weren't able to implement all of our goals (the goals which are no
 \end{table}
 
 \section{Design of the site}
+\section{Theme and Design}
+The theme should be minimalistic and consistent. Therefore we decided to go with a existing theme and implement our features. We've gone with a theme named "AppUI". It's available on the online platform "themeforest". It already includes a lot of sample pages so we only had to replace those placeholder widgets with our own views and partials. For more information about this theme you can have a look at "http://themeforest.net/item/appui-web-app-bootstrap-admin-template/8603616".
 
 \section{Gems}
 We use several gems in our project, this means that we didn't need to reinvent the wheel for features that already exist, and we could focus on our own features. All the gems used can be found in the gemfile in the project source, but the most important ones are the following.
@@ -226,7 +239,8 @@ In the first iterations we created our own authentication system, but we found o
 \subsection{Leaflet}
 \textit{Leaflet}\cite{leaflet} is a JavaScript library that let us implement the interactive map for the routes. Before discovering \textit{Leaflet}, we looked at a similar gem from Google, but it was too heavy for our requirements. As an example, Google Maps seemed to snap waypoints to the nearest road, which is counter-productive for us since we want the users to be able to plan any kind of trip, including hikes.
 
-\subsection{rails-asserts}
+\subsection{rails-assets}
+Rails assets are used to include common JavaScript libraries which extend mainly jQuery and Bootstrap. Using the rails assets source, we can benefit from pre packaged JavaScript libraries which are automatically included in the rails asset pipeline. For more information you can refer the rails asset website: https://rails-assets.org/
 
 \subsection{Geocoder}
 \textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location to show the location in the explore map. 
@@ -243,18 +257,22 @@ The trip and it's features are the main focus of our project.
   \begin{center}
     \vspace{-0pt}
     \includegraphics[width=0.5\textwidth]{pictures/discussion}
-  \label{fig:discussion}
   \end{center}
 \caption{Turi discussion}
+\label{fig:discussion}
 \end{figure}
 
 This feature is for discussion among the trip participants. If something needs discussion considering the trip, this is a place where the participants can come to an agreement. All participants can create a new discussion and comment on others and their own discussions. Figure \ref{fig:discussion} is an example of the discussion feature. At the top of the figure is the title of discussion. Next to it is the name of the discussion creator and how long since it was created. Below the title are the comments to the discussion. Each comment has information on who created it, how long since it was created and an image of the creator, if available. Adding new comments to the discussion is done by exchanging data to the server using AJAX \footnote{\AJAX}. This gives a smoother experience for the commentator. 
 
 \subsection{Event management}
+The event management is a simple calender where you can add events. We make usage of a jQuery Plugin called "fullCalendar" which does all the frontend logic for us. In the backend we simply store events with a date and description etc. The events are then pulled via AJAX by fullCalendar and a small JSON interface in our EventController.
+
 \subsection{Equipment planning}
 Equipment planning is essential for a trip, knowing what you need to bring and the ability to distribute responsibilities between the participants of the trip. In our implementation each trip can have multiple list, which can contain multiple items. Each item in return contains a number (number of items) and a price, these items can be assigned to other participants. Charts provide an overview of all the lists and for each individual list, these charts provide a summary of the assignments (items and price) for each participant in a pie chart. \\ This feature had two different user stories attached to it (\emph{\#154 and \#155}), and they had a combined point value of 13. This estimation was reasonable, and the implementation of the features spanned the entire second sprint. We changed the look and feel of the features multiple during this sprint, before ending up at the current implementation, which we felt was the most intuitive. There weren't any particular problems we faced when implementing this feature. There was, however, a lot of work to get everything working on a single view page, instead of having views for each of the controllers. A particularly tricky part of the feature was the form for the item assignment, since we used the same form for creating, editing and deleting, this caused the create method of the equipment-assignment controller to become quite large and complex. 
 
 \subsection{Gallery}
+The gallery feature enables the integration of Dropbox \footnote{\DROPBOX}. The user gives us the right to see his images. But of course we wanted to let the customer still feel safe. Therefore he has to create a new Dropbox folder called "turi". When he connects Dropbox to a trip he also has to create a subfolder in "turi" after his trip name. So if you call your trip e.g. "My Trip to London" we will display all images of the user under the folder "turi/my\_trip\_to\_london" to all trip participants. The public feature will allow you in the near future to declare a public folder like "turi/my\_trip\_to\_london/public". This folder will be visible on the public trip page to show external users some impressions of the trip. Beside that the user can always revoke his Dropbox acces by simply clicking the bin icon on the trip gallery page. It should be mentioned that the Dropbox Api is stubbed during the tests since we wanted to make sure that turi can be tested offline.
+
 \subsection{Blog}
 The blog platform allows a trip editor to create a blog associated with the trip. The user can edit the blog through a simple editor interface which also allows for URLs and images. A blog can be marked as public, which means that non-participants can read it. The platform has a blog index list which lists the blogs in order of creation and shows an excerpt from each entry.\\
 
@@ -271,6 +289,7 @@ A trip is private to the participants of the trip, unless they decide it should 
 The implementation of the feature was quite straightforward. The thing that took the most time was the design of the public trip view, and finding out what and how we were going to show the different elements on a single page. We ended up using \emph{Kaminari}\cite{kaminari}, to "paginate" the different elements. For example if a trip has many public blog entries, only one of them are displayed on the page at any given time. 
 
 \subsection{Explore trips}
+The explore trip feature was one of our last implementations. We provide a fullscreen map which fetches all public trips via AJAX and display them on the map.Furthermore we added a plug-in that groups trips based on their locations so you have to zoom in or click on the trip group to see all the trips available for this specific area.
 
 \subsection{Search}
 The search system is implemented through address tags which are read out of a form and appended on the address bar. These tags are read as arguments by the controller methods running search, and are used to do look-up in the database. The search allows the user to do a search on title, start and end location and date, and tags. The same engine is also used to search for other users.\\
@@ -287,12 +306,12 @@ The search system was assigned a single user story estimated at 8 points. The sc
 
 \subsection{Route Planner}
 
-\begin{figure}
+\begin{figure}[!h]
   \begin{center}
     \includegraphics[width=0.5\textwidth]{pictures/route_planning}
-  	\label{fig:route}
   \end{center}
 \caption{Turi Route Planner}
+\label{fig:route}
 \end{figure}
 
 \noindent
@@ -346,9 +365,9 @@ We use github.com instead of the git repository supplied to us from the school, 
 \subsubsection{Travis CI}
 Travis CI is a hosted continuous integration service. It is integrated with GitHub and provides testing for our project. So when we created a pull request on the development branch of the Github repository, Travis would test our new code automatically and give us a clear indication if the test was passing or not. When the pull request is merged with the development branch it would be tested once again by Travis to be sure that everything was working correctly before the pull request is automatically merged with the master branch of the repository. The log from Travis is public and can be viewed here: \url{https://travis-ci.org/turi-inc/turi/builds}.
 
-\begin{figure}
+\begin{figure}[!h]
   \begin{center}
-    \includegraphics[scale=0.45]{pictures/Travis_buildlog.png}
+    \includegraphics[scale=0.35]{pictures/Travis_buildlog.png}
     \caption{A sample of the build logs from Travis CI}
     \label{fig:travis_log}
   \end{center}
@@ -359,20 +378,19 @@ Travis CI is a hosted continuous integration service. It is integrated with GitH
 Heroku is a cloud platform which hosts our project for free. When a pull request is merged with the master branch it's automatically pushed to Heroku. This lets us, and other people, see a preview of the project. We had some minor problem getting this to work properly because we use Sqlite3 when we develop, but Heroku does not support Sqlite3 so we set the production database to use postgres instead.
 
 \subsubsection{CodeClimate}
-Is also a 3rd party application which checks our code for test coverage, complexity and duplications. The check is done on the master branch of the repository every time a new pull request is merged with the branch. Then it gives us an indication about the code health and grades our code, on the basis of test coverage, complexity and duplications. The summary of the code climate of our project can be found here: \url{https://codeclimate.com/github/turi-inc/turi}. \\
-CodeClimate also have some cool features like Trends over the "health" of our code over time, and the location "hotspots" in the code.  
+This is also a 3rd party application which checks our code for test coverage, complexity and duplications. The check is done on the master branch of the repository whenever a new pull request is merged with the branch. It gives us an indication about the code health and grades our code, on the basis of test coverage, complexity and duplications. The summary of the code climate of our project can be found here: \url{https://codeclimate.com/github/turi-inc/turi}. \\
+\textit{CodeClimate} also has additional features like Trends over the "health" of our code over time, and the location "hotspots" in the code. In Figure \ref{fig:codeclimate} we can see three charts. The top chart displays the overall quality of the code according to code climate. We had a small breakdown at the end since we added a lot of functionality in the end and ended up with some complex or duplicated methods. We checked the issues \textit{CodeClimate} showed us and came to the conclusion that these complex or duplicated methods are totally okay in our case. The Churn vs. Quality chart displays if classes are changed very frequently. In our case we had some classes which were under heavy development during all iterations. But this also relates to only 3 classes (yellow dots).
 
-\begin{figure}
+\begin{figure}[!h]
   \begin{center}
-    \includegraphics[scale=0.45]{pictures/trends_code.png}
+    \includegraphics[scale=0.35]{pictures/trends_code.png}
     \caption{CodeClimate trends}
     \label{fig:codeclimate}
   \end{center}
 \end{figure}
 
 \subsubsection{Hakiri}
-This 3rd party application is used to show if any of the gems are outdated, and if there are any known security claws in the gems we use in our project.
-
+This 3rd party application is used to show if any of the gems are outdated, and if there are any known security flaws in the gems we use in our project. It can be applied to every open-source project for free.
 
 \section{Group collaboration}
 When we got this assignment, we formed a Google Group to share our ideas and organize ourselves. It was also used to schedule weekly two-hour scrum meetings. These meetings started with a stand-up session, where everyone talked about what they were working on, any issues they had, and what they planned to work on that week.\\
@@ -384,7 +402,29 @@ In the sprint planning meetings, we consistently used scrum poker after we had m
 Day to day we sat together in the lab, what ever each of us were working on. This meant that if one of us had an issue, they always had someone they could ask for help without too much effort. Everyone in the group was very helpful, so this arrangement worked out perfectly. Many of the programming sessions were done in pairs, which is a great way to avoid getting stuck for too long. During the last iteration, the weekly meetings were getting shorter and more informal because we prioritized programming, and we communicated naturally on an on-demand basis.
 
 
+\noindent
+As we can see in Figure \ref{fig:commitgraph} we constantly developed our features except the april down related to the eastern holidays and individual exam preparations.\\
 
+\begin{figure}[!h]
+  \begin{center}
+  	\makebox[\textwidth][c]{\includegraphics[width=1\textwidth]{pictures/commit_graph.png}}%
+    \caption{Commit graph}
+    \label{fig:commitgraph}
+  \end{center}
+\end{figure}
+
+We also collected some data to show that the development of turi was spreaded over the whole week (see Figure \ref{fig:commitfrequency}). Tuesday was or weekly meeting that is why the most intensive work was done during this day. \\
+
+\begin{figure}[!htb]
+  \begin{center}
+  	\makebox[\textwidth][c]{\includegraphics[width=1\textwidth]{pictures/commit_frequency.png}}%
+    \caption{Commits spreading over the week}
+    \label{fig:commitfrequency}
+  \end{center}
+\end{figure}
+
+\section{User stories}
+Our user stories are mainly related to the features we implemented. We added the user stories as appendix in table \ref{tab:sprint1}, \ref{tab:sprint2} and \ref{tab:sprint3}. As we can see in Table \ref{tab:sprint2} we reduced the number of user stories since we had to do some clean up beside that. Therefore the average sum of user story points is around 40 Points.
 
 \section{The development process}
 
@@ -393,10 +433,8 @@ Using tools like GitHub and Travis CI we came up with the following workflow:
 \subsection{Git Workflow}
 Since we use Git together with GitHub, we are able to make use of the continuous integration tool Travis CI. Therefore we decided to go with the following development workflow. Please note that the term "origin" represents the main turi repository on GitHub.
 
-
 \subsubsection{Developing of a new feature}
 The developer creates a local feature branch with a telling name. A feature always relates to a user story in Agilefant.
-
 
 \subsubsection{Starting a merge request}
 If the developer finished with the development of his local feature, he pushes the feature branch to his own remote repository (which is a fork of the origin repository). Before he pushes his changes, he has to do a rebase on the current \textit{develop branch} of the origin to make sure all sources are up to date and we don't mess up the git history with thousands of branches. After making sure that everything is up to date, the developer can create a merge request on GitHub from his feature branch to the origin \textit{develop branch}.
@@ -410,7 +448,20 @@ As soon as a merge request is accepted, Travis CI will run again against the lat
 \noindent
 After a push to the master Travis will push the code to Heroku and run the database migrations. Therefore we always have a stable snapshot version on heroku.
 
-\subsection{Conclusion of the workflow}
+\subsection{Testing}
+For this project we have three different layers of testing. This ensures that every aspect of our application is well tested and we will not break previous added functionality by adding a new feature. As mentioned previously, our build server (Travis CI) will take care of running those test automated.
+
+\subsubsection{Model Tests}
+The model tests are relatively simple and they handle the lowest level of the site, the database layer. The tests check if the database requires the appropriate fields, before saving anything to the database. We have implemented model tests for all the features, to make sure the database is consistent.
+\\
+
+\subsubsection{Controller Tests}
+The controller is responsible for handling the HTTP requests. Testing the controller means making sure privilege levels are enforced, and that the CRUD operations do no more, and no less, than they are supposed to. There are tests for all of our controller functions.
+\\
+
+\subsubsection{Feature Tests}
+The feature tests, are testing if the view is updated in the expected manor after a clicking a link, or doing some other action on the site it self. These test are not testing any of the underlying processes, and are not that important, though we have written feature tests for almost all of the features. 
+At total we have about 240 tests, and the test coverage according to \textit{CodeClimate} is about 90 percent. \\
 
 \section{Iterations}
 \subsection{Iteration 1}
@@ -440,16 +491,23 @@ I think the group communicated really well, and we've worked steadily, more or l
 \noindent
 All that said, I appreciated the benefits of agile development, and the scrum meetings were very useful and concise. Everyone got to have their say, and the group was excellent in the sense that we didn't try to overpower each other. The user stories were well defined with acceptance criteria, so knowing \textit{what} to do was never a problem. The course as a whole has given me useful insight into the perils of software engineering and working in groups, but also into the benefits. It can be a challenge to understand other people's code, or to satisfy everyone when a decision has to be made, but the group can also be a great resource when you're stuck with a seemingly insurmountable problem.
 
-
-\subsection{Martin}
-I think the group communication was good, the meeting each week gave us a opportunity to talk about our work and get feedback on the user stories we were working on and ask for help if we were stuck on something. Having a place to meet in the lab, gave us the ability to ask each other questions about our code and the problem we faced underway in the development. \\ 
-The complexity did quickly increase in the second iteration of the project, it was hard to keep up with all the changes. But we all worked on our own features so we didn't have to keep up with all the changes, so I think it worked out fine. \\
-As for Agilefant I think it's a useful tool, but it was really easy to forget to update. Therefore some of the user stories have an estimated time used. \\
+\subsection{Florian}
+In my opinion the whole group did a really, really good job. I admit, the learning curve was really high and without my previous knowledge I would have been a bit overwhelmed by the possibilities rails offers. Due to our good teamwork we managed to create an application which is nearly ready to release and could be offered a large audience. As an exchange student I really appreciated the warm welcome from my Norwegian team-mates. We had no problems to meet when it was necessary. There was a small down related to exam preparations in April but this hadn't any influence on the efficiency of our group.
 
 \noindent
-As for the course itself, it was quite interesting to learn web development, Ruby-on-Rails, Git and agile development. It's something completely different from the things we're done in the past. In addition to the language and the version-control we also had to learn bootstrap, how to use the AppUI elements, how to design a HTML view and some basic JavaScript. 
+Sometimes we should stick more to the Scrum methodology but due to our limited time it was not always possible to plan the User Stories in very detail or to have something like a daily meeting (which we replaced with a "weekly").
 
+\noindent
+To sum up I felt really comfortable in this team during all iterations. We all learned new and useful things which can be used in our later work life. I would like to continue the work on our application beyond this course and try to lunch the product together with the whole team.
 
+\subsection{Ingvild}
+The communication in the group was really good, even if though we had only one formally meeting in the week. It think it was mostly because all from the group where sitting together on the same places in the lab the whole semester, so it was easy to ask anybody for help. In the beginning it was a lot to learn, since ruby was a whole new language for me and I had to learn HTML also. But after a while I got some of it, and it was really good to be able to ask the group for help on something difficult and get an answer. I think we where very lucky that Florian already could a lot ruby and could learn the rest of the group and help any group member that hadn't gotten so much hang on it in the start.\\
+
+\noindent
+The Agilefant was a useful tool for having the user story on one place, but writing down the spent time on a user story got forgotten when one worked on the user story. So my spent time is probably less than i worked, because I only wrote the time I had worked when I was finished with a user story. It probably would be more useful to use a tool one could use while also being able to work on the user story. \\
+
+\noindent
+The course itself have been really interesting, it was interesting to learn web development and to  also be able to work on a group, something that is not done in that many other courses.
 
 \subsection{Kristoffer}
 \noindent
@@ -461,6 +519,14 @@ Our group was also very lucky to have the exchange student, Florian on the team,
 The communication in the group may have been better organized, since we only had one formal meeting each week. However, it felt like there was good communication in the group. All the members of the group have been sitting at the same place in the lab for the whole semester, even when working with other courses, and many days the whole group was present. Thus, getting help with a problem was very easy.
 From previous experiences, working in groups could be very challenging, luckily this has not been the case for this assignment, and I felt that the group worked well together. Working in scrum groups and using agile methods, has given valuable insight into software engineering.  \\
 
+\subsection{Martin}
+I think the group communication was good, the meeting each week gave us a opportunity to talk about our work and get feedback on the user stories we were working on and ask for help if we were stuck on something. By having a place to meet in the lab, gave us also the ability to ask each other questions about our code and the problem we faced during the development. \\ 
+The complexity did quickly increase in the second iteration of the project, it was hard to keep up all the changes. But we all worked on our own features so we didn't have to keep up with all the changes, so I think it worked out fine. \\
+As for Agilefant I think it's a useful tool, but it was really easy to forget to update. Therefore some of the user stories have a estimates time used. \\
+
+\noindent
+As for the course itself, it was quite interesting to learn web development, Ruby-on-Rails, Git and agile development. It's something completely different from the things we're done in the past. In addition to the the language and the version-control we also had to learn bootstrap, how to use the AppUI elements, how to design a HTML view and some basic JavaScript. 
+
 \subsection{Ole-Morten}
 \noindent
 During the first sprint, the complexity of the product seemed overwhelming. It was difficult to get a realistic grasp on how much work needed to be done, and it was hard to look past the feeling of having taken on a project too big to finish. The early implementation of the graphical interface also created some issues when coding as the html code for the interface represented another thing to learn on top of Ruby and Rails. As features were completed and I started getting an idea of how much time went into developing each feature the project, while still complex, seemed less insurmountable.\\
@@ -470,7 +536,6 @@ How the various tasks were divided among the group members seemed to work out pr
 
 \noindent
 Generally working in groups and collaborating is always a challenge, especially for someone timid, but in the end it worked out well.
-
 
 %\printbibliography[heading=bibintoc, title={References}]
 
@@ -505,6 +570,111 @@ Generally working in groups and collaborating is always a challenge, especially 
 \url{https://github.com/amatsuda/kaminari}
 
 \end{thebibliography}
+
+\appendix
+
+\section{User Stories}
+\label{sec:user-stories}
+
+\begin{table}[!h]
+  \begin{tabulary}{1.0\textwidth}{|L|L|L|}
+    \hline
+    N. & User story & Pts \\ \hline
+    
+    1&As a user, I want to look at the website during the development, so that I can see the progress.
+    & 5 \\ \hline
+    
+    2&As an user, I want to be able to register on the web page, so that I can login into the planner.
+    & 5 \\ \hline
+
+    3&As a logged in user, I want to be able to see my account page, so that I can get an overview of my activity and information.
+    & 5 \\ \hline
+
+    4&As a logged in user, I want to create a trip, so that I can plan it. 
+    & 8 \\ \hline
+
+    5&As a registerd user, I want to be able to log in and start a session, and log out, to prevent access to my personal data. & 3 \\ \hline
+
+    6&As an owner of a trip, I want to be able to edit the details, so that I can redo or add information. & 5 \\ \hline
+
+    7&As a logged in user, I want to be able to see a detail page of my trip, so that I can display the details of my trip. & 3 \\ \hline
+
+    8&As an owner of a trip, I want to be able to delete the trip, so that I can delete my data because I am not planning on going anyway. & 3 \\ \hline
+
+    9&As a User I want to be able to share my trips (like the google drive sharing model) & 8 \\ \hline
+
+    10&As a user I want to be able to search for trips so that I can easily look up relevant trips. & 8 \\ \hline
+    &SUM & 53 \\ \hline
+  \end{tabulary}
+  \caption{Sprint 1 user stories}
+\end{table}
+
+\begin{table}[!h]
+  \centering
+  \begin{tabulary}{1.0\textwidth}{|L|L|L|}
+    \hline
+    N. & User story & Pts \\ \hline
+
+    1&As an trip user I want to be able to create events for my trip so that I can organize my trip with the other participant.
+    & 5 \\ \hline
+
+    2&As an trip user I want to be able to connect my trip with a dropbox folder to show the other participants the pictures on it
+    & 8 \\ \hline
+
+    3 &As an User I want to be able to create and manage an equipment list for my trip. 
+    & 8 \\ \hline
+
+    4 & As an User I want to be able to assign equipment Items to a user (to mark that he has bought it e.g.).
+    & 5 \\ \hline
+
+    5& As an trip owner or editor I want to be able to create blog articles so that I can share my trip experience or planning results
+    & 5 \\ \hline
+
+    6& As a person I want to share turi on social networks so that my friends or other people get to know the site.
+    & 1 \\ \hline
+
+    7& As a user I want to be able to reset my password so that I can login, because I forgot my password.
+    &5 \\ \hline
+
+    8& As an Trip User I want to be able to have a discussion forum for my trip.
+    & 8 \\ \hline
+
+    9& As a user I want to explore trips using a map.
+    & 8 \\ \hline
+
+    &SUM&53 \\ \hline
+
+    
+  \end{tabulary}
+  \caption{Sprint 2 user stories}
+\label{tab:sprint2}
+\end{table}
+
+\begin{table}[!h]
+  \centering
+  \begin{tabulary}{1.0\linewidth}{|L|L|L|}
+    \hline
+    N. & User story & Pts \\ \hline
+    1& As a developer I want to have a clean code structure.
+    & 5 \\ \hline
+
+    2& As an user I want to have a uniform user interface.
+    & 5 \\ \hline
+
+    3& As an user I want to be able to set the privacy of my trip to public or private.
+    & 3 \\ \hline
+
+    4&As a user I want to manage my friends so I can stay in touch with my friends on the site.
+    & 5 \\ \hline
+
+    5& As a Trip User I want to be able to create maps with different routes using waypoints for a trip.
+    & 13 \\ \hline
+
+    & SUM & 31 \\ \hline
+  \end{tabulary}
+  \caption{Sprint 3 user stories}
+\label{tab:sprint3}
+\end{table}
 
 \end{document}
 
