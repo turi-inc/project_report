@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{tabulary}
+\usepackage{lscape}
 
 \usepackage[
 			portrait,
@@ -83,13 +84,13 @@
 
 
 \section{Introduction}
-Imagine you want to go on a trip - to Norway for example. You ask you friends to join you but they reject because they cannot afford the money or they have no spare time. What now?
+Imagine you want to go on a trip - to Norway for example. You ask you friends to join you but they reject because they can not afford the money or they have no spare time. What now?
 
-You can either go alone or try to find some people who can join you. The first place we look today is on the world wide web. There are already some portals where you can find partners for your trip. But what about planning your actual trip?
+You can either go alone or try to find some people who can join you. The first place we look today is on the world wide web. We already can find some portals where you can find partners for your trip. But what about planning your actually trip?
 
-We couldn't find a tool which allows you to plan your trip in detail. Planning your trip gets particularly difficult if you find your trip mates online and you can't meet because you live too far away from each other. 
+We couldn’t find a tool which allows you to plan your trip in detail. Planning your trip gets especially difficult if you find your trip mates online and you can not meet because you live too far away from each other. 
 
-You can now either use the phone or create e.g. some Facebook group. Still those ways lack several of the features we want to implement in our trip planner which makes it unique. In fact we came up with the idea to create a trip planner which offers a combination between socializing and planning for your trips.\\
+You can now either use the phone or create e.g. some Facebook group. Still those ways lack of several features we want to implement in our trip planner which makes it unique. In fact we came up with the idea to create a a trip planner which offers a combination between socialising and planning for your trips.\\
 
 \begin{figure}[!h]
   \begin{center}
@@ -352,6 +353,14 @@ After a push to the master Travis will push the code to Heroku and run the datab
 \subsection{Testing}
 For this project we have three different layers of testing. This ensures that every aspect of our application is well tested and we will not break previous added functionality by adding a new feature. As mentioned previously, our build server (Travis CI) will take care of running those test automated.
 
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.40]{pictures/rake_tests.png}
+    \caption{A sample RSpec test run}
+    \label{fig:}
+  \end{center}
+\end{figure}
+
 \subsubsection{Model Tests}
 The model tests are relatively simple and they handle the lowest level of the site, the database layer. The tests check if the database requires the appropriate fields, before saving anything to the database. We have implemented model tests for all the features, to make sure the database is consistent.
 \\
@@ -478,6 +487,7 @@ In the second iteration I was understanding more and felt I could contribute mor
 
 \end{thebibliography}
 
+\pagebreak
 \appendix
 
 \section{User Stories}
@@ -583,6 +593,234 @@ In the second iteration I was understanding more and felt I could contribute mor
 \label{tab:sprint3}
 \end{table}
 
+
+\begin{landscape}
+\section{Time lists}
+
+\subsection{Meetings}
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{Project} & \textbf{Task Id} & \textbf{Task}  & \textbf{User} & \textbf{Date} & \textbf{Spent effort (hours)} \\ \hline
+Meetings &  359 & Group Meeting 23/06 & Everyone & \multicolumn{1}{r|}{23.06.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  358 & Group Meeting 16/06 & Everyone & \multicolumn{1}{r|}{16.06.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  357 & Group Meeting 09/06 & Everyone & \multicolumn{1}{r|}{09.06.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  356 & Group Meeting 02/06 & Everyone & \multicolumn{1}{r|}{02.06.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  355 & Group Meeting 26/05 & Everyone & \multicolumn{1}{r|}{26.05.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  354 & Group Meeting 19/05 & Everyone & \multicolumn{1}{r|}{19.05.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  353 & Group Meeting 12/05 & Everyone & \multicolumn{1}{r|}{12.05.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  352 & Group Meeting 05/05 & Everyone & \multicolumn{1}{r|}{05.05.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  351 & Group Meeting 28/04 & Everyone & \multicolumn{1}{r|}{28.04.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  350 & Group Meeting 21/04 & Everyone & \multicolumn{1}{r|}{21.04.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  349 & Group Meeting 14/04 & Everyone & \multicolumn{1}{r|}{14.04.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  348 & Group Meeting 07/04 & Everyone & \multicolumn{1}{r|}{07.04.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  347 & Group Meeting 01/04 & Everyone & \multicolumn{1}{r|}{01.04.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  346 & Group Meeting 24/03 & Everyone & \multicolumn{1}{r|}{24.03.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  345 & Group Meeting 17/03 & Everyone & \multicolumn{1}{r|}{17.03.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  344 & Group Meeting 10/03 & Everyone & \multicolumn{1}{r|}{10.03.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  343 & Group Meeting 03/03 & Everyone & \multicolumn{1}{r|}{03.03.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  342 & Group Meeting 24/02 & Everyone & \multicolumn{1}{r|}{24.02.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  341 & Group Meeting 17/02 & Everyone & \multicolumn{1}{r|}{17.02.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  340 & Group Meeting 10/02 & Everyone & \multicolumn{1}{r|}{10.02.2015 11:15} & \multicolumn{1}{r|}{7.00} \\ \hline
+Meetings &  38 & Group Meeting 04/02 & Everyone & \multicolumn{1}{r|}{04.02.2015 11:15} & \multicolumn{1}{r|}{7.00} \\ \hline
+Meetings &  4 & Group Meeting 03/02 & Everyone & \multicolumn{1}{r|}{03.02.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  3 & Group Meeting 28/01 & Everyone & \multicolumn{1}{r|}{28.01.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+Meetings &  5 & Group Meeting 21/01 & Everyone & \multicolumn{1}{r|}{21.01.2015 11:15} & \multicolumn{1}{r|}{14.00} \\ \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Bjørnar}
+\begin{tabular}{|l|l|l|l|r|r|}
+\hline
+\textbf{Iteration} & \textbf{Story Id} & \textbf{Comment} & \textbf{User} & \multicolumn{1}{l|}{\textbf{Date}} & \multicolumn{1}{l|}{\textbf{Spent effort (hours)}} \\ \hline
+1. Sprint & 52 & Finished the account registration & Bjørnar Grøholt Prytz & 10.02.2015 18:04 & 2.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 16.05.2015 15:44 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 15.05.2015 15:44 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 14.05.2015 15:49 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 29.04.2015 15:48 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 10.04.2015 15:43 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 09.04.2015 15:43 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 07.04.2015 15:43 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 19.03.2015 15:46 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 18.03.2015 15:43 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 16.03.2015 15:46 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 13.03.2015 15:46 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 11.03.2015 15:45 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 10.03.2015 15:41 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 07.03.2015 15:42 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 05.03.2015 15:41 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 04.03.2015 15:41 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 27.02.2015 15:40 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 26.02.2015 15:39 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 24.02.2015 15:38 & 4.00 \\ \hline
+3. Sprint & 171 &  & Bjørnar Grøholt Prytz & 21.02.2015 15:39 & 4.00 \\ \hline
+ & & & &\textbf{TOTAL}: & \textbf{127} \\ \hline
+\end{tabular}
+
+\subsection{Florian}
+\begin{tabular}{|l|l|l|l|r|r|}
+\hline
+\textbf{Iteration} & \textbf{Story Id} & \textbf{Comment} & \textbf{User} & \multicolumn{1}{l|}{\textbf{Date}} & \multicolumn{1}{l|}{\textbf{Spent effort (hours)}} \\ \hline
+1. Sprint & 152 & RSpec and Authorization & Florian Sauter & 24.02.2015 09:15 & 8.00 \\ \hline
+1. Sprint & 152 & Started implementation & Florian Sauter & 20.02.2015 17:19 & 3.00 \\ \hline
+1. Sprint & 78 & Theme & Florian Sauter & 17.02.2015 10:39 & 1.00 \\ \hline
+1. Sprint & 70 & Theme & Florian Sauter & 17.02.2015 10:38 & 1.00 \\ \hline
+1. Sprint & 66 & Logout Button and stuff & Florian Sauter & 17.02.2015 10:39 & 0.50 \\ \hline
+1. Sprint & 50 & More work on Heroku and Travis and the Theme & Florian Sauter & 17.02.2015 10:38 & 5.00 \\ \hline
+1. Sprint & 50 & Setup & Florian Sauter & 10.02.2015 10:28 & 4.00 \\ \hline
+1. Sprint & 87 & Theme for editing & Florian Sauter & 17.02.2015 10:40 & 0.50 \\ \hline
+1. Sprint & 52 & devise & Florian Sauter & 24.02.2015 11:52 & 3.00 \\ \hline
+1. Sprint & 52 & Theme & Florian Sauter & 17.02.2015 10:39 & 1.00 \\ \hline
+2. Sprint & 10 & Including Landing page & Florian Sauter & 02.04.2015 19:52 & 5.00 \\ \hline
+2. Sprint & 247 &  & Florian Sauter & 22.04.2015 12:43 & 5.00 \\ \hline
+2. Sprint & 172 & View updates (Theme) & Florian Sauter & 07.05.2015 19:50 & 4.00 \\ \hline
+2. Sprint & 154 & View updates no 2. & Florian Sauter & 08.04.2015 13:00 & 6.00 \\ \hline
+2. Sprint & 154 & View updates & Florian Sauter & 03.03.2015 20:54 & 5.00 \\ \hline
+2. Sprint & 154 & Test prepartion & Florian Sauter & 03.03.2015 20:53 & 3.00 \\ \hline
+2. Sprint & 211 & Improvements & Florian Sauter & 17.03.2015 16:27 & 2.00 \\ \hline
+2. Sprint & 211 & Finalization & Florian Sauter & 08.03.2015 03:41 & 3.00 \\ \hline
+2. Sprint & 211 & Improvements & Florian Sauter & 07.03.2015 23:17 & 3.00 \\ \hline
+2. Sprint & 211 & First tests/implementation & Florian Sauter & 05.03.2015 16:00 & 6.00 \\ \hline
+2. Sprint & 212 & Further improvements & Florian Sauter & 24.03.2015 09:40 & 3.00 \\ \hline
+2. Sprint & 212 & Improvements & Florian Sauter & 17.03.2015 16:28 & 1.00 \\ \hline
+2. Sprint & 212 & Implementation of Tests \& Views & Florian Sauter & 11.03.2015 12:38 & 6.00 \\ \hline
+2. Sprint & 212 & Prepartion of view files & Florian Sauter & 10.02.2015 16:28 & 2.00 \\ \hline
+3. Sprint & 280 & Code clean up (summoned) & Florian Sauter & 15.05.2015 12:50 & 10.00 \\ \hline
+3. Sprint & 231 & Cleaned up the request and friendship controller & Florian Sauter & 18.05.2015 12:51 & 6.00 \\ \hline
+3. Sprint & 231 & Updated the user page view & Florian Sauter & 15.05.2015 12:51 & 6.00 \\ \hline
+3. Sprint & 279 & General improvements. & Florian Sauter & 08.05.2015 12:48 & 6.00 \\ \hline
+3. Sprint & 279 & Discussion Form & Florian Sauter & 05.05.2015 12:48 & 4.00 \\ \hline
+ & & & &\textbf{TOTAL}: & \textbf{157} \\ \hline
+\end{tabular}
+
+
+\subsection{Ingvild}
+\begin{tabular}{|l|l|l|l|r|r|}
+\hline
+\textbf{Iteration} & \textbf{Story Id} & \textbf{Comment} & \textbf{User} & \multicolumn{1}{l|}{\textbf{Date}} & \multicolumn{1}{l|}{\textbf{Spent effort (hours)}} \\ \hline
+1. Sprint & 62 &  & Ingvild Kristiane Myrvang & 27.02.2015 10:01 & 3.00 \\ \hline
+1. Sprint & 52 & created register page & Ingvild Kristiane Myrvang & 08.02.2015 17:31 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 14.05.2015 15:19 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 12.05.2015 15:20 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 10.05.2015 15:21 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 07.05.2015 15:19 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 03.05.2015 15:22 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 13.04.2015 16:30 & 2.50 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 07.04.2015 15:30 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 25.03.2015 15:46 & 2.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 24.03.2015 11:10 & 1.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 19.03.2015 09:40 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 17.03.2015 09:41 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 16.03.2015 09:53 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 15.03.2015 09:40 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 13.03.2015 09:53 & 3.00 \\ \hline
+3. Sprint & 231 &  & Ingvild Kristiane Myrvang & 12.03.2015 09:43 & 3.00 \\ \hline
+ & & & &\textbf{TOTAL}: & \textbf{92.5} \\ \hline
+\end{tabular}
+
+\subsection{Kristoffer}
+\begin{tabular}{|l|l|l|l|r|r|}
+\hline
+\textbf{Iteration} & \textbf{Story Id} & \textbf{Comment} & \textbf{User} & \multicolumn{1}{l|}{\textbf{Date}} & \multicolumn{1}{l|}{\textbf{Spent effort (hours)}} \\ \hline
+1. Sprint & 66 &  & Kristoffer Myrseth Severinsen & 10.02.2015 18:07 & 3.00 \\ \hline
+1. Sprint & 52 & Finished the account registration & Kristoffer Myrseth Severinsen & 10.02.2015 18:04 & 2.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 18.05.2015 15:45 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 15.05.2015 15:44 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 14.05.2015 15:49 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 29.04.2015 15:48 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 10.04.2015 15:43 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 09.04.2015 15:43 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 07.04.2015 15:43 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 19.03.2015 15:46 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 18.03.2015 15:43 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 16.03.2015 15:46 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 13.03.2015 15:46 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 11.03.2015 15:45 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 10.03.2015 15:41 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 07.03.2015 15:42 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 05.03.2015 15:41 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 04.03.2015 15:41 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 27.02.2015 15:40 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 26.02.2015 15:39 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 24.02.2015 15:38 & 4.00 \\ \hline
+3. Sprint & 171 &  & Kristoffer Myrseth Severinsen & 21.02.2015 15:39 & 4.00 \\ \hline
+ & & & &\textbf{TOTAL}: & \textbf{130} \\ \hline
+\end{tabular}
+
+\subsection{Martin}
+\begin{tabular}{|l|l|l|l|r|r|}
+\hline
+\textbf{Iteration} & \textbf{Story Id} & \textbf{Comment} & \textbf{User} & \multicolumn{1}{l|}{\textbf{Date}} & \multicolumn{1}{l|}{\textbf{Spent effort (hours)}} \\ \hline
+1. Sprint & 152 & Started implementation & Martin Mikalsen & 20.02.2015 17:19 & 3.00 \\ \hline
+1. Sprint & 78 &  & Martin Mikalsen & 10.02.2015 18:10 & 3.00 \\ \hline
+1. Sprint & 70 & Controller test & Martin Mikalsen & 03.03.2015 16:18 & 3.00 \\ \hline
+1. Sprint & 70 &  & Martin Mikalsen & 10.02.2015 18:09 & 4.00 \\ \hline
+1. Sprint & 66 &  & Martin Mikalsen & 10.02.2015 18:09 & 3.00 \\ \hline
+1. Sprint & 50 & Helping :3  & Martin Mikalsen & 10.02.2015 18:01 & 4.00 \\ \hline
+1. Sprint & 92 &  & Martin Mikalsen & 10.02.2015 18:09 & 2.00 \\ \hline
+1. Sprint & 87 & refactoring test & Martin Mikalsen & 24.02.2015 11:52 & 2.00 \\ \hline
+1. Sprint & 87 &  & Martin Mikalsen & 10.02.2015 18:06 & 3.00 \\ \hline
+1. Sprint & 52 & devise & Martin Mikalsen & 24.02.2015 11:51 & 2.00 \\ \hline
+2. Sprint & 155 & Updated view & Martin Mikalsen & 04.04.2015 19:00 & 4.00 \\ \hline
+2. Sprint & 155 & Mostly done & Martin Mikalsen & 31.03.2015 19:35 & 7.00 \\ \hline
+2. Sprint & 155 & views/controller & Martin Mikalsen & 30.03.2015 19:35 & 4.00 \\ \hline
+2. Sprint & 155 & Model, controller and some tests made & Martin Mikalsen & 18.03.2015 10:14 & 4.00 \\ \hline
+2. Sprint & 155 & Implemnting & Martin Mikalsen & 17.03.2015 19:35 & 5.00 \\ \hline
+2. Sprint & 154 & Charts & Martin Mikalsen & 08.04.2015 13:29 & 12.00 \\ \hline
+2. Sprint & 154 & Continue on implenation & Martin Mikalsen & 11.03.2015 12:13 & 7.00 \\ \hline
+2. Sprint & 154 & Started with Equipment item & Martin Mikalsen & 06.03.2015 09:37 & 7.00 \\ \hline
+2. Sprint & 154 & Controller, view and controller tests & Martin Mikalsen & 04.03.2015 18:52 & 7.00 \\ \hline
+2. Sprint & 154 & Started creating the equipment list & Martin Mikalsen & 03.03.2015 20:52 & 6.00 \\ \hline
+3. Sprint & 280 & Clean up & Martin Mikalsen & 28.05.2015 19:47 & 2.00 \\ \hline
+3. Sprint & 231 & Cleaned up the request and friendship controller  & Martin Mikalsen & 18.05.2015 12:52 & 6.00 \\ \hline
+3. Sprint & 231 & updated the user page view & Martin Mikalsen & 15.05.2015 12:42 & 6.00 \\ \hline
+3. Sprint & 278 & Approximation timed used... & Martin Mikalsen & 24.05.2015 20:31 & 12.00 \\ \hline
+ & & & &\textbf{TOTAL}: & \textbf{165} \\ \hline
+\end{tabular}
+
+
+
+
+\subsection{Ole-Morten}
+\begin{tabular}{|l|l|l|l|r|r|}
+\hline
+\textbf{Iteration} & \textbf{Story Id} & \textbf{Comment} & \textbf{User} & \multicolumn{1}{l|}{\textbf{Date}} & \multicolumn{1}{l|}{\textbf{Spent effort (hours)}} \\ \hline
+1. Sprint & 151 &  & Ole-Morten Tangen & 27.02.2015 12:21 & 2.00 \\ \hline
+1. Sprint & 151 &  & Ole-Morten Tangen & 23.02.2015 12:19 & 6.00 \\ \hline
+1. Sprint & 151 &  & Ole-Morten Tangen & 20.02.2015 12:12 & 6.00 \\ \hline
+1. Sprint & 151 &  & Ole-Morten Tangen & 19.02.2015 12:18 & 4.00 \\ \hline
+1. Sprint & 151 &  & Ole-Morten Tangen & 18.02.2015 12:18 & 6.00 \\ \hline
+1. Sprint & 52 & Finished the account registration & Ole-Morten Tangen & 10.02.2015 18:04 & 2.00 \\ \hline
+2. Sprint & 206 &  & Ole-Morten Tangen & 27.03.2015 11:02 & 1.00 \\ \hline
+2. Sprint & 206 &  & Ole-Morten Tangen & 25.03.2015 11:04 & 3.00 \\ \hline
+2. Sprint & 206 &  & Ole-Morten Tangen & 24.03.2015 16:52 & 5.00 \\ \hline
+2. Sprint & 206 &  & Ole-Morten Tangen & 17.03.2015 16:01 & 3.00 \\ \hline
+2. Sprint & 206 &  & Ole-Morten Tangen & 16.03.2015 17:22 & 4.00 \\ \hline
+2. Sprint & 206 &  & Ole-Morten Tangen & 13.03.2015 12:39 & 1.00 \\ \hline
+2. Sprint & 206 &  & Ole-Morten Tangen & 11.03.2015 12:38 & 2.00 \\ \hline
+ & & & &\textbf{TOTAL}: & \textbf{90} \\ \hline
+\end{tabular}
+
+
+
+\subsection{Runar}
+\begin{tabular}{|l|l|l|l|r|r|}
+\hline
+\textbf{Iteration} & \textbf{Story Id} & \textbf{Comment} & \textbf{User} & \multicolumn{1}{l|}{\textbf{Date}} & \multicolumn{1}{l|}{\textbf{Spent effort (hours)}} \\ \hline
+1. Sprint & 62 &  & Runar Flåten & 28.05.2015 22:36 & 10.00 \\ \hline
+2. Sprint & 177 &  & Runar Flåten & 28.05.2015 22:34 & 10.00 \\ \hline
+2. Sprint & 172 &  & Runar Flåten & 28.05.2015 22:36 & 20.00 \\ \hline
+3. Sprint & 231 &  & Runar Flåten & 28.05.2015 22:35 & 15.00 \\ \hline
+3. Sprint & 171 &  & Runar Flåten & 28.05.2015 22:37 & 10.00 \\ \hline
+3. Sprint & 279 &  & Runar Flåten & 28.05.2015 22:34 & 4.00 \\ \hline
+ & & & &\textbf{TOTAL}: & \textbf{113} \\ \hline
+\end{tabular}
+
+
+
+
+\end{landscape}
 \end{document}
 
 %%% Local Variables:
