@@ -5,7 +5,12 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{tabulary}
-
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=ynt
+]{biblatex}
+\addbibresource{references.bib}
 \usepackage{setspace} 
 \DeclareUnicodeCharacter{00A0}{ }
 
@@ -30,22 +35,24 @@
 %----------------------------------------------------------------------------------------
 
 \HRule \\[0.5cm]
+\includegraphics[scale=0.25]{pictures/turi_logo.png}\\[0.5cm]
 { \huge \bfseries Turi}\\[0.5cm] % Title of your document
-\HRule \\[3cm]
+\HRule \\[1cm]
  
 %----------------------------------------------------------------------------------------
 %	AUTHOR SECTION
 %----------------------------------------------------------------------------------------
 
+
 % If you don't want a supervisor, uncomment the two lines below and remove the section above
 \Large \emph{Group:}\\
-1\\[2cm] % Your name
+1\\[1.5cm] % Your name
 % title
 %----------------------------------------------------------------------------------------
 %	DATE SECTION
 %----------------------------------------------------------------------------------------
 
-\textsc{\large Spring 2015}\\[4cm] % Date, change the \today to a set date if you want to be precise
+\textsc{\large Spring 2015}\\[3cm] % Date, change the \today to a set date if you want to be precise
 
 %----------------------------------------------------------------------------------------
 %	LOGO SECTION
@@ -214,11 +221,10 @@ In the first iterations we created our own authentication system, but we found o
 \subsection{Leaflet}
 \textit{Leaflet}\cite{leaflet} is a JavaScript library that let us implement the interactive map for the routes. Before discovering \textit{Leaflet}, we looked at a similar gem from Google, but it was too heavy for our requirements. As an example, Google Maps seemed to snap waypoints to the nearest road, which is counter-productive for us since we want the users to be able to plan any kind of trip, including hikes.
 
-
 \subsection{rails-asserts}
 
 \subsection{Geocoder}
-\textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location. 
+\textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location to show the location in the explore map. 
 
 \subsection{Puma}
 \textit{Puma} is a "simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications."\cite{puma}. Heroku recommend \textit{Puma} over the stock rails server (WEBrick) by saying that: "While WEBrick should be fine for development, it was not designed to handle a high concurrent workload that a Ruby app must serve in production. A production web server should be used instead."\cite{heroku_webserver}. Even tho Heroku only uses one core (for the free program), this secures that the project is ready for a deployment onto a multi-core server in the future.  
@@ -242,7 +248,10 @@ The text input is handled through a plugin named CKEditor\cite{CKEditor}. This p
 Generally implementing the blog was straight-forward to implement and the only issues that presented themselves were designing the tests and getting the interface to look presentable. The blog was assigned a single user story estimated at 5 points, which in retrospect seems fairly appropriate.
 
 \subsection{Share your trip (public setting)}
-A trip should we private to the participants of the trip, unless they decide it should be shared with the public. The public should only be able to view a small subset of the information about the trip, which the participant agrees to share.  Therefor each trip needs a private setting and it's own public view, this was the one of the main things we wanted to implement in the 3rd sprint for the project. 
+A trip should we private to the participants of the trip, unless they decide it should be shared with the public. The public should only be able to view a small subset of the information about the trip, which the participant agrees to share.  Therefor each trip needs a private setting and it's own public view, this was the one of the main things we wanted to implement in the 3rd sprint for the project. \\
+
+\noindent
+The implementation of the feature was quite straightforward, the thing that took the most time was the design of the public trip view, and finding out what and how we were going to show the different elements on a single page. We ended up using \emph{Kaminari}\cite{kaminari}, to "paginate" the different elements. For example if a trip has many public blog entries, only one of them are displayed on the page at the same time. 
 
 \subsection{Explore trips}
 
@@ -258,35 +267,46 @@ The solution used here is not the only possible solution. A second option would 
 \noindent
 The search system was assigned a single user story estimated at 8 points. The scoring of the story seemed appropriate as implementing search required some time to study the different options available and implement it. Not every field could be read through the same query which meant extra work for comparison and merging of search results before getting the final result. This led to some trial and error to get the query results correct. Unfortunately the user story in question only refers to searching for trips and not users and no additional user story were made for the user search. This means that there is no tracking available for the work done on the user search and no estimation for work load.
 
+
 \subsection{Route Planner}
+
+\noindent
 When planning a trip, it could be very useful to illustrate the route, and points of interests on a map. This map should be visible to all the participants, so that the route, or proposed route could be discussed.\\
 
 \noindent
-Bjørnar and Kristoffer was given the responsibility of implementing the feature, and when planning the second sprint a single user story (CITE) was created for the entire feature. The user story was given the maximum points for complexity by the scum poker session, thus it was expected that the entire feature was to be implemented during the second sprint.\\
+Bjørnar and Kristoffer was given the responsibility of implementing the feature, and when planning the second sprint a single user story (CITE) was created for the entire feature. The user story was given the maximum points for complexity by the scum poker session, thus it was expected that the entire feature was to be implemented during the second sprint. \\
 
 \noindent
-In retrospect, the user story could have been classified as an “epic”, with multiple fine-grained user stories. The implementation could have been divided into three main parts; the map control and GUI, the back-end model and controller, and the view. And given how the workload have been on this feature, we would have given the map control 13 points, the back-end, including tests would get 8 points, and the view would get about 3 points.\\
+In retrospect, the user story could have been classified as an “epic”, with multiple fine-grained user stories. The implementation could have been divided into three main parts; the map control and GUI, the back-end model and controller, and the view. And given how the workload have been on this feature, we would have given the map control 13 points, the back-end, including tests would get 8 points, and the view would get about 3 points. \\
 
 \noindent
-Implementing the feature was mainly done by pair-programming. This worked really well for the map, which was implemented in JavaScript, using the Leaflet API, where one was writing code, and the other was helping, and could very quickly look up manuals and documentation on the fly.\\
+Implementing the feature was mainly done by pair-programming. This worked really well for the map, which was implemented in JavaScript, using the Leaflet API, where one was writing code, and the other was helping, and could very quickly look up manuals and documentation on the fly. \\
 
 \noindent
-The model and controller was a bit more complicated for this feature, than for the other features. A route is a collection of waypoints, and at first, we thought about having these as two separate models,  but after some help from Runar, we decided on a structure where the route model uses nested-attributes of the waypoint model. This means that waypoints are passed as parameters of a route upon its creation instead of being appended after the fact.
-
-The model and controller was a bit more complicated for this feature, than for the other features. A route is a collection of waypoints, and at first, we thought about having these as two separate models,  but after some help from Runar, we decided on a structure where the route model uses nested-attributes of the waypoint model. This way a route is created all at once, and not by appending waypoints to a route. 
+The model and controller was a bit more complicated for this feature, than for the other features. A route is a collection of waypoints, and at first, we thought about having these as two separate models,  but after some help from Runar, we decided on a structure where the route model uses nested-attributes of the waypoint model. This means that waypoints are passed as parameters of a route upon its creation instead of being appended after the fact. \\
 
 \noindent
-We did not put much effort into the view during the implementation of the feature, and at the end, we did not feel this was a bad choice, since the group did not decide on a uniform design until at the end of the third sprint. And since Florian had put a lot of work into the layouts, applying a design to the views was trivial.\\
+We did not put much effort into the view during the implementation of the feature, and at the end, we did not feel this was a bad choice, since the group did not decide on a uniform design until at the end of the third sprint. And since Florian had put a lot of work into the layouts, applying a design to the views was trivial. \\
 
 \noindent
-\paragraph{(this part could be somewhere else??)}The feature was implemented on a separate branch on Github, and was only merged into the development branch at the end of the third sprint, when the feature was done. This was not a deliberate choice, but the view was always a work in progress, and we did not feel the feature was polished enough to be introduced in the master branch. There was also the continuous development functionality, that required that all tests needed to pass before a pull request could be accepted, and we did not start writing tests until at the end of the third sprint. 
+The feature was implemented on a separate branch on Github, and was only merged into the development branch at the end of the third sprint, when the feature was done. This was not a deliberate choice, but the view was always a work in progress, and we did not feel the feature was polished enough to be introduced in the master branch. There was also the continuous development functionality, that required that all tests needed to pass before a pull request could be accepted, and we did not start writing tests until at the end of the third sprint. \\
 
 \section{Other features}
 \subsection{Friend requests}
 
 \section{Tests}
-\subsection{Routes and Waypoints}
+\noindent
+The model tests model are simple tests, that tests the lowest level of the site, the database layer. The tests checks if the database requires the required fields, before saving anything to the database. We have implemented model tests for all the features, to make sure the database is consistent.
+\\
 
+\noindent
+The controller is responsible for handling the HTTP requests. Testing the controller means making sure privilege levels are enforced, and that the CRUD operations do no more, and no less, than they are supposed to. There are tests for all of our controller functions.
+\\
+
+\noindent
+The feature tests, are testing if the view is updated in the expected manor after a clicking a link, or doing some other action on the site it self. These test are not testing any of the underlying processes, and are not that important, though we have written feature tests for almost all of the features. 
+At total we have about 240 tests, and the test coverage according to CodeClimate is about 90 percent as seen in figure \ref{fig:codeclimate}.
+\\
 
 \section{Git}
 We use github.com instead of the git repository supplied to us from the school, this gave us the opportunity to work outside the school network. In addition it gave us the ability to use 3rd party applications, this is explained the following subsections. The githib repository address is: \url{https://github.com/turi-inc/turi}.
@@ -298,7 +318,7 @@ Travis CI is a hosted continuous integration service. It is integrated with GitH
   \begin{center}
     \includegraphics[scale=0.45]{pictures/Travis_buildlog.png}
     \caption{A sample of the build logs from Travis CI}
-    \label{fig:}
+    \label{fig:travis_log}
   \end{center}
 \end{figure}
 
@@ -314,7 +334,7 @@ CodeClimate also have some cool features like Trends over the "health" of our co
   \begin{center}
     \includegraphics[scale=0.45]{pictures/trends_code.png}
     \caption{CodeClimate trends}
-    \label{fig:}
+    \label{fig:codeclimate}
   \end{center}
 \end{figure}
 
@@ -329,9 +349,7 @@ This 3rd party application is used to show if there is any gem which is not up t
 %  \item {In the last iteration we mostly worked separate, since most of us had exams in other subjects. But we still had communication between the members. } *
 %  \item {Our own Google group, for discussion. } *
 %\end{itemize}
-When we got this assignment, we formed a Google Group to share our ideas and organize ourselves. It was also used to schedule weekly two-hour scrum meetings. These meetings started with a stand-up session, where everyone talked about what they were working on, any issues they had, and what they planned to work on that week.
 
-In the sprint planning meetings, we consistently used scrum poker after we had made sure all the user stories were clear to everyone. We did not do any retrospectives apart from the ones planned in the course, with Weihai Yu.
 
 \section{Group collaboration}
 When we got this assignment, we formed a Google Group to share our ideas and organize ourselves. It was also used to schedule weekly two-hour scrum meetings. These meetings started with a stand-up session, where everyone talked about what they were working on, any issues they had, and what they planned to work on that week.\\
@@ -372,7 +390,11 @@ A soon as a merge request is accepted, Travis CI will run again against the late
 After a push to the master Travis will push the code to Heroku and run the database migrations. Therefore we always have a stable snapshot version on heroku.
 
 \subsection{Conclusion of the workflow}
+\subsubsection{1st Sprint}
 
+
+\subsubsection{2nd Sprint}
+\subsubsection{3rd Sprint}
 
 \section{Something about the different sprints?}
 \begin{itemize}
@@ -423,34 +445,34 @@ I think the group communicated really well, and we've worked steadily, more or l
 \noindent
 All that said, I appreciated the benefits of agile development, and the scrum meetings were very useful and concise. Everyone got to have their say, and the group was excellent in the sense that we didn't try to overpower each other. The user stories were well defined with acceptance criteria, so knowing \textit{what} to do was never a problem. The course as a whole has given me useful insight into the perils of software engineering and working in groups, but also into the benefits. It can be a challenge to understand other people's code, or to satisfy everyone when a decision has to be made, but the group can also be a great resource when you're stuck with a seemingly insurmountable problem.
 
-\begin{thebibliography}{9}
-\bibitem{puma}
-\emph{Puma webserver - GitHub}\\
-\url{https://github.com/puma/puma}
 
-\bibitem{heroku_webserver}
-\emph{Heroku Ruby webserver advise}\\
-\url {https://devcenter.heroku.com/articles/ruby-default-web-server}
+\subsection{Martin}
+I think the group communication was good, the meeting each week gave us a opportunity to talk about our work and get feedback on the user stories we were working on and ask for help if we were stuck on something. By having a place to meet in the lab, gave us also the ability to ask each other questions about our code and the problem we faced underway in the development. \\ 
+The complexity did quickly increase in the second iteration of the project, it was hard to keep up all the changes. But we all worked on our own features so we didn't have to keep up with all the changes, so I think it worked out fine. \\
+As for Agilefant I think it's a useful tool, but it was really easy to forget to update. Therefor some of the user stories have a estimates time used. \\
 
-\bibitem{devise}
-\emph{Devise - GitHub}\\
-\url{https://github.com/plataformatec/devise}
+\noindent
+As for the course itself, it was quite interesting to learn web development, Ruby-on-Rails, Git and agile development. It's something completely different from the things we're done in the past. In addition to the the language and the version-control we also had to learn bootstrap, how to use the AppUI elements, how to design a HTML view and some basic JavaScript. 
 
 
-\bibitem{pundit}
-\emph{Pundit - GitHub}\\
-\url{https://github.com/elabs/pundit}
+
+\subsection{Kristoffer}
+\noindent
+For the first few weeks of this assignment the workload felt quite overwhelming since we had to learn so many new things before we could start the project. There was a new language, Ruby, and the web-framework, Rails. Then there was the tests, and the API for creating tests, FactoryGirl. And by our own choice, we went ahead with the map feature, and needed to learn JavaScript, and the leaflet API as well.  
+The initial shock, I think could have been alleviated if we used the Django web-framework instead, since we have used Python in previous courses. \\
+
+\noindent
+Our group was also very lucky to have the exchange student, Florian on the team, since he was very  experienced with creating web-applications. This made the project progress very fast in the beginning, and this again added to the already steep learning curve. \\
+
+\noindent
+The communication in the group may have been better organized, since we only had one formal meeting each week. However, it felt like there has been good communication in the group. All the members of the group have been sitting at the same place in the lab for the whole semester, even when working with other courses, and many days, the whole group was present. This made getting help when stuck, was very easy.\\
+
+\noindent
+Working in \cite{ckeditor} groups could be very tiresome, when there are issues in the group, or some members does not pull their weight. This has luckily not been the case for this assignment, and I felt that the group worked well together. \\
 
 
-\bibitem{leaflet}
-\emph{Leaflet JS}\\
-\url{http://leafletjs.com/}
 
-\bibitem{CKEditor}
-\emph{CKEditor}\\
-\url{https://en.wikipedia.org/wiki/CKEditor}
-
-\end{thebibliography}
+\printbibliography[heading=bibintoc, title={References}]
 
 \end{document}
 
