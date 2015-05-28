@@ -107,9 +107,9 @@ The name derived from the Norwegian word “tur” (a trip/a walk). turi was sho
 
 \subsection{Setup and Live Demo}
 
-With this report we delivered you the latest turi sources. To run the project just follow the steps in the README.md file in the root folder of the project. However you can checkout the latest sources also from our GitHub repository (\url{https://github.com/turi-inc/turi/}).\\
+With this report we delivered you the latest turi sources. To run the project just follow the steps in the README.md file in the root folder of the project. However you can checkout the latest sources also from our GitHub repository\footnote{\url{https://github.com/turi-inc/turi/}}.\\
 
-As a third option we uploaded a fully functional snapshot of the latest changes (we reset the snapshot after every push to our develop branch): \url{https://turi.herokuapp.com}
+As a third option we uploaded a fully functional snapshot of the latest changes (we reset the snapshot after every push to our develop branch).\footnote{\url{https://turi.herokuapp.com}}
 
 \subsection{Summary of goals (planned functionalities)}
 The following functionalities should be supported (bold means that we they were implemented during the course sprints):
@@ -135,7 +135,7 @@ The following functionalities should be supported (bold means that we they were 
 In the end we weren't able to implement all of our goals (the goals which are not in bold) and we had tons of more ideas. But for the first release of turi (1.0.0) we decided to require all these features above.\\
 
 \section{Theme and Design}
-The theme should be minimalistic and consistent. Therefore we decided to go with a existing theme and implement our features. We've gone with a theme named "AppUI"\footnote{http://themeforest.net/item/appui-web-app-bootstrap-admin-template/8603616}. It's available on the online platform "themeforest". It already includes a lot of sample pages so we only had to replace those placeholder widgets with our own views and partials.
+The theme should be minimalistic and consistent. Therefore we decided to go with a existing theme and implement our features. We've gone with a theme named "AppUI"\footnote{\url{http://themeforest.net/item/appui-web-app-bootstrap-admin-template/8603616}}. It's available on the online platform "themeforest". It already includes a lot of sample pages so we only had to replace those placeholder widgets with our own views and partials.
 
 \section{Gems}
 We use several gems in our project, this means that we didn't need to reinvent the wheel for features that already exist, and we could focus on our own features. All the gems used can be found in the gemfile in the project source, but the most important ones are the following.
@@ -150,7 +150,7 @@ In the first iterations we created our own authentication system, but we found o
 \textit{Leaflet}\cite{leaflet} is a JavaScript library that let us implement the interactive map for the routes. Before discovering \textit{Leaflet}, we looked at a similar gem from Google, but it was too heavy for our requirements. As an example, Google Maps seemed to snap waypoints to the nearest road, which is counter-productive for us since we want the users to be able to plan any kind of trip, including hikes.
 
 \subsection{rails-assets}
-Rails assets\footnote{https://rails-assets.org/} are used to include common JavaScript libraries which extend mainly jQuery and Bootstrap. Using the rails assets source, we can benefit from pre packaged JavaScript libraries which are automatically included in the rails asset pipeline.
+Rails assets\footnote{\url{https://rails-assets.org/}} are used to include common JavaScript libraries which extend mainly jQuery and Bootstrap. Using the rails assets source, we can benefit from pre packaged JavaScript libraries which are automatically included in the rails asset pipeline.
 
 \subsection{Geocoder}
 \textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location to show the location in the explore map. 
@@ -282,7 +282,7 @@ We use github.com instead of the git repository supplied to us from the school, 
 
 
 \subsubsection{Travis CI}
-Travis CI is a hosted continuous integration service. It is integrated with GitHub and provides testing for our project. So when we created a pull request on the development branch of the Github repository, Travis would test our new code automatically and give us a clear indication if the test was passing or not. When the pull request is merged with the development branch it would be tested once again by Travis to be sure that everything was working correctly before the pull request is automatically merged with the master branch of the repository. The log from Travis is public and can be viewed here: \url{https://travis-ci.org/turi-inc/turi/builds}.
+Travis CI is a hosted continuous integration service. It is integrated with GitHub and provides testing for our project. So when we created a pull request on the development branch of the Github repository, Travis would test our new code automatically and give us a clear indication if the test was passing or not. When the pull request is merged with the development branch it would be tested once again by Travis to be sure that everything was working correctly before the pull request is automatically merged with the master branch of the repository. The log from Travis is public and can be viewed online\footnote{\url{https://travis-ci.org/turi-inc/turi/builds}}.
 
 \begin{figure}[!h]
   \begin{center}
@@ -297,7 +297,7 @@ Travis CI is a hosted continuous integration service. It is integrated with GitH
 Heroku is a cloud platform which hosts our project for free. When a pull request is merged with the master branch it's automatically pushed to Heroku. This lets us, and other people, see a preview of the project. We had some minor problem getting this to work properly because we use Sqlite3 when we develop, but Heroku does not support Sqlite3 so we set the production database to use postgres instead.
 
 \subsubsection{CodeClimate}
-This is also a 3rd party application which checks our code for test coverage, complexity and duplications. The check is done on the master branch of the repository whenever a new pull request is merged with the branch. It gives us an indication about the code health and grades our code, on the basis of test coverage, complexity and duplications. The summary of the code climate of our project can be found here: \url{https://codeclimate.com/github/turi-inc/turi}. \\
+This is also a 3rd party application which checks our code for test coverage, complexity and duplications. The check is done on the master branch of the repository whenever a new pull request is merged with the branch. It gives us an indication about the code health and grades our code, on the basis of test coverage, complexity and duplications. The summary of the code climate of our project can be found online\footnote{\url{https://codeclimate.com/github/turi-inc/turi}}. \\
 \textit{CodeClimate} also has additional features like Trends over the "health" of our code over time, and the location "hotspots" in the code. In figure \ref{fig:codeclimate} we can see three charts. The top chart displays the overall quality of the code according to code climate. We had a small breakdown at the end since we added a lot of functionality in the end and ended up with some complex or duplicated methods. We checked the issues \textit{CodeClimate} showed us and came to the conclusion that these complex or duplicated methods are totally okay in our case. The Churn vs. Quality chart displays if classes are changed very frequently. In our case we had some classes which were under heavy development during all iterations. But this also relates to only 3 classes (yellow dots).
 
 \begin{figure}[!h]
@@ -541,6 +541,7 @@ In the second iteration I was understanding more and felt I could contribute mor
     &SUM & 53 \\ \hline
   \end{tabulary}
   \caption{Sprint 1 user stories}
+\label{tab:sprint1}
 \end{table}
 
 \begin{table}[H]
