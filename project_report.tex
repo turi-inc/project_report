@@ -5,7 +5,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{tabulary}
-\usepackage{wrapfig}
+%\usepackage{wrapfig}
 %\usepackage[
 %backend=biber,
 %style=numeric,
@@ -239,14 +239,14 @@ In the first iterations we created our own authentication system, but we found o
 The trip and it's features are the main focus of our project. 
 \subsection{Discussion}
 
-\begin{wrapfigure}[16]{r}{0.5\textwidth}
+\begin{figure}%[0]{r}{0.5\textwidth}
   \begin{center}
-    \vspace{-40pt}
+    \vspace{-0pt}
     \includegraphics[width=0.5\textwidth]{pictures/discussion}
-    \caption{Turi discussion}
   \label{fig:discussion}
   \end{center}
-\end{wrapfigure}
+\caption{Turi discussion}
+\end{figure}
 
 This feature is for discussion among the trip participants. If something needs discussion considering the trip, this is a place where the participants can come to an agreement. All participants can create a new discussion and comment on others and their own discussions. In figure \ref{fig:discussion} is an example of the discussion feature. At the top of the figure is the title of discussion. Next to it is the name of the discussion creator and how long since it was created. Below the title are the comments to the discussion. Each comment has information of who created it, how long since it was created and an image of the creator if available. Adding new comments to the discussion is done by exchanging data to the server using AJAX \footnote{\AJAX}. This gives a smoother experience for the commentator. 
 
@@ -485,11 +485,42 @@ Our group was also very lucky to have the exchange student, Florian on the team,
 The communication in the group may have been better organized, since we only had one formal meeting each week. However, it felt like there has been good communication in the group. All the members of the group have been sitting at the same place in the lab for the whole semester, even when working with other courses, and many days, the whole group was present. This made getting help when stuck, was very easy.\\
 
 \noindent
-Working in \cite{ckeditor} groups could be very tiresome, when there are issues in the group, or some members does not pull their weight. This has luckily not been the case for this assignment, and I felt that the group worked well together. \\
-
+Working in groups could be very tiresome, when there are issues in the group, or some members does not pull their weight. This has luckily not been the case for this assignment, and I felt that the group worked well together. \\
 
 
 %\printbibliography[heading=bibintoc, title={References}]
+
+\begin{thebibliography}{9}
+
+\bibitem{puma}
+\emph{Puma webserver - GitHub}\\
+\url{https://github.com/puma/puma}
+
+\bibitem{heroku_webserver}
+\emph{Heroku Ruby webserver advise}\\
+\url {https://devcenter.heroku.com/articles/ruby-default-web-server}
+
+\bibitem{devise}
+\emph{Devise - GitHub}\\
+\url{https://github.com/plataformatec/devise}
+
+\bibitem{pundit}
+\emph{Pundit - GitHub}\\
+\url{https://github.com/elabs/pundit}
+
+\bibitem{leaflet}
+\emph{Leaflet JS}\\
+\url{http://leafletjs.com/}
+
+\bibitem{CKEditor}
+\emph{CKEditor}\\
+\url{https://en.wikipedia.org/wiki/CKEditor}
+
+\bibitem{kaminari}
+\emph{Kaminari - GitHub}\\
+\url{https://github.com/amatsuda/kaminari}
+
+\end{thebibliography}
 
 \end{document}
 
