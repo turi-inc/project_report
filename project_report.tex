@@ -116,114 +116,6 @@ The following functionalities should be supported (bold means that we they were 
 \noindent
 In the end we weren't able to implement all of our goals (the goals which are not in bold) and we had tons of more ideas. But for the first release of turi (1.0.0) we decided to require all these features above.\\
 
-\section{The development process}
-
-\subsection{User stories}
-\label{sec:user-stories}
-
-
-
-\begin{table}
-  \begin{tabulary}{1.0\textwidth}{|L|L|L|}
-    \hline
-    N. & User story & Pts \\ \hline
-    
-    1&As a user, I want to look at the website during the development, so that I can see the progress.
-    & 5 \\ \hline
-    
-    2&As a user, I want to be able to register on the web page, so that I can login into the planner.
-    & 5 \\ \hline
-
-    3&As a logged in user, I want to be able to see my account page, so that I can get an overview of my activity and information.
-    & 5 \\ \hline
-
-    4&As a logged in user, I want to create a trip, so that I can plan it. 
-    & 8 \\ \hline
-
-    5&As a registerd user, I want to be able to log in and start a session, and log out, to prevent access to my personal data. & 3 \\ \hline
-
-    6&As an owner of a trip, I want to be able to edit the details, so that I can redo or add information. & 5 \\ \hline
-
-    7&As a logged in user, I want to be able to see a details page of my trip, so that I can display the details of my trip. & 3 \\ \hline
-
-    8&As an owner of a trip, I want to be able to delete the trip, so that I can delete my data because I am not planning on going anyway. & 3 \\ \hline
-
-    9&As a User I want to be able to share my trips (like the google drive sharing model) & 8 \\ \hline
-
-    10&As a user I want to be able to search for trips so that I can easily look up relevant trips. & 8 \\ \hline
-    &SUM & 53 \\ \hline
-  \end{tabulary}
-  \caption{Sprint 1 user stories}
-\end{table}
-
-\begin{table}
-  \centering
-  \begin{tabulary}{1.0\textwidth}{|L|L|L|}
-    \hline
-    N. & User story & Pts \\ \hline
-
-    1&As a trip user I want to be able to create events for my trip so that I can organize my trip with the other participant.
-    & 5 \\ \hline
-
-    2&As a trip user I want to be able to connect my trip with a dropbox folder to show the other participants the pictures on it
-    & 8 \\ \hline
-
-    3 &As a User I want to be able to create and manage an equipment list for my trip. 
-    & 8 \\ \hline
-
-    4 & As a User I want to be able to assign equipment Items to a user (to mark that he has bought it e.g.).
-    & 5 \\ \hline
-
-    5& As a trip owner or editor I want to be able to create blog articles so that I can share my trip experience or planning results
-    & 5 \\ \hline
-
-    6& As a person I want to share turi on social networks so that my friends or other people get to know the site.
-    & 1 \\ \hline
-
-    7& As a user I want to be able to reset my password so that I can login, because I forgot my password.
-    &5 \\ \hline
-
-    8& As a Trip User I want to be able to have a discussion forum for my trip.
-    & 8 \\ \hline
-
-    9& As a user I want to explore trips using a map.
-    & 8 \\ \hline
-
-    &SUM&53 \\ \hline
-
-    
-  \end{tabulary}
-  \caption{Sprint 2 user stories}
-\label{tab:sprint2}
-\end{table}
-
-\begin{table}
-  \centering
-  \begin{tabulary}{1.0\linewidth}{|L|L|L|}
-    \hline
-    N. & User story & Pts \\ \hline
-    1& As a developer I want to have a clean code structure.
-    & ? \\ \hline
-
-    2& As a user I want to have a uniform user interface.
-    & ? \\ \hline
-
-    3& As a user I want to be able to set the privacy of my trip to public or private.
-    & ? \\ \hline
-
-    4&As a user I want to manage my friends so I can stay in touch with my friends on the site.
-    & 5 \\ \hline
-
-    5& As a Trip User I want to be able to create maps with different routes using waypoints for a trip.
-    & 13 \\ \hline
-
-    & SUM & ? \\ \hline
-  \end{tabulary}
-  \caption{Sprint 3 user stories}
-\label{tab:sprint3}
-\end{table}
-
-\section{Design of the site}
 \section{Theme and Design}
 The theme should be minimalistic and consistent. Therefore we decided to go with a existing theme and implement our features. We've gone with a theme named "AppUI". It's available on the online platform "themeforest". It already includes a lot of sample pages so we only had to replace those placeholder widgets with our own views and partials. For more information about this theme you can have a look at "http://themeforest.net/item/appui-web-app-bootstrap-admin-template/8603616".
 
@@ -590,7 +482,7 @@ In the second iteration I was understanding more and felt I could contribute mor
     1&As a user, I want to look at the website during the development, so that I can see the progress.
     & 5 \\ \hline
     
-    2&As an user, I want to be able to register on the web page, so that I can login into the planner.
+    2&As a user, I want to be able to register on the web page, so that I can login into the planner.
     & 5 \\ \hline
 
     3&As a logged in user, I want to be able to see my account page, so that I can get an overview of my activity and information.
@@ -603,7 +495,7 @@ In the second iteration I was understanding more and felt I could contribute mor
 
     6&As an owner of a trip, I want to be able to edit the details, so that I can redo or add information. & 5 \\ \hline
 
-    7&As a logged in user, I want to be able to see a detail page of my trip, so that I can display the details of my trip. & 3 \\ \hline
+    7&As a logged in user, I want to be able to see a details page of my trip, so that I can display the details of my trip. & 3 \\ \hline
 
     8&As an owner of a trip, I want to be able to delete the trip, so that I can delete my data because I am not planning on going anyway. & 3 \\ \hline
 
@@ -621,19 +513,19 @@ In the second iteration I was understanding more and felt I could contribute mor
     \hline
     N. & User story & Pts \\ \hline
 
-    1&As an trip user I want to be able to create events for my trip so that I can organize my trip with the other participant.
+    1&As a trip user I want to be able to create events for my trip so that I can organize my trip with the other participant.
     & 5 \\ \hline
 
-    2&As an trip user I want to be able to connect my trip with a dropbox folder to show the other participants the pictures on it
+    2&As a trip user I want to be able to connect my trip with a dropbox folder to show the other participants the pictures on it
     & 8 \\ \hline
 
-    3 &As an User I want to be able to create and manage an equipment list for my trip. 
+    3 &As a User I want to be able to create and manage an equipment list for my trip. 
     & 8 \\ \hline
 
-    4 & As an User I want to be able to assign equipment Items to a user (to mark that he has bought it e.g.).
+    4 & As a User I want to be able to assign equipment Items to a user (to mark that he has bought it e.g.).
     & 5 \\ \hline
 
-    5& As an trip owner or editor I want to be able to create blog articles so that I can share my trip experience or planning results
+    5& As a trip owner or editor I want to be able to create blog articles so that I can share my trip experience or planning results
     & 5 \\ \hline
 
     6& As a person I want to share turi on social networks so that my friends or other people get to know the site.
@@ -642,7 +534,7 @@ In the second iteration I was understanding more and felt I could contribute mor
     7& As a user I want to be able to reset my password so that I can login, because I forgot my password.
     &5 \\ \hline
 
-    8& As an Trip User I want to be able to have a discussion forum for my trip.
+    8& As a Trip User I want to be able to have a discussion forum for my trip.
     & 8 \\ \hline
 
     9& As a user I want to explore trips using a map.
@@ -664,10 +556,10 @@ In the second iteration I was understanding more and felt I could contribute mor
     1& As a developer I want to have a clean code structure.
     & 5 \\ \hline
 
-    2& As an user I want to have a uniform user interface.
+    2& As a user I want to have a uniform user interface.
     & 5 \\ \hline
 
-    3& As an user I want to be able to set the privacy of my trip to public or private.
+    3& As a user I want to be able to set the privacy of my trip to public or private.
     & 3 \\ \hline
 
     4&As a user I want to manage my friends so I can stay in touch with my friends on the site.
