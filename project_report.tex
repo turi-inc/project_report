@@ -5,13 +5,13 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{tabulary}
-%\usepackage{wrapfig}
-%\usepackage[
-%backend=biber,
-%style=numeric,
-%sorting=ynt
-%]{biblatex}
-%\addbibresource{references.bib}
+\usepackage{wrapfig}
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=ynt
+]{biblatex}
+\addbibresource{references.bib}
 \usepackage{setspace} 
 \DeclareUnicodeCharacter{00A0}{ }
 
@@ -138,7 +138,7 @@ Rails assets are used to include common JavaScript libraries which extend mainly
 \textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location to show the location in the explore map. 
 
 \subsection{Puma}
-\textit{Puma} is a "simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications."\cite{puma}. Heroku recommend \textit{Puma} over the stock rails server (WEBrick) by saying that: "While WEBrick should be fine for development, it was not designed to handle a high concurrent workload that a Ruby app must serve in production. A production web server should be used instead."\cite{heroku_webserver}. Even though Heroku only uses one core (for the free program), this ensures that the project is ready for deployment onto a multi-core server in the future.  
+\textit{Puma} is a "simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications."\cite{puma}. Heroku recommend \textit{Puma} over the stock rails server (WEBrick) by saying that: "While WEBrick should be fine for development, it was not designed to handle a high concurrent workload that a Ruby app must serve in production. A production web server should be used instead."\cite{heroku}. Even though Heroku only uses one core (for the free program), this ensures that the project is ready for deployment onto a multi-core server in the future.  
 
 
 \section{Trip Features}
@@ -169,7 +169,7 @@ The gallery feature enables the integration of Dropbox \footnote{\DROPBOX}. The 
 The blog platform allows a trip editor to create a blog associated with the trip. The user can edit the blog through a simple editor interface which also allows for URLs and images. A blog can be marked as public, which means that non-participants can read it. The platform has a blog index list which lists the blogs in order of creation and shows an excerpt from each entry.\\
 
 \noindent
-The text input is handled through a plug-in named CKEditor\cite{CKEditor}. This plug-in integrates with a text area and allows the user to work with text in a similar fashion as a regular text editor It automatically adds the appropriate HTML tags necessary to render the text properly in a browser. By default the editor has an overwhelming amount of tools available, but for this implementation the number of tools has been greatly reduced to remove unneeded functions and improve ease-of-use.\\
+The text input is handled through a plug-in named CKEditor\cite{ckeditor}. This plug-in integrates with a text area and allows the user to work with text in a similar fashion as a regular text editor It automatically adds the appropriate HTML tags necessary to render the text properly in a browser. By default the editor has an overwhelming amount of tools available, but for this implementation the number of tools has been greatly reduced to remove unneeded functions and improve ease-of-use.\\
 
 \noindent
 In general, implementing the blog was straight-forward to implement and the only issues that presented themselves were designing the tests and getting the interface to look presentable. The blog was assigned a single user story estimated at 5 points, which in retrospect seems fairly appropriate.
@@ -435,39 +435,39 @@ I, as most of the other in the group, was overwhelmed by the amount of new thing
 \noindent
 In the second iteration I was understanding more and felt I could contribute more to the implementation of the features. Me and Ingvild pair programmed two features together during the second and third iteration. We used the pomodoro technique \cite{pomodoro}, which means we made a list of things to implement the next 25 minutes and then we started working hard together to complete these things. After 25 minutes we had a 5 minute break. Then we repeated the pattern. This worked very good for us and we got a boost in productivity.
 
-%\printbibliography[heading=bibintoc, title={References}]
+\printbibliography[heading=bibintoc, title={References}]
 
-\begin{thebibliography}{9}
+% \begin{thebibliography}{9}
 
-\bibitem{puma}
-\emph{Puma webserver - GitHub}\\
-\url{https://github.com/puma/puma}
+% \bibitem{puma}
+% \emph{Puma webserver - GitHub}\\
+% \url{https://github.com/puma/puma}
 
-\bibitem{heroku_webserver}
-\emph{Heroku Ruby webserver advise}\\
-\url {https://devcenter.heroku.com/articles/ruby-default-web-server}
+% \bibitem{heroku}
+% \emph{Heroku Ruby webserver advise}\\
+% \url {https://devcenter.heroku.com/articles/ruby-default-web-server}
 
-\bibitem{devise}
-\emph{Devise - GitHub}\\
-\url{https://github.com/plataformatec/devise}
+% \bibitem{devise}
+% \emph{Devise - GitHub}\\
+% \url{https://github.com/plataformatec/devise}
 
-\bibitem{pundit}
-\emph{Pundit - GitHub}\\
-\url{https://github.com/elabs/pundit}
+% \bibitem{pundit}
+% \emph{Pundit - GitHub}\\
+% \url{https://github.com/elabs/pundit}
 
-\bibitem{leaflet}
-\emph{Leaflet JS}\\
-\url{http://leafletjs.com/}
+% \bibitem{leaflet}
+% \emph{Leaflet JS}\\
+% \url{http://leafletjs.com/}
 
-\bibitem{CKEditor}
-\emph{CKEditor}\\
-\url{https://en.wikipedia.org/wiki/CKEditor}
+% \bibitem{ckeditor}
+% \emph{CKEditor}\\
+% \url{https://en.wikipedia.org/wiki/CKEditor}
 
-\bibitem{kaminari}
-\emph{Kaminari - GitHub}\\
-\url{https://github.com/amatsuda/kaminari}
+% \bibitem{kaminari}
+% \emph{Kaminari - GitHub}\\
+% \url{https://github.com/amatsuda/kaminari}
 
-\end{thebibliography}
+% \end{thebibliography}
 
 \appendix
 
