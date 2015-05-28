@@ -6,7 +6,6 @@
 \usepackage{hyperref}
 \usepackage{tabulary}
 \usepackage{lscape}
-
 \usepackage[
 			portrait,
 			bindingoffset=1.5cm,
@@ -15,6 +14,8 @@
 			top=3cm,
 			bottom=3cm
 				]{geometry}
+\usepackage{float}
+\restylefloat{table}
 %\usepackage{wrapfig}
 %\usepackage[
 %backend=biber,
@@ -103,6 +104,12 @@ You can now either use the phone or create e.g. some Facebook group. Still those
 \subsection{The product name: turi}
 The name derived from the Norwegian word “tur” (a trip/a walk). turi was short and concise enough and sounds good to the ear. It is also a Norwegian name, but this will be no problem when we think about topics like a trademark etc.
 
+\subsection{Setup and Live Demo}
+
+With this report we delivered you the latest turi sources. To run the project just follow the steps in the README.md file in the root folder of the project. However you can checkout the latest sources also from our GitHub repository (\url{https://github.com/turi-inc/turi/}).\\
+
+As a third option we uploaded a fully functional snapshot of the latest changes (we reset the snapshot after every push to our develop branch): \url{https://turi.herokuapp.com}
+
 \subsection{Summary of goals (planned functionalities)}
 The following functionalities should be supported (bold means that we they were implemented during the course sprints):
 \begin{itemize}
@@ -127,7 +134,7 @@ The following functionalities should be supported (bold means that we they were 
 In the end we weren't able to implement all of our goals (the goals which are not in bold) and we had tons of more ideas. But for the first release of turi (1.0.0) we decided to require all these features above.\\
 
 \section{Theme and Design}
-The theme should be minimalistic and consistent. Therefore we decided to go with a existing theme and implement our features. We've gone with a theme named "AppUI". It's available on the online platform "themeforest". It already includes a lot of sample pages so we only had to replace those placeholder widgets with our own views and partials. For more information about this theme you can have a look at "http://themeforest.net/item/appui-web-app-bootstrap-admin-template/8603616".
+The theme should be minimalistic and consistent. Therefore we decided to go with a existing theme and implement our features. We've gone with a theme named "AppUI". It's available on the online platform "themeforest". It already includes a lot of sample pages so we only had to replace those placeholder widgets with our own views and partials. For more information about this theme you can have a look at \url{http://themeforest.net/item/appui-web-app-bootstrap-admin-template/8603616}.
 
 \section{Gems}
 We use several gems in our project, this means that we didn't need to reinvent the wheel for features that already exist, and we could focus on our own features. All the gems used can be found in the gemfile in the project source, but the most important ones are the following.
@@ -142,7 +149,7 @@ In the first iterations we created our own authentication system, but we found o
 \textit{Leaflet}\cite{leaflet} is a JavaScript library that let us implement the interactive map for the routes. Before discovering \textit{Leaflet}, we looked at a similar gem from Google, but it was too heavy for our requirements. As an example, Google Maps seemed to snap waypoints to the nearest road, which is counter-productive for us since we want the users to be able to plan any kind of trip, including hikes.
 
 \subsection{rails-assets}
-Rails assets are used to include common JavaScript libraries which extend mainly jQuery and Bootstrap. Using the rails assets source, we can benefit from pre packaged JavaScript libraries which are automatically included in the rails asset pipeline. For more information you can refer the rails asset website: https://rails-assets.org/
+Rails assets are used to include common JavaScript libraries which extend mainly jQuery and Bootstrap. Using the rails assets source, we can benefit from pre packaged JavaScript libraries which are automatically included in the rails asset pipeline. For more information you can refer the rails asset website: \url{https://rails-assets.org/}
 
 \subsection{Geocoder}
 \textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location to show the location in the explore map. 
@@ -210,7 +217,7 @@ The search system was assigned a single user story estimated at 8 points. The sc
 
 \begin{figure}[!h]
   \begin{center}
-    \includegraphics[width=0.5\textwidth]{pictures/route_planning}
+    \includegraphics[width=1\textwidth]{pictures/route_planning}
   \end{center}
 \caption{Turi Route Planner}
 \label{fig:route}
@@ -261,8 +268,17 @@ The feature tests, are testing if the view is updated in the expected manner aft
 At total we have about 240 tests, and the test coverage according to CodeClimate is about 90 percent as seen in figure \ref{fig:codeclimate}.
 \\
 
-\section{Git}
-We use github.com instead of the git repository supplied to us from the school, this gave us the opportunity to work outside the school network. In addition it gave us the ability to use 3rd party applications, this is explained the following subsections. The GitHub repository address is: \url{https://github.com/turi-inc/turi}.
+\section{GitHub}
+We use github.com instead of the git repository supplied to us from the school, this gave us the opportunity to work outside the school network. In addition it gave us the ability to use 3rd party applications, this is explained the following subsections. The GitHub repository address is: \url{https://github.com/turi-inc/turi}. Due to the third party applications we could add some embedded bagdes to our README.md file which is displayed when you visit the GitHub project file (see figure \ref{fig:badges}). This gives us always an overview about the current project state.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[scale=0.7]{pictures/badges.png}
+    \caption{Project Health on the GitHub Project Site}
+    \label{fig:badges}
+  \end{center}
+\end{figure}
+
 
 \subsubsection{Travis CI}
 Travis CI is a hosted continuous integration service. It is integrated with GitHub and provides testing for our project. So when we created a pull request on the development branch of the Github repository, Travis would test our new code automatically and give us a clear indication if the test was passing or not. When the pull request is merged with the development branch it would be tested once again by Travis to be sure that everything was working correctly before the pull request is automatically merged with the master branch of the repository. The log from Travis is public and can be viewed here: \url{https://travis-ci.org/turi-inc/turi/builds}.
@@ -281,7 +297,7 @@ Heroku is a cloud platform which hosts our project for free. When a pull request
 
 \subsubsection{CodeClimate}
 This is also a 3rd party application which checks our code for test coverage, complexity and duplications. The check is done on the master branch of the repository whenever a new pull request is merged with the branch. It gives us an indication about the code health and grades our code, on the basis of test coverage, complexity and duplications. The summary of the code climate of our project can be found here: \url{https://codeclimate.com/github/turi-inc/turi}. \\
-\textit{CodeClimate} also has additional features like Trends over the "health" of our code over time, and the location "hotspots" in the code. In Figure \ref{fig:codeclimate} we can see three charts. The top chart displays the overall quality of the code according to code climate. We had a small breakdown at the end since we added a lot of functionality in the end and ended up with some complex or duplicated methods. We checked the issues \textit{CodeClimate} showed us and came to the conclusion that these complex or duplicated methods are totally okay in our case. The Churn vs. Quality chart displays if classes are changed very frequently. In our case we had some classes which were under heavy development during all iterations. But this also relates to only 3 classes (yellow dots).
+\textit{CodeClimate} also has additional features like Trends over the "health" of our code over time, and the location "hotspots" in the code. In figure \ref{fig:codeclimate} we can see three charts. The top chart displays the overall quality of the code according to code climate. We had a small breakdown at the end since we added a lot of functionality in the end and ended up with some complex or duplicated methods. We checked the issues \textit{CodeClimate} showed us and came to the conclusion that these complex or duplicated methods are totally okay in our case. The Churn vs. Quality chart displays if classes are changed very frequently. In our case we had some classes which were under heavy development during all iterations. But this also relates to only 3 classes (yellow dots).
 
 \begin{figure}[!h]
   \begin{center}
@@ -298,7 +314,7 @@ This 3rd party application is used to show if any of the gems are outdated, and 
 When we got this assignment, we formed a Google Group to share our ideas and organize ourselves. It was also used to schedule weekly two-hour scrum meetings. These meetings started with a stand-up session, where everyone talked about what they were working on, any issues they had, and what they planned to work on that week.\\
 
 \noindent
-In the sprint planning meetings, we consistently used scrum poker after we had made sure all the user stories were clear to everyone. We did not do any retrospectives apart from the ones planned in the course, with Weihai Yu.\\
+In the sprint planning meetings, we consistently used scrum poker after we had made sure all the user stories were clear to everyone. We did not do any retrospectives apart from the ones planned in the course, with Weihai Yu. You can find the report of our first retrospective in appendix \ref{rep:retro1}.\\
 
 \noindent
 Day to day we sat together in the lab, what ever each of us were working on. This meant that if one of us had an issue, they always had someone they could ask for help without too much effort. Everyone in the group was very helpful, so this arrangement worked out perfectly. Many of the programming sessions were done in pairs, which is a great way to avoid getting stuck for too long. During the last iteration, the weekly meetings were getting shorter and more informal because we prioritized programming, and we communicated naturally on an on-demand basis.
@@ -380,14 +396,14 @@ For the first iteration we focused on getting the basic features for the website
 \noindent
 During development we learned that we could save time if we checked for existing gems before attempting to implement functionality from scratch. This showed up in the authentication part where we first attempted to code our own authentication system. In addition, based on the feedback from the code reviews we learned that we had to use more controller and model tests and lower the focus on feature tests.
 
-\subsubsection{Retrospective}
-During this retrospective we wrote down our thoughts on the project, the group and anything relating to these. Each member wrote down their thoughts and passed the paper to their left. This continued until the papers returned at their original owners, with other members' thoughts added. The retrospect finished with the group members thanking each other for bringing something to the group.
+\subsubsection{Retrospective 1}
+During the first retrospective we wrote down our thoughts on the project, the group and anything relating to these. Each member wrote down their thoughts and passed the paper to their left. This continued until the papers returned at their original owners, with other members' thoughts added. The retrospect finished with the group members thanking each other for bringing something to the group. You can find the report of our first retrospective in appendix \ref{rep:retro1}.
 
 \subsection{Iteration 2}
 This iteration we decided to start implementing more and larger features. As the basic trip and authentication features were complete, the focus was on supporting features like blog and discussion platforms, maps, equipment lists, friends and an event calendar.
 
-\subsubsection{Retrospective}
-During the retrospective we talked about how we were doing with various parts of the project and each member had a graph with six categories they were supposed to rate. The results showed something of a consensus for planning, development, user stories and coding. Almost everyone rated these highly, indicating these categories were handled well. Communication varied, with both high and low ratings. Some wanted more formal meetings while others thought the communication was good enough already since we usually worked in close proximity to each other and talked together while working. Documentation was rated low because we had not been creating much documentation. What we learned was that the git commits and the data from Travis also counted as documentation, meaning that we were not as lacking in this department as we first thought.
+\subsubsection{Retrospective 2}
+During the second retrospective we talked about how we were doing with various parts of the project and each member had a graph with six categories they were supposed to rate. The results showed something of a consensus for planning, development, user stories and coding. Almost everyone rated these highly, indicating these categories were handled well. Communication varied, with both high and low ratings. Some wanted more formal meetings while others thought the communication was good enough already since we usually worked in close proximity to each other and talked together while working. Documentation was rated low because we had not been creating much documentation. What we learned was that the git commits and the data from Travis also counted as documentation, meaning that we were not as lacking in this department as we first thought.
 
 \subsection{Iteration 3}
 This iteration saw very few new features. The only notable feature was an addition to the friendship system in the form of proper friend requests. We focused on finishing the features that were still unfinished at the end of iteration 2, namely the route planner and equipment lists. The main work went into making the interface design for our features coherent and doing bug fixes.
@@ -493,7 +509,7 @@ In the second iteration I was understanding more and felt I could contribute mor
 \section{User Stories}
 \label{sec:user-stories}
 
-\begin{table}[!h]
+\begin{table}[H]
   \begin{tabulary}{1.0\textwidth}{|L|L|L|}
     \hline
     N. & User story & Pts \\ \hline
@@ -526,7 +542,7 @@ In the second iteration I was understanding more and felt I could contribute mor
   \caption{Sprint 1 user stories}
 \end{table}
 
-\begin{table}[!h]
+\begin{table}[H]
   \centering
   \begin{tabulary}{1.0\textwidth}{|L|L|L|}
     \hline
@@ -567,7 +583,7 @@ In the second iteration I was understanding more and felt I could contribute mor
 \label{tab:sprint2}
 \end{table}
 
-\begin{table}[!h]
+\begin{table}[H]
   \centering
   \begin{tabulary}{1.0\linewidth}{|L|L|L|}
     \hline
@@ -592,7 +608,6 @@ In the second iteration I was understanding more and felt I could contribute mor
   \caption{Sprint 3 user stories}
 \label{tab:sprint3}
 \end{table}
-
 
 \begin{landscape}
 \section{Time lists}
@@ -780,8 +795,6 @@ Meetings &  5 & Group Meeting 21/01 & Everyone & \multicolumn{1}{r|}{21.01.2015 
 \end{tabular}
 
 
-
-
 \subsection{Ole-Morten}
 \begin{tabular}{|l|l|l|l|r|r|}
 \hline
@@ -803,7 +816,6 @@ Meetings &  5 & Group Meeting 21/01 & Everyone & \multicolumn{1}{r|}{21.01.2015 
 \end{tabular}
 
 
-
 \subsection{Runar}
 \begin{tabular}{|l|l|l|l|r|r|}
 \hline
@@ -818,9 +830,83 @@ Meetings &  5 & Group Meeting 21/01 & Everyone & \multicolumn{1}{r|}{21.01.2015 
 \end{tabular}
 
 
-
-
 \end{landscape}
+
+
+\section{Retrospective - 1 Results}
+\label{rep:retro1}
+
+Here is an overview of the things we mentioned and the results (discussed with the teacher) for our first retrospective.
+
+\textbf{Results}
+
+\begin{itemize}
+	\item Choose a master next meeting
+	\item Make daily even if not everyone can participate (15 minutes - standup - what have i done, what problems i had, what I'm going to do)
+	\item Create workshops for the things you done (just create an appointment - who can participate participates)
+	\item Take more time for the next sprint planning (find an appointment next tirsdag) - at least 4 to 5 hours
+\end{itemize}
+
+\textbf{Detailed points with unfiltered comments of all:}
+\begin{itemize}
+	\item Things are progressing fast!
+	\begin{itemize}
+		\item Good
+	\end{itemize}
+	\item A lot was done in the first iteration
+	\begin{itemize}
+		\item We can do more =)
+	\end{itemize}
+	\item Base program, nearly done
+	\begin{itemize}
+		\item Suprised how fast things are stacking up
+		\item Awesome
+	\end{itemize}
+	\item Complexity is increasing
+	\begin{itemize}
+		\item Knowledge too
+	\end{itemize}
+	\item Tests are overlapping (Model/Controller/view)
+	\item Good dialog between team members
+	\item Git is nice
+	\begin{itemize}
+		\item Yes but very complicated also sometimes
+		\item + Annoying but better thean CVS/SVN :P
+	\end{itemize}
+	\item Continuous Integration/delivery is also very nice
+	\item We have a good team atmosphere
+	\begin{itemize}
+		\item Our team is ze best
+	\end{itemize}
+	\item Good collaboration which can be extended
+	\begin{itemize}
+		\item Party/do things outside school?
+		\item Yes I'd like a Party!
+	\end{itemize}
+	\item More pair programming
+	\begin{itemize}
+		\item Yes and switch it up!
+	\end{itemize}
+	\item More exchange of learned things between Members!
+	\begin{itemize}
+		\item Maybe set an hour in the meeting explaining new features?
+		\item Workshops in the group!
+	\end{itemize}
+	\item We should have a kanban board
+	\item There should be more acceptance criterias
+	\begin{itemize}
+		\item Maybe set an hour in the meeting explaining new features?
+		\item Workshops in the group!
+	\end{itemize}
+	\item We should have workshops within our group about 	such as the new gems we are using and rails, javascript, css, html etc.
+	\begin{itemize}
+		\item Awesome idea.
+	\end{itemize}
+	\item Each user story should have points, use the planning poker
+	\item Our meetings should be more effective, maybe set up an agenda for each meeting
+	\item We should have a motivated master which focus is on the organization part (like meeting agenda)
+\end{itemize}
+
 \end{document}
 
 %%% Local Variables:
