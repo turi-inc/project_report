@@ -130,9 +130,9 @@ The following functionalities should be supported (bold means that we they were 
   \item {Search and find trips according your interests}
 \end{itemize}
 
-\noindent
-In the end we weren't able to implement all of our goals (the goals which are not in bold) and we had tons of more ideas. But for the first release of turi (1.0.0) we decided to require all the features above.\\
+In the end we weren't able to implement all of our goals (the goals which are not in bold) and we had tons of more ideas. But for  a potential future release of turi (1.0.0), not related to the course, we should require all the features mentioned above. \\
 
+\noindent
 \section{Theme and Design}
 The theme should be minimalistic and consistent. Therefore we decided to go with an existing theme and implement our features. We've gone with a theme named "AppUI". It's available on the online platform "themeforest". It already includes a lot of sample pages so we only had to replace the placeholder widgets with our own views and partials. For more information about this theme you can have a look at \url{http://themeforest.net/item/appui-web-app-bootstrap-admin-template/8603616}.
 
@@ -146,10 +146,10 @@ In the first iterations we created our own authentication system, but we found o
 \textit{Pundit} is an authorization system\cite{pundit}, which we use in almost all of the features in the project. Our main usage of the gem is to check privileges when a user interacts with the trip or the trip features. For example an editor and the owner of a trip are able to edit the trip title, description and so on, but a viewer is not able to do this. 
 
 \subsection{Leaflet}
-\textit{Leaflet}\cite{leaflet} is a JavaScript library that let us implement the interactive map for the routes. Before discovering \textit{Leaflet}, we looked at a similar gem from Google, but it was too heavy for our requirements. As an example, Google Maps seemed to snap waypoints to the nearest road, which is counter-productive for us since we want the users to be able to plan any kind of trip, including hikes.
+\textit{Leaflet}\cite{leaflet} is a JavaScript library that let us implement the interactive map for the routes and for the explore map. Before discovering \textit{Leaflet}, we looked at a similar gem from Google, but it was too heavy for our requirements. As an example, Google Maps seemed to snap waypoints to the nearest road, which is counter-productive for us since we want the users to be able to plan any kind of trip, including hikes.
 
 \subsection{rails-assets}
-Rails assets are used to include common JavaScript libraries which extend mainly jQuery and Bootstrap. Using the rails assets source, we can benefit from pre packaged JavaScript libraries which are automatically included in the rails asset pipeline. For more information you can refer the rails asset website: \url{https://rails-assets.org/}
+Rails assets are used to include common JavaScript libraries which extend mainly jQuery and Bootstrap. Using the rails assets source, we can benefit from pre packaged JavaScript libraries which are automatically injected into the rails asset pipeline. For more information you can refer the rails asset website: \url{https://rails-assets.org/}
 
 \subsection{Geocoder}
 \textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}. It provides a location based on IP, location and so on. In the project we use it for location based search, for example in the trip start and end location to show the location in the explore map. 
@@ -171,7 +171,7 @@ The trip and its features are the main focus of our project.
 \label{fig:discussion}
 \end{figure}
 
-This feature is for discussion among the trip participants. If something needs discussion considering the trip, this is a place where the participants can come to an agreement. All participants can create a new discussion and comment on others and their own discussions. Figure \ref{fig:discussion} is an example of the discussion feature. At the top of the figure is the title of discussion. Next to it is the name of the discussion creator and how long since it was created. Below the title are the comments on the discussion. Each comment has information on who created it, how long since it was created and an image of the creator, if available. Adding new comments to the discussion is done by exchanging data to the server using AJAX \footnote{\AJAX}. This gives a smoother experience for the commentator. 
+This feature is for discussions among the trip participants. If something needs to be discussed considering the trip, this is the place where the participants can come to an agreement. All participants can create a new discussion and comment on others' and their own discussions. Figure \ref{fig:discussion} is an example of the discussion feature. At the top of the figure is the title of discussion. Next to it is the name of the discussion creator and the creation date. Below the title are the comments to the discussion. Each comment has information on who created it, how long since it was created and an image of the creator, if available. Adding new comments to the discussion is done by exchanging data to the server using AJAX \footnote{\AJAX}. This gives a smoother experience for the commentator. 
 
 \subsection{Event management}
 The event management is a simple calendar where you can add events. We make use of a jQuery Plugin called "fullCalendar" which does all the frontend logic for us. In the backend we simply store events with a date and description etc. The events are then pulled via AJAX by fullCalendar and a small JSON interface in our EventController.
@@ -249,7 +249,7 @@ The feature was implemented on a separate branch on Github, and was only merged 
 Now that you have registered and logged into the turi site and been on a trip with some people and now you want to continue to stay in touch with them so that you can go with more trips with them. This is why the friendship feature was created, so that you as a user have the option to add other users as your friends. \\
 
 \noindent
-The user story for the friends feature was made in the second sprint and it was given 5 points during the scrum poker session. Ingvild was given the responsibility for implementing the friends feature. In the beginning this feature was implemented without friend requests. In the third sprint the ability to request friendship was added. This time both Runar and Ingvild was assigned to work on the request. But it was not given a an user story since it was a part of the friends user story. In retrospect this user story should have been given 8 points since there was some work with friends and request. \\
+The user story for the friends feature was made in the second sprint and it was given 5 points during the scrum poker session. Ingvild was given the responsibility for implementing the friends feature, but the requests themselves weren't described in the user story. In the third sprint the ability to request friendship was added. This time both Runar and Ingvild was assigned to work on the request. But it was not given a an user story since it was a part of the friends user story. In retrospect this user story should have been given 8 points since there was some work with friends and request. \\
 
 \noindent
 When a user clicks "add friend", rails will build a request for the user id and the receiver id. The pending request will come up under "Request" on the receiver's user page. The user that sent the request can visit the user page of the receiver and remove the request if the it was sent by mistake, which will delete the request from the database. When the receiver sees the pending request she/he will have the option to either accept (+) or decline(-) the request, if he/she accepts, then a friendship will be built between the receiver and the requester. Either way, the request will be deleted from the database. When they go to their user page the friend name will be shown under Friends, there they can remove them as a friend or click on their name and visit their user page. When they remove them as a friend it will delete the friendship from the database. When implementing the friends feature one of the problems was that even tough both users were friends, the friendship would only be shown to one of the users' (the sender) user page. This is why inverse friendships had to be used when telling rails to show the friend on both users user page. \\
@@ -318,7 +318,7 @@ As we can see in Figure \ref{fig:commitgraph} we constantly developed our featur
   \end{center}
 \end{figure}
 
-We also collected some data to show that the development of turi was spread across the whole week (see Figure \ref{fig:commitfrequency}). Tuesday was our weekly meeting that is why the most intensive work was done during this day. \\
+We also collected some data to show that the development of turi was spread across the whole week (see Figure \ref{fig:commitfrequency}). Our weekly meetings were on Tuesday. That is why the most intensive work was done during this day. \\
 
 \begin{figure}[!htb]
   \begin{center}
