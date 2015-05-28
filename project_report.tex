@@ -15,13 +15,13 @@
 			top=3cm,
 			bottom=3cm
 				]{geometry}
-%\usepackage{wrapfig}
-%\usepackage[
-%backend=biber,
-%style=numeric,
-%sorting=ynt
-%]{biblatex}
-%\addbibresource{references.bib}
+\usepackage{wrapfig}
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=ynt
+]{biblatex}
+\addbibresource{references.bib}
 \usepackage{setspace} 
 \DeclareUnicodeCharacter{00A0}{ }
 
@@ -127,7 +127,7 @@ The following functionalities should be supported (bold means that we they were 
 In the end we weren't able to implement all of our goals (the goals which are not in bold) and we had tons of more ideas. But for the first release of turi (1.0.0) we decided to require all these features above.\\
 
 \section{Theme and Design}
-The theme should be minimalistic and consistent. Therefore we decided to go with a existing theme and implement our features. We've gone with a theme named "AppUI". It's available on the online platform "themeforest". It already includes a lot of sample pages so we only had to replace those placeholder widgets with our own views and partials. For more information about this theme you can have a look at "http://themeforest.net/item/appui-web-app-bootstrap-admin-template/8603616".
+The theme should be minimalistic and consistent. Therefore we decided to go with a existing theme and implement our features. We've gone with a theme named "AppUI"\footnote{http://themeforest.net/item/appui-web-app-bootstrap-admin-template/8603616}. It's available on the online platform "themeforest". It already includes a lot of sample pages so we only had to replace those placeholder widgets with our own views and partials.
 
 \section{Gems}
 We use several gems in our project, this means that we didn't need to reinvent the wheel for features that already exist, and we could focus on our own features. All the gems used can be found in the gemfile in the project source, but the most important ones are the following.
@@ -142,7 +142,7 @@ In the first iterations we created our own authentication system, but we found o
 \textit{Leaflet}\cite{leaflet} is a JavaScript library that let us implement the interactive map for the routes. Before discovering \textit{Leaflet}, we looked at a similar gem from Google, but it was too heavy for our requirements. As an example, Google Maps seemed to snap waypoints to the nearest road, which is counter-productive for us since we want the users to be able to plan any kind of trip, including hikes.
 
 \subsection{rails-assets}
-Rails assets are used to include common JavaScript libraries which extend mainly jQuery and Bootstrap. Using the rails assets source, we can benefit from pre packaged JavaScript libraries which are automatically included in the rails asset pipeline. For more information you can refer the rails asset website: https://rails-assets.org/
+Rails assets\footnote{https://rails-assets.org/} are used to include common JavaScript libraries which extend mainly jQuery and Bootstrap. Using the rails assets source, we can benefit from pre packaged JavaScript libraries which are automatically included in the rails asset pipeline.
 
 \subsection{Geocoder}
 \textit{Geocoder} is a so called "complete geocoding solution for Ruby"\cite{geocoder}, it provides a location based on IP, location and so on, in the project we use it for location based search, for example in the trip start and end location to show the location in the explore map. 
@@ -170,7 +170,7 @@ This feature is for discussion among the trip participants. If something needs d
 The event management is a simple calender where you can add events. We make usage of a jQuery Plugin called "fullCalendar" which does all the frontend logic for us. In the backend we simply store events with a date and description etc. The events are then pulled via AJAX by fullCalendar and a small JSON interface in our EventController.
 
 \subsection{Equipment planning}
-Equipment planning is essential for a trip, knowing what you need to bring and the ability to distribute responsibilities between the participants of the trip. In our implementation each trip can have multiple list, which can contain multiple items. Each item in return contains a number (number of items) and a price, these items can be assigned to other participants. Charts provide an overview of all the lists and for each individual list, these charts provide a summary of the assignments (items and price) for each participant in a pie chart. \\ This feature had two different user stories attached to it (\emph{\#154 and \#155}), and they had a combined point value of 13. This estimation was reasonable, and the implementation of the features spanned the entire second sprint. We changed the look and feel of the features multiple during this sprint, before ending up at the current implementation, which we felt was the most intuitive. There weren't any particular problems we faced when implementing this feature. There was, however, a lot of work to get everything working on a single view page, instead of having views for each of the controllers. A particularly tricky part of the feature was the form for the item assignment, since we used the same form for creating, editing and deleting, this caused the create method of the equipment-assignment controller to become quite large and complex. 
+Equipment planning is essential for a trip, knowing what you need to bring and the ability to distribute responsibilities between the participants of the trip. In our implementation each trip can have multiple list, which can contain multiple items. Each item in return contains a number (number of items) and a price, these items can be assigned to other participants. Charts provide an overview of all the lists and for each individual list, these charts provide a summary of the assignments (items and price) for each participant in a pie chart. \\ This feature had two different user stories attached to it (see Appendix A, table \ref{tab:sprint2}, number 4 and 5), and they had a combined point value of 13. This estimation was reasonable, and the implementation of the features spanned the entire second sprint. We changed the look and feel of the features multiple during this sprint, before ending up at the current implementation, which we felt was the most intuitive. There weren't any particular problems we faced when implementing this feature. There was, however, a lot of work to get everything working on a single view page, instead of having views for each of the controllers. A particularly tricky part of the feature was the form for the item assignment, since we used the same form for creating, editing and deleting, this caused the create method of the equipment-assignment controller to become quite large and complex. 
 
 \subsection{Gallery}
 The gallery feature enables the integration of Dropbox \footnote{\DROPBOX}. The user gives us the right to see his images. But of course we wanted to let the customer still feel safe. Therefore he has to create a new Dropbox folder called "turi". When he connects Dropbox to a trip he also has to create a subfolder in "turi" after his trip name. So if you call your trip e.g. "My Trip to London" we will display all images of the user under the folder "turi/my\_trip\_to\_london" to all trip participants. The public feature will allow you in the near future to declare a public folder like "turi/my\_trip\_to\_london/public". This folder will be visible on the public trip page to show external users some impressions of the trip. Beside that the user can always revoke his Dropbox acces by simply clicking the bin icon on the trip gallery page. It should be mentioned that the Dropbox Api is stubbed during the tests since we wanted to make sure that turi can be tested offline.
@@ -220,7 +220,7 @@ The search system was assigned a single user story estimated at 8 points. The sc
 When planning a trip, it could be very useful to illustrate the route, and points of interests on a map. This map should be visible to all the participants so that the route, or proposed route, could be discussed.\\
 
 \noindent
-Bjørnar and Kristoffer was given the responsibility of implementing the feature, and when planning the second sprint a single user story (\emph{\#171}) was created for the entire feature. The user story was given the maximum points for complexity by the scrum poker session, thus it was expected that the entire feature was to be implemented during the second sprint. \\
+Bjørnar and Kristoffer was given the responsibility of implementing the feature, and when planning the second sprint a single user story (see Appendix A, table \ref{tab:sprint3}, number 5) was created for the entire feature. The user story was given the maximum points for complexity by the scrum poker session, thus it was expected that the entire feature was to be implemented during the second sprint. \\
 
 \noindent
 In retrospect, the user story could have been classified as an “epic”, with multiple fine-grained user stories. The implementation could have been divided into three main parts; the map control and GUI, the back-end model and controller, and the view. And given how the workload have been on this feature, we would have given the map control 13 points, the back-end, including tests would get 8 points, and the view would get about 3 points. \\
